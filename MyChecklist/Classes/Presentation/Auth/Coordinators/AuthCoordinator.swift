@@ -13,7 +13,16 @@ class AuthCoordinator: BaseCoordinator {
     let viewModel = AuthViewModel()
     
     override func start() -> Single<Void> {
+        let viewController = AuthViewController()
+        viewController.dataContext = viewModel
         
-        return .create()
+        navigationController.pushViewController(viewController, animated: true)
+        
+        return .create { [unowned self] obs in
+            viewModel.closed
+                .bind {
+                    obs(.success(()))
+                }
+        }
     }
 }

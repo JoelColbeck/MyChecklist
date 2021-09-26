@@ -8,17 +8,20 @@
 import UIKit
 
 class MainViewController: BaseViewController<MainViewModel> {
-    @IBOutlet weak var signInButton: UIButton!
+    // MARK: - Outlets
+    @IBOutlet private weak var signInButton: UIButton!
     
+    // MARK: - LC
     override func viewDidLoad() {
         super.viewDidLoad()
+        isHeroEnabled = true
     }
     
     override func applyBinding() {
+        guard let dataContext = dataContext else { return }
+        
         signInButton.rx.tap
-            .subscribe(onNext: {
-                
-            })
+            .bind(to: dataContext.signInPublisher)
             .disposed(by: bag)
     }
 }

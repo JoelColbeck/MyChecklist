@@ -1040,3 +1040,15 @@ extension UIColor {
         )
     }
 }
+
+extension UIDevice {
+    var hasNotch: Bool {
+        guard
+            let window = UIApplication.shared
+                .windows
+                .filter({ $0.isKeyWindow })
+                .first
+        else { return false }
+        return window.safeAreaInsets.top >= 44
+    }
+}

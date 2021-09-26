@@ -46,6 +46,9 @@
 		C7D3E38E270094C000A08407 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E38D270094C000A08407 /* AuthViewModel.swift */; };
 		C7D3E392270094D600A08407 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E390270094D600A08407 /* AuthViewController.swift */; };
 		C7D3E393270094D600A08407 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D3E391270094D600A08407 /* AuthViewController.xib */; };
+		C7D3E3982700971100A08407 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E3972700971100A08407 /* NavigationBarView.swift */; };
+		C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D3E3992700972800A08407 /* NavigationBarView.xib */; };
+		C7D3E39C2700ACC600A08407 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E39B2700ACC600A08407 /* XibView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +95,9 @@
 		C7D3E38D270094C000A08407 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C7D3E390270094D600A08407 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		C7D3E391270094D600A08407 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		C7D3E3972700971100A08407 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		C7D3E3992700972800A08407 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
+		C7D3E39B2700ACC600A08407 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,7 @@
 		C784883F27007A36003240C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C7D3E394270096E700A08407 /* Views */,
 				C784885127007CFC003240C9 /* Extensions */,
 				C784884E27007C56003240C9 /* Components */,
 				C784884827007AF3003240C9 /* ViewModel */,
@@ -387,6 +394,24 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C7D3E394270096E700A08407 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7D3E395270096F900A08407 /* NavigationBar */,
+				C7D3E39B2700ACC600A08407 /* XibView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7D3E395270096F900A08407 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				C7D3E3972700971100A08407 /* NavigationBarView.swift */,
+				C7D3E3992700972800A08407 /* NavigationBarView.xib */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -452,6 +477,7 @@
 				C7D3E393270094D600A08407 /* AuthViewController.xib in Resources */,
 				C784889327008EEF003240C9 /* Colors.xcassets in Resources */,
 				C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */,
+				C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */,
 				C784888F27008CA7003240C9 /* Gilroy-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +538,7 @@
 				C784886827007CFC003240C9 /* Single+Extensions.swift in Sources */,
 				C7848880270080BE003240C9 /* MainViewModel.swift in Sources */,
 				C784887127007D22003240C9 /* InteractiveClosableView.swift in Sources */,
+				C7D3E39C2700ACC600A08407 /* XibView.swift in Sources */,
 				C784886627007CFC003240C9 /* UIWindow+Extensions.swift in Sources */,
 				C784887027007D22003240C9 /* InteractiveClosableManager.swift in Sources */,
 				C784886A27007CFC003240C9 /* TableView+Extensions.swift in Sources */,
@@ -523,6 +550,7 @@
 				C784886227007CFC003240C9 /* UIView+Extension.swift in Sources */,
 				C784887D270080B4003240C9 /* MainCoordinator.swift in Sources */,
 				C784886727007CFC003240C9 /* UIScrollView+Extensions.swift in Sources */,
+				C7D3E3982700971100A08407 /* NavigationBarView.swift in Sources */,
 				C784884A27007B0A003240C9 /* BaseViewModel.swift in Sources */,
 				C784887227007D22003240C9 /* InteractiveClosableManagerProvider.swift in Sources */,
 				C7D3E38E270094C000A08407 /* AuthViewModel.swift in Sources */,

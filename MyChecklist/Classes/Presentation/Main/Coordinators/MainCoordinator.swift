@@ -26,6 +26,23 @@ class MainCoordinator: BaseCoordinator {
         
         window.setRoot(viewController: navigationController, withAnimation: true)
         
+        applyBinding()
+        
         return .never()
+    }
+    
+    // MARK: - Private Methods
+    private func applyBinding() {
+        viewModel.signInPublisher
+            .subscribe(onNext: { [unowned self] in
+                openSignInScene()
+            })
+            .disposed(by: bag)
+    }
+    
+    private func openSignInScene() {
+        let coordinator = AuthCoordinator()
+        coordinator.navigationController = navigationController
+        start(coordinator: coordinator)
     }
 }

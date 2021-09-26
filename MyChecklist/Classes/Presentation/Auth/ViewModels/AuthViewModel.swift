@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxRelay
 
 class AuthViewModel: BaseViewModel {
-    
+    let closed = PublishRelay<Void>()
 }

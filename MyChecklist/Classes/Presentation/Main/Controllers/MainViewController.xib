@@ -33,6 +33,9 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="115" id="lGG-9j-Ovo"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="logoImage"/>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8C-ac-oh1">
                             <rect key="frame" x="274" y="0.0" width="100" height="35"/>

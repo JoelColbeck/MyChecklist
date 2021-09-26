@@ -10,5 +10,5 @@ import RxSwift
 import RxRelay
 
 class MainViewModel: BaseViewModel {
-    
+    let signInPublisher = PublishRelay<Void>()
 }
