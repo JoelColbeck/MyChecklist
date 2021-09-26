@@ -9,28 +9,11 @@
 import UIKit
 
 extension UIFont {
-    static func regularFont(ofSize fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "SBSansUI-Regular", size: fontSize) ??
-            UIFont.systemFont(ofSize: fontSize, weight: .regular)
+    static func gilroySemibold(ofSize size: CGFloat) -> UIFont {
+        return UIFont(name: "Gilroy-Semibold", size: size) ?? UIFont.systemFont(ofSize: size, weight: .semibold)
     }
     
-    static func lightFont(ofSize fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "SBSansUI-Light", size: fontSize) ??
-            UIFont.systemFont(ofSize: fontSize, weight: .light)
-    }
-    
-    static func semiboldFont(ofSize fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "SBSansUI-SemiBold", size: fontSize) ??
-            UIFont.systemFont(ofSize: fontSize, weight: .semibold)
-    }
-    
-    static func boldFont(ofSize fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "SBSansUI-Bold", size: fontSize) ??
-            UIFont.systemFont(ofSize: fontSize, weight: .bold)
-    }
-    
-    static func capsFont(ofSize fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "SBSansUI-Caps", size: fontSize) ??
-            UIFont.systemFont(ofSize: fontSize, weight: .bold)
+    static func gilroyBold(ofSize size: CGFloat) -> UIFont {
+        return UIFont(name: "Gilroy-Bold", size: size) ?? UIFont.systemFont(ofSize: size, weight: .bold)
     }
 }

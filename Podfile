@@ -9,5 +9,6 @@ target 'MyChecklist' do
   pod 'RxCocoa'
   pod 'Moya'
   pod 'lottie-ios'
+  pod 'Hero'
 
 end

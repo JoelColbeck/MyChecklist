@@ -36,21 +36,21 @@ var connectionStatus: InternetConnectionStatus {
 }
 
 var bottomSafeAreaInset: CGFloat {
-    if #available(iOS 11.0, *) {
-        if let bottomEdge = UIApplication.shared.keyWindow?.safeAreaInsets.bottom {
-            return bottomEdge
-        }
-    }
-    return 0.0
+    guard
+        let window = UIApplication.shared
+            .windows
+            .filter( {$0.isKeyWindow} ).first
+    else { return .zero }
+    return window.safeAreaInsets.bottom
 }
 
 var topSafeAreaInset: CGFloat {
-    if #available(iOS 11.0, *) {
-        if let topEdge = UIApplication.shared.keyWindow?.safeAreaInsets.top {
-            return topEdge
-        }
-    }
-    return 0.0
+    guard
+        let window = UIApplication.shared
+            .windows
+            .filter( {$0.isKeyWindow} ).first
+    else { return .zero }
+    return window.safeAreaInsets.top
 }
 
 var window: UIWindow {
@@ -121,12 +121,6 @@ extension UITapGestureRecognizer {
         let locationOfTouchInTextContainer = CGPoint(x: locationOfTouchInLabel.x - textContainerOffset.x, y: locationOfTouchInLabel.y - textContainerOffset.y)
         let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
         return NSLocationInRange(indexOfCharacter, targetRange)
-    }
-}
-
-extension Range where Bound == String.Index {
-    var nsRange: NSRange {
-        return NSRange(location: self.lowerBound.encodedOffset, length: self.upperBound.encodedOffset - self.lowerBound.encodedOffset)
     }
 }
 
