@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  MainViewControllers.swift
 //  MyChecklist
 //
-//  Created by Башир Арсланалиев on 13.08.2021.
+//  Created by Башир Арсланалиев on 26.09.2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewControllers: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
 }
-
