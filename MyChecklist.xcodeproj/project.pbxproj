@@ -49,6 +49,8 @@
 		C7D3E3982700971100A08407 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E3972700971100A08407 /* NavigationBarView.swift */; };
 		C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D3E3992700972800A08407 /* NavigationBarView.xib */; };
 		C7D3E39C2700ACC600A08407 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E39B2700ACC600A08407 /* XibView.swift */; };
+		C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E39E2700BC1D00A08407 /* SeparatedTextField.swift */; };
+		C7D3E3A32700C32200A08407 /* SeparatedTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D3E3A22700C32100A08407 /* SeparatedTextField.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,8 @@
 		C7D3E3972700971100A08407 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		C7D3E3992700972800A08407 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
 		C7D3E39B2700ACC600A08407 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		C7D3E39E2700BC1D00A08407 /* SeparatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatedTextField.swift; sourceTree = "<group>"; };
+		C7D3E3A22700C32100A08407 /* SeparatedTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatedTextField.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +401,7 @@
 		C7D3E394270096E700A08407 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C7D3E39D2700BC0200A08407 /* SeparatedTextField */,
 				C7D3E395270096F900A08407 /* NavigationBar */,
 				C7D3E39B2700ACC600A08407 /* XibView.swift */,
 			);
@@ -410,6 +415,15 @@
 				C7D3E3992700972800A08407 /* NavigationBarView.xib */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		C7D3E39D2700BC0200A08407 /* SeparatedTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C7D3E39E2700BC1D00A08407 /* SeparatedTextField.swift */,
+				C7D3E3A22700C32100A08407 /* SeparatedTextField.xib */,
+			);
+			path = SeparatedTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +492,7 @@
 				C784889327008EEF003240C9 /* Colors.xcassets in Resources */,
 				C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */,
 				C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */,
+				C7D3E3A32700C32200A08407 /* SeparatedTextField.xib in Resources */,
 				C784888F27008CA7003240C9 /* Gilroy-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +571,7 @@
 				C7D3E38E270094C000A08407 /* AuthViewModel.swift in Sources */,
 				C784886927007CFC003240C9 /* ObserverType+Extension.swift in Sources */,
 				C784886527007CFC003240C9 /* Extensions.swift in Sources */,
+				C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */,
 				C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */,
 				C784887827007E5B003240C9 /* StartUpViewController.swift in Sources */,
 				C784887327007D22003240C9 /* InteractiveClosableViewModel.swift in Sources */,

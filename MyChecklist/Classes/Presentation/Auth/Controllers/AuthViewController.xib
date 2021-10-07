@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gilroy-Semibold.ttf">
+            <string>Gilroy-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthViewController" customModule="MyChecklist" customModuleProvider="target">
             <connections>
@@ -27,6 +32,29 @@
                         <constraint firstAttribute="height" constant="80" id="6In-rQ-Kx1"/>
                     </constraints>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uRu-1J-ivs">
+                    <rect key="frame" x="85" y="124" width="244" height="84"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ваш пин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAt-fb-Mrf">
+                            <rect key="frame" x="57.5" y="0.0" width="129" height="16"/>
+                            <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbo-0u-8jW" customClass="SeparatedTextField" customModule="MyChecklist" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="24" width="244" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="yOV-xg-gAK"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="sbo-0u-8jW" firstAttribute="leading" secondItem="uRu-1J-ivs" secondAttribute="leading" id="4tl-FP-BA1"/>
+                        <constraint firstAttribute="width" constant="244" id="lw1-oX-34C"/>
+                        <constraint firstAttribute="trailing" secondItem="sbo-0u-8jW" secondAttribute="trailing" id="wDC-Xn-XCH"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -34,6 +62,8 @@
                 <constraint firstItem="rNr-xj-dhh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1Lz-ME-cum"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rNr-xj-dhh" secondAttribute="trailing" id="DRp-1k-x8c"/>
                 <constraint firstItem="rNr-xj-dhh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ED2-OS-CF9"/>
+                <constraint firstItem="uRu-1J-ivs" firstAttribute="top" secondItem="rNr-xj-dhh" secondAttribute="bottom" id="YZy-gP-1al"/>
+                <constraint firstItem="uRu-1J-ivs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a3W-Sg-sZf"/>
             </constraints>
             <point key="canvasLocation" x="132" y="74"/>
         </view>
