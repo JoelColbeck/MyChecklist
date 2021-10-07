@@ -4,11 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Gilroy-Bold.ttf">
+            <string>Gilroy-Bold</string>
+        </array>
         <array key="Gilroy-Semibold.ttf">
             <string>Gilroy-Semibold</string>
         </array>
@@ -16,7 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthViewController" customModule="MyChecklist" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="XyH-5J-Quc" id="wAr-7k-rp7"/>
+                <outlet property="helpButton" destination="IMN-Iw-CLv" id="wb8-oP-x57"/>
                 <outlet property="navigationBar" destination="rNr-xj-dhh" id="xIM-Fy-fPB"/>
+                <outlet property="newTestButton" destination="Xi5-A7-VVb" id="LG0-ix-nut"/>
+                <outlet property="textField" destination="sbo-0u-8jW" id="Krv-cg-HQo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,6 +63,31 @@
                         <constraint firstAttribute="trailing" secondItem="sbo-0u-8jW" secondAttribute="trailing" id="wDC-Xn-XCH"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMN-Iw-CLv">
+                    <rect key="frame" x="106.5" y="720" width="201" height="32"/>
+                    <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Что такое «Мой чеклист»?">
+                        <color key="titleColor" systemColor="labelColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi5-A7-VVb">
+                    <rect key="frame" x="30" y="772" width="354" height="60"/>
+                    <color key="backgroundColor" name="MCYellow"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="bJR-9A-4x8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Пройти новый тест">
+                        <color key="titleColor" systemColor="labelColor"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,13 +95,24 @@
                 <constraint firstItem="rNr-xj-dhh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1Lz-ME-cum"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rNr-xj-dhh" secondAttribute="trailing" id="DRp-1k-x8c"/>
                 <constraint firstItem="rNr-xj-dhh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ED2-OS-CF9"/>
+                <constraint firstItem="Xi5-A7-VVb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="MbJ-8s-kZ5"/>
+                <constraint firstItem="Xi5-A7-VVb" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-30" id="XyH-5J-Quc"/>
                 <constraint firstItem="uRu-1J-ivs" firstAttribute="top" secondItem="rNr-xj-dhh" secondAttribute="bottom" id="YZy-gP-1al"/>
+                <constraint firstItem="IMN-Iw-CLv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zzx-Sb-sGM"/>
                 <constraint firstItem="uRu-1J-ivs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a3W-Sg-sZf"/>
+                <constraint firstItem="Xi5-A7-VVb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aEP-XN-QAM"/>
+                <constraint firstItem="Xi5-A7-VVb" firstAttribute="top" secondItem="IMN-Iw-CLv" secondAttribute="bottom" constant="20" id="tD3-bI-SXP"/>
             </constraints>
             <point key="canvasLocation" x="132" y="74"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="MCYellow">
+            <color red="1" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

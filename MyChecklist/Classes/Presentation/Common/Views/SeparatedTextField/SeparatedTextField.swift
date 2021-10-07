@@ -12,7 +12,7 @@ import RxCocoa
 class SeparatedTextField: XibView {
     
     // MARK: - Outlets
-    @IBOutlet weak var textFieldsStack: UIStackView! {
+    @IBOutlet private weak var textFieldsStack: UIStackView! {
         didSet {
             for subview in textFieldsStack.arrangedSubviews where subview is UITextField {
                 if let textField = subview as? UITextField {
@@ -23,11 +23,11 @@ class SeparatedTextField: XibView {
             }
         }
     }
-    var textFields: [UITextField] = []
+    private var textFields: [UITextField] = []
     
     // MARK: - Public Properties
     private(set) var bag = DisposeBag()
-    var textObservable: Observable<String> {
+    var codeObservable: Observable<String> {
         result.asObservable()
     }
     
@@ -70,7 +70,6 @@ class SeparatedTextField: XibView {
                         getter: { $0.textOrEmpty },
                         setter: { $0.text = $1 })
                     .skip(1)
-                    .debug("Value changed", trimOutput: true)
                     .subscribe(onNext: { text in
                         updateValuePublisher.accept(())
                         if text.isEmpty {
