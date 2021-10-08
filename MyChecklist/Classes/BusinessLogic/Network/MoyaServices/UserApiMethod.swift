@@ -1,5 +1,5 @@
 //
-//  NetworkService.swift
+//  UserApiMethod.swift
 //  MyChecklist
 //
 //  Created by Башир Арсланалиев on 07.10.2021.
@@ -8,11 +8,13 @@
 import Foundation
 import Moya
 
-enum NetworkService {
+enum UserApiMethod {
+    static let provider = MoyaProvider<Self>(plugins: [NetworkLoggingPlugin()])
+    
     case getUsers(id: String)
 }
 
-extension NetworkService: TargetType {
+extension UserApiMethod: TargetType {
     var baseURL: URL { URL(string: appBaseUrl)! }
     
     var path: String {
@@ -35,7 +37,6 @@ extension NetworkService: TargetType {
             return .get
         }
     }
-    
     
     var sampleData: Data {
         return Data()

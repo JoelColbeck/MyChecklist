@@ -50,6 +50,14 @@ class AuthViewController: BaseViewController<AuthViewModel> {
         textField.codeObservable
             .bind(to: dataContext.sendCodePublisher)
             .disposed(by: bag)
+        
+        dataContext.errorPublisher
+            .subscribe(onNext: { [unowned self] error in
+                showAlert(title: "Упс...", message: error, style: .alert)
+                    .subscribe()
+                    .disposed(by: bag)
+            })
+            .disposed(by: bag)
     }
     
     override func handleKeyboardDidShown(_ keyboardBounds: CGRect) {

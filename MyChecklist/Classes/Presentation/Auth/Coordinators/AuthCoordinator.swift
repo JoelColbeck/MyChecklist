@@ -26,4 +26,16 @@ class AuthCoordinator: BaseCoordinator {
                 }
         }
     }
+    
+    private func applyBindings() {
+        viewModel.userChecklistPublisher
+            .subscribe(onNext: { _ in
+                
+            })
+            .disposed(by: bag)
+    }
+    
+    private func openChecklistScene(user: User) {
+        
+    }
 }

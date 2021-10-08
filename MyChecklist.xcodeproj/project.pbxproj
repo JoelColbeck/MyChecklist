@@ -42,8 +42,11 @@
 		C784889127008CAD003240C9 /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C784889027008CAD003240C9 /* Gilroy-Semibold.ttf */; };
 		C784889327008EEF003240C9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C784889227008EEF003240C9 /* Colors.xcassets */; };
 		C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784889427008FB4003240C9 /* UIColor+Extensions.swift */; };
+		C789C6FC2710352B001E7B75 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C6FB2710352B001E7B75 /* UserService.swift */; };
+		C789C6FE27103649001E7B75 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C6FD27103649001E7B75 /* User.swift */; };
+		C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */; };
 		C7AB92C4270F761000E4827B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C3270F761000E4827B /* Constants.swift */; };
-		C7AB92C6270F772E00E4827B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* NetworkService.swift */; };
+		C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* UserApiMethod.swift */; };
 		C7D3E38B2700949F00A08407 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */; };
 		C7D3E38E270094C000A08407 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E38D270094C000A08407 /* AuthViewModel.swift */; };
 		C7D3E392270094D600A08407 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E390270094D600A08407 /* AuthViewController.swift */; };
@@ -95,8 +98,11 @@
 		C784889027008CAD003240C9 /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		C784889227008EEF003240C9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C784889427008FB4003240C9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		C789C6FB2710352B001E7B75 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C789C6FD27103649001E7B75 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLoggingPlugin.swift; sourceTree = "<group>"; };
 		C7AB92C3270F761000E4827B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C7AB92C5270F772E00E4827B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C7AB92C5270F772E00E4827B /* UserApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiMethod.swift; sourceTree = "<group>"; };
 		C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		C7D3E38D270094C000A08407 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C7D3E390270094D600A08407 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 		C78487A0270075C0003240C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C789C6FD27103649001E7B75 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,11 +375,29 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C789C6F92710351A001E7B75 /* MoyaServices */ = {
+			isa = PBXGroup;
+			children = (
+				C7AB92C5270F772E00E4827B /* UserApiMethod.swift */,
+			);
+			path = MoyaServices;
+			sourceTree = "<group>";
+		};
+		C789C6FA27103524001E7B75 /* ConcreteServices */ = {
+			isa = PBXGroup;
+			children = (
+				C789C6FB2710352B001E7B75 /* UserService.swift */,
+			);
+			path = ConcreteServices;
+			sourceTree = "<group>";
+		};
 		C7AB92C2270F760500E4827B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C789C6FA27103524001E7B75 /* ConcreteServices */,
+				C789C6F92710351A001E7B75 /* MoyaServices */,
 				C7AB92C3270F761000E4827B /* Constants.swift */,
-				C7AB92C5270F772E00E4827B /* NetworkService.swift */,
+				C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -574,19 +599,22 @@
 				C784886427007CFC003240C9 /* Differ.swift in Sources */,
 				C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */,
 				C784884527007A8E003240C9 /* CommonNavigationController.swift in Sources */,
+				C789C6FC2710352B001E7B75 /* UserService.swift in Sources */,
 				C7D3E38B2700949F00A08407 /* AuthCoordinator.swift in Sources */,
 				C784885F27007CFC003240C9 /* UIViewAnchor+Extensions.swift in Sources */,
 				C784886227007CFC003240C9 /* UIView+Extension.swift in Sources */,
+				C789C6FE27103649001E7B75 /* User.swift in Sources */,
 				C784887D270080B4003240C9 /* MainCoordinator.swift in Sources */,
 				C784886727007CFC003240C9 /* UIScrollView+Extensions.swift in Sources */,
 				C7D3E3982700971100A08407 /* NavigationBarView.swift in Sources */,
 				C784884A27007B0A003240C9 /* BaseViewModel.swift in Sources */,
 				C784887227007D22003240C9 /* InteractiveClosableManagerProvider.swift in Sources */,
-				C7AB92C6270F772E00E4827B /* NetworkService.swift in Sources */,
+				C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */,
 				C7D3E38E270094C000A08407 /* AuthViewModel.swift in Sources */,
 				C784886927007CFC003240C9 /* ObserverType+Extension.swift in Sources */,
 				C784886527007CFC003240C9 /* Extensions.swift in Sources */,
 				C7AB92C4270F761000E4827B /* Constants.swift in Sources */,
+				C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */,
 				C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */,
 				C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */,
 				C784887827007E5B003240C9 /* StartUpViewController.swift in Sources */,
