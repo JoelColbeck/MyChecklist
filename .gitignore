@@ -31,3 +31,5 @@ contents.xcworkspacedata
 *.mobileprovision
 
 .env.default
+
+MyChecklist/Classes/BusinessLogic/Network/Constants.swift

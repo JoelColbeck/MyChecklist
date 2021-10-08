@@ -53,7 +53,7 @@ class AuthViewController: BaseViewController<AuthViewModel> {
     }
     
     override func handleKeyboardDidShown(_ keyboardBounds: CGRect) {
-        bottomConstraint.constant -= keyboardBounds.height
+        bottomConstraint.constant = -30 - keyboardBounds.height
         
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
