@@ -29,13 +29,15 @@ class AuthCoordinator: BaseCoordinator {
     
     private func applyBindings() {
         viewModel.userChecklistPublisher
-            .subscribe(onNext: { _ in
-                
+            .subscribe(onNext: { [unowned self] user in
+                openChecklistScene(user: user)
             })
             .disposed(by: bag)
     }
     
     private func openChecklistScene(user: User) {
-        
+        let coordinator = ChecklistCoordinator()
+        coordinator.navigationController = navigationController
+        start(coordinator: coordinator, parameter: user)
     }
 }

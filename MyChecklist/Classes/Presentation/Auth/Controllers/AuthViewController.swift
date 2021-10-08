@@ -10,7 +10,20 @@ import Hero
 
 class AuthViewController: BaseViewController<AuthViewModel> {
     // MARK: - Outlets
-    @IBOutlet weak var navigationBar: NavigationBarView!
+    @IBOutlet weak var navigationBar: NavigationBarView! {
+        didSet {
+            let logoImageView = UIImageView()
+            logoImageView.widthAnchor.constraint(equalToConstant: 115).isActive = true
+            logoImageView.contentMode = .scaleAspectFit
+            logoImageView.image = UIImage(named: "iconLogo")
+            logoImageView.heroID = "logoImage"
+            
+            navigationBar.leftBarItem = logoImageView
+            
+            self.logoImageView = logoImageView
+        }
+    }
+    
     @IBOutlet weak var textField: SeparatedTextField!
     @IBOutlet weak var newTestButton: UIButton!
     @IBOutlet weak var helpButton: UIButton! {
@@ -27,12 +40,12 @@ class AuthViewController: BaseViewController<AuthViewModel> {
         }
     }
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    weak var logoImageView: UIImageView!
     
     // MARK: - LC
     override func viewDidLoad() {
         super.viewDidLoad()
         isHeroEnabled = true
-        configureNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,6 +66,7 @@ class AuthViewController: BaseViewController<AuthViewModel> {
         
         dataContext.errorPublisher
             .subscribe(onNext: { [unowned self] error in
+                textField.clear()
                 showAlert(title: "Упс...", message: error, style: .alert)
                     .subscribe()
                     .disposed(by: bag)
@@ -74,16 +88,5 @@ class AuthViewController: BaseViewController<AuthViewModel> {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
-    }
-    
-    // MARK: - Private Methods
-    private func configureNavigationBar() {
-        let logoImageView = UIImageView()
-        logoImageView.widthAnchor.constraint(equalToConstant: 115).isActive = true
-        logoImageView.contentMode = .scaleAspectFit
-        logoImageView.image = UIImage(named: "iconLogo")
-        logoImageView.heroID = "logoImage"
-        
-        navigationBar.leftBarItem = logoImageView
     }
 }
