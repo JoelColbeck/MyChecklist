@@ -17,18 +17,24 @@ final class TestService {
     private init() {}
     
     // MARK: - Private Methods
-    private func decodeTestAnchors() -> [TestAnchor] {
+    private func decodeTestAnchors() -> [String : TestAnchor] {
         let decoder = JSONDecoder()
-        guard let data = testAnchorJSON.data(using: .utf8) else { return [] }
+        guard let data = testAnchorJSON.data(using: .utf8) else { return [:] }
         
         do {
-            let result = try decoder.decode([TestAnchor].self, from: data)
+            let anchors = try decoder.decode([TestAnchor].self, from: data)
+            
+            var result: [String: TestAnchor] = [:]
+            
+            for anchor in anchors {
+                result[anchor.testAnchor] = anchor
+            }
             
             return result
         } catch {
             print(error.localizedDescription)
         }
         
-        return []
+        return [:]
     }
 }

@@ -22,7 +22,7 @@ class MyChecklistUnitTests: XCTestCase {
         let service = TestService.shared
         let exampleAnchor = "hiv"
         
-        let resultElem = service.testAnchors.first(where: { $0.testAnchor == exampleAnchor })
+        let resultElem = service.testAnchors[exampleAnchor]
         
         XCTAssert(!service.testAnchors.isEmpty)
         XCTAssertEqual(resultElem?.testName, "Тест на вирус имуннодифицита человека")

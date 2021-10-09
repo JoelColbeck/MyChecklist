@@ -17,12 +17,33 @@ struct TestAnchor: Codable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(testAnchor)
     }
+    
+    static let preview = TestAnchor(testAnchor: "preview",
+                                    testName: "preview",
+                                    category: "preview",
+                                    description: "preview",
+                                    importance: .high)
 }
 
 enum Importance: String, Codable {
     case high = "importanceHigh"
     case medium = "importanceMed"
     case low = "importanceLow"
+    
+    var description: String {
+        switch self {
+        case .high:
+            return "Высокая важность"
+        case .medium:
+            return "Средняя важность"
+        case .low:
+            return "Низкая важность"
+        }
+    }
+    
+    var imageName: String {
+        return self.rawValue
+    }
 }
 
 let testAnchorJSON = """

@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChecklistViewController" customModule="MyChecklist" customModuleProvider="target">
             <connections>
                 <outlet property="navigationBar" destination="gJF-wr-M9Q" id="A7S-XS-lnk"/>
+                <outlet property="tableView" destination="qJl-oZ-ngf" id="vS7-fh-7T2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

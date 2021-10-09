@@ -6,18 +6,25 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class YearViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    // MARK: - Outlets
+    @IBOutlet private weak var anchorStackView: UIStackView!
+    @IBOutlet private weak var ageLabel: UILabel!
+    @IBOutlet private weak var yearLabel: UILabel!
+    @IBOutlet private weak var calendarButton: UIButton!
     
+    // MARK: - Public Properties
+    var calendarButtonTapped: Observable<Void> {
+        calendarButton.rx.tap
+            .map {}
+    }
+
+    // MARK: - Public Methods
+    func configure(model: ChecklistYearModel) {
+        ageLabel.text = model.age
+        yearLabel.text = model.year
+    }
 }

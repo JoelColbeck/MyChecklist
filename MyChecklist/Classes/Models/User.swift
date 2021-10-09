@@ -41,3 +41,50 @@ struct Test: Codable {
         case testAnchor
     }
 }
+
+struct UserModel {
+    let id: String
+    let username: String
+    let tests: [Test]
+    let createdAt: String
+    let info: [String: Any]
+    
+    init(
+        id: String,
+        username: String,
+        tests: [Test],
+        createdAt: String,
+        info: [String : Any]
+    ) {
+        self.id = id
+        self.username = username
+        self.tests = tests
+        self.createdAt = createdAt
+        self.info = info
+    }
+    
+    init(fromUser user: User) {
+        self.id = user.id
+        self.username = user.username
+        self.createdAt = user.createdAt
+        self.tests = user.tests
+        self.info = Self.surveyToInfo(user.survey)
+    }
+    
+    private static func surveyToInfo(_ survey: String) -> [String: Any] {
+        var info: [String: Any] = [:]
+        
+        do {
+            let result = try JSONSerialization
+                .jsonObject(with: survey.data(using: .utf8)!,
+                            options: .mutableContainers) as! NSDictionary
+            
+            info = result as? [String : Any] ?? [:]
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return info
+    }
+}
