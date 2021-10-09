@@ -33,16 +33,23 @@ enum Importance: String, Codable {
     var description: String {
         switch self {
         case .high:
-            return "Высокая важность"
+            return "Важно"
         case .medium:
-            return "Средняя важность"
+            return "Желательно"
         case .low:
-            return "Низкая важность"
+            return "На усмотрение"
         }
     }
     
     var imageName: String {
-        return self.rawValue
+        switch self {
+        case .high:
+            return "importanceHigh"
+        case .medium:
+            return "importanceMed"
+        case .low:
+            return "importanceLow"
+        }
     }
 }
 

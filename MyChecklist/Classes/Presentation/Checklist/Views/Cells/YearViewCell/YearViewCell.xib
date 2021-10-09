@@ -19,53 +19,67 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="YearViewCell" customModule="MyChecklist" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="531" height="91"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="KGk-i7-Jjw" customClass="YearViewCell" customModule="MyChecklist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="531" height="109"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="531" height="91"/>
+                <rect key="frame" x="0.0" y="0.0" width="531" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ypB-cT-vHb">
-                        <rect key="frame" x="40" y="15" width="77" height="57.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6LR-1h-AEc">
+                        <rect key="frame" x="15" y="30" width="501" height="48"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnv-px-cDm">
-                                <rect key="frame" x="0.0" y="0.0" width="77" height="36.5"/>
-                                <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-At-QtH">
-                                <rect key="frame" x="0.0" y="36.5" width="77" height="21"/>
-                                <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="21"/>
-                                <color key="textColor" systemColor="systemGray2Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ypB-cT-vHb">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnv-px-cDm">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="22"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-At-QtH">
+                                        <rect key="frame" x="0.0" y="22" width="70" height="14"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="5hg-1p-rdi"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-XS-OzP">
+                                <rect key="frame" x="85" y="0.0" width="376" height="48"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcw-OQ-gs6">
+                                <rect key="frame" x="476" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="6OW-Lc-iuL"/>
+                                    <constraint firstAttribute="height" constant="25" id="tE9-NO-MhW"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="calendar" catalog="system"/>
+                            </button>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-XS-OzP">
-                        <rect key="frame" x="117" y="15" width="349" height="61"/>
-                    </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcw-OQ-gs6">
-                        <rect key="frame" x="466" y="15" width="25" height="25"/>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ty6-O7-1ah" userLabel="Separator">
+                        <rect key="frame" x="20" y="108" width="491" height="1"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="6OW-Lc-iuL"/>
-                            <constraint firstAttribute="height" constant="25" id="tE9-NO-MhW"/>
+                            <constraint firstAttribute="height" constant="1" id="bf0-d6-Fb9"/>
                         </constraints>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="calendar" catalog="system"/>
-                    </button>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ypB-cT-vHb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="1q5-co-9P7"/>
-                    <constraint firstItem="ypB-cT-vHb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="2dO-Yq-7px"/>
-                    <constraint firstAttribute="bottom" secondItem="z6S-XS-OzP" secondAttribute="bottom" constant="15" id="NMa-KP-ddh"/>
-                    <constraint firstAttribute="trailing" secondItem="Bcw-OQ-gs6" secondAttribute="trailing" constant="40" id="QU6-ah-M2M"/>
-                    <constraint firstItem="z6S-XS-OzP" firstAttribute="leading" secondItem="ypB-cT-vHb" secondAttribute="trailing" id="X9M-fT-aPD"/>
-                    <constraint firstItem="Bcw-OQ-gs6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="aRn-Vk-Lnw"/>
-                    <constraint firstItem="Bcw-OQ-gs6" firstAttribute="leading" secondItem="z6S-XS-OzP" secondAttribute="trailing" id="bb3-SC-XGC"/>
-                    <constraint firstItem="z6S-XS-OzP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="kk4-MM-MrE"/>
+                    <constraint firstAttribute="trailing" secondItem="6LR-1h-AEc" secondAttribute="trailing" constant="15" id="9DO-d0-xNh"/>
+                    <constraint firstAttribute="trailing" secondItem="Ty6-O7-1ah" secondAttribute="trailing" constant="20" id="XZh-CF-pZr"/>
+                    <constraint firstItem="6LR-1h-AEc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fU5-Eq-oB9"/>
+                    <constraint firstAttribute="bottom" secondItem="Ty6-O7-1ah" secondAttribute="bottom" id="lCe-hN-Ipz"/>
+                    <constraint firstItem="6LR-1h-AEc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="vXL-1D-6up"/>
+                    <constraint firstItem="Ty6-O7-1ah" firstAttribute="top" secondItem="6LR-1h-AEc" secondAttribute="bottom" constant="30" id="wFE-N6-p4S"/>
+                    <constraint firstItem="Ty6-O7-1ah" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="yFn-Hp-kNK"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -73,18 +87,16 @@
                 <outlet property="ageLabel" destination="mnv-px-cDm" id="Gxa-Up-tFa"/>
                 <outlet property="anchorStackView" destination="z6S-XS-OzP" id="EfS-2r-C2f"/>
                 <outlet property="calendarButton" destination="Bcw-OQ-gs6" id="9ps-uo-2bQ"/>
+                <outlet property="separatorView" destination="Ty6-O7-1ah" id="iYy-gd-oya"/>
                 <outlet property="yearLabel" destination="p8Y-At-QtH" id="md8-4L-3aw"/>
             </connections>
-            <point key="canvasLocation" x="303.62318840579712" y="110.15625"/>
+            <point key="canvasLocation" x="303.62318840579712" y="116.18303571428571"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

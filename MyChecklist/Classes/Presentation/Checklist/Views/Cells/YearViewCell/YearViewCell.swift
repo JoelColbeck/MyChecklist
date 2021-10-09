@@ -15,6 +15,11 @@ class YearViewCell: UITableViewCell {
     @IBOutlet private weak var ageLabel: UILabel!
     @IBOutlet private weak var yearLabel: UILabel!
     @IBOutlet private weak var calendarButton: UIButton!
+    @IBOutlet weak var separatorView: UIView! {
+        didSet {
+            separatorView.alpha = 0.2
+        }
+    }
     
     // MARK: - Public Properties
     var calendarButtonTapped: Observable<Void> {
@@ -26,5 +31,11 @@ class YearViewCell: UITableViewCell {
     func configure(model: ChecklistYearModel) {
         ageLabel.text = model.age
         yearLabel.text = model.year
+        for anchor in model.anchors {
+            let anchorView = AnchorView()
+            anchorView.configure(anchor: anchor)
+            
+            anchorStackView.addArrangedSubview(anchorView)
+        }
     }
 }

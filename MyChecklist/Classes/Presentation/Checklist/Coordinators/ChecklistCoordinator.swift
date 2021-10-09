@@ -18,6 +18,8 @@ class ChecklistCoordinator: BaseParameterCoordinator<User> {
         let viewController = ChecklistViewController()
         viewController.dataContext = viewModel
         
+        navigationController.pushViewController(viewController, animated: true)
+        
         return .create { [unowned self] obs in
             viewModel.closed
                 .bind {
