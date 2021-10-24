@@ -11,5 +11,6 @@ target 'MyChecklist' do
   pod 'Moya/RxSwift', :inhibit_warnings => true
   pod 'lottie-ios', :inhibit_warnings => true
   pod 'Hero', :inhibit_warnings => true
+  pod 'ProgressHUD', :inhibit_warnings => true
 
 end

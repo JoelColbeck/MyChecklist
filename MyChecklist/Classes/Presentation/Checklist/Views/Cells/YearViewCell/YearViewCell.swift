@@ -26,6 +26,11 @@ class YearViewCell: UITableViewCell {
         calendarButton.rx.tap
             .map {}
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        anchorStackView.clear()
+    }
 
     // MARK: - Public Methods
     func configure(model: ChecklistYearModel) {
@@ -34,7 +39,6 @@ class YearViewCell: UITableViewCell {
         for anchor in model.anchors {
             let anchorView = AnchorView()
             anchorView.configure(anchor: anchor)
-            
             anchorStackView.addArrangedSubview(anchorView)
         }
     }

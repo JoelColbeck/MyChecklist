@@ -36,7 +36,11 @@ class AuthViewModel: BaseViewModel {
     
     // MARK: - Private Methods
     private func getUser(byId id: String) {
+        isLoading.onNext(true)
         userService.getUsers(byId: id)
+            .do(onDispose: { [unowned self] in
+                isLoading.onNext(false)
+            })
             .subscribe(onSuccess: { [unowned self] users in
                 if users.isEmpty {
                     errorPublisher.accept("Не смогли найти чеклист с таким пином")

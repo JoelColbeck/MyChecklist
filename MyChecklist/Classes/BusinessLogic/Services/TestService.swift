@@ -6,15 +6,22 @@
 //
 
 import Foundation
+import RxSwift
 
 final class TestService {
     // MARK: - Public Properties
     static let shared = TestService()
     
     private(set) lazy var testAnchors = decodeTestAnchors()
+    private let bag = DisposeBag()
     
     // MARK: - Initializers
     private init() {}
+    
+    // MARK: - Public Methods
+    func getData() {
+        fetchTestAnchors()
+    }
     
     // MARK: - Private Methods
     private func decodeTestAnchors() -> [String : TestAnchor] {
@@ -36,5 +43,22 @@ final class TestService {
         }
         
         return [:]
+    }
+    
+    private func fetchTestAnchors() {
+        let service = UserService()
+        
+        service.getAnchors()
+            .debug("GettingAchors")
+            .subscribe(onSuccess: { [unowned self] anchors in
+                var result: [String: TestAnchor] = [:]
+                
+                for anchor in anchors {
+                    result[anchor.testAnchor] = anchor
+                }
+                
+                self.testAnchors = result
+            })
+            .disposed(by: bag)
     }
 }

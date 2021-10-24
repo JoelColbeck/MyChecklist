@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53BB920D9E11FD3B8D67736B /* Pods_MyChecklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */; };
+		C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C73417962725647C005FC8C9 /* Gilroy-Regular.ttf */; };
 		C7418B0F2710E03F0018A233 /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B0E2710E03F0018A233 /* TestService.swift */; };
 		C7418B242710E3F70018A233 /* MyChecklistUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B232710E3F70018A233 /* MyChecklistUnitTests.swift */; };
 		C7418B2D2710E78B0018A233 /* YearViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B2B2710E78B0018A233 /* YearViewCell.swift */; };
@@ -59,6 +60,8 @@
 		C789C71027104065001E7B75 /* TestAnchorJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C70F27104065001E7B75 /* TestAnchorJSON.swift */; };
 		C7AB92C4270F761000E4827B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C3270F761000E4827B /* Constants.swift */; };
 		C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* UserApiMethod.swift */; };
+		C7C96DD1271223B30084FF0C /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C96DD0271223B30084FF0C /* PinCodeView.swift */; };
+		C7C96DD3271223B90084FF0C /* PinCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C96DD2271223B90084FF0C /* PinCodeView.xib */; };
 		C7D3E38B2700949F00A08407 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */; };
 		C7D3E38E270094C000A08407 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E38D270094C000A08407 /* AuthViewModel.swift */; };
 		C7D3E392270094D600A08407 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E390270094D600A08407 /* AuthViewController.swift */; };
@@ -84,6 +87,7 @@
 		1490C37008ADFB04917EC3DB /* Pods-MyChecklist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChecklist.debug.xcconfig"; path = "Target Support Files/Pods-MyChecklist/Pods-MyChecklist.debug.xcconfig"; sourceTree = "<group>"; };
 		42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyChecklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634AC44DAE9B43728C008EFE /* Pods-MyChecklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChecklist.release.xcconfig"; path = "Target Support Files/Pods-MyChecklist/Pods-MyChecklist.release.xcconfig"; sourceTree = "<group>"; };
+		C73417962725647C005FC8C9 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		C7418B0E2710E03F0018A233 /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
 		C7418B212710E3F70018A233 /* MyChecklistUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyChecklistUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7418B232710E3F70018A233 /* MyChecklistUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChecklistUnitTests.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 		C789C70F27104065001E7B75 /* TestAnchorJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnchorJSON.swift; sourceTree = "<group>"; };
 		C7AB92C3270F761000E4827B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7AB92C5270F772E00E4827B /* UserApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiMethod.swift; sourceTree = "<group>"; };
+		C7C96DD0271223B30084FF0C /* PinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
+		C7C96DD2271223B90084FF0C /* PinCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinCodeView.xib; sourceTree = "<group>"; };
 		C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		C7D3E38D270094C000A08407 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C7D3E390270094D600A08407 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 		C7418B2A2710E6F70018A233 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C7C96DCF271223A30084FF0C /* PinCodeView */,
 				C7418B372710E7CE0018A233 /* Cells */,
 				C7418B332710E7980018A233 /* AnchorView */,
 			);
@@ -475,6 +482,7 @@
 		C784888D27008C9E003240C9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C73417962725647C005FC8C9 /* Gilroy-Regular.ttf */,
 				C784889027008CAD003240C9 /* Gilroy-Semibold.ttf */,
 				C784888E27008CA4003240C9 /* Gilroy-Bold.ttf */,
 			);
@@ -543,6 +551,15 @@
 				C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C7C96DCF271223A30084FF0C /* PinCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				C7C96DD0271223B30084FF0C /* PinCodeView.swift */,
+				C7C96DD2271223B90084FF0C /* PinCodeView.xib */,
+			);
+			path = PinCodeView;
 			sourceTree = "<group>";
 		};
 		C7D3E388270093DE00A08407 /* Auth */ = {
@@ -702,6 +719,7 @@
 				C7418B2E2710E78B0018A233 /* YearViewCell.xib in Resources */,
 				C784888B27008418003240C9 /* MainViewController.xib in Resources */,
 				C789C70D27103E7B001E7B75 /* ChecklistViewController.xib in Resources */,
+				C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */,
 				C7D3E393270094D600A08407 /* AuthViewController.xib in Resources */,
 				C784889327008EEF003240C9 /* Colors.xcassets in Resources */,
 				C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */,
@@ -709,6 +727,7 @@
 				C7418B392710E7E80018A233 /* AnchorView.xib in Resources */,
 				C7D3E3A32700C32200A08407 /* SeparatedTextField.xib in Resources */,
 				C784888F27008CA7003240C9 /* Gilroy-Bold.ttf in Resources */,
+				C7C96DD3271223B90084FF0C /* PinCodeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,6 +829,7 @@
 				C784887327007D22003240C9 /* InteractiveClosableViewModel.swift in Sources */,
 				C7418B2D2710E78B0018A233 /* YearViewCell.swift in Sources */,
 				C789C70927103E3D001E7B75 /* ChecklistViewModel.swift in Sources */,
+				C7C96DD1271223B30084FF0C /* PinCodeView.swift in Sources */,
 				C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */,
 				C789C70727103DEB001E7B75 /* ChecklistCoordinator.swift in Sources */,
 				C784888A27008418003240C9 /* MainViewController.swift in Sources */,
