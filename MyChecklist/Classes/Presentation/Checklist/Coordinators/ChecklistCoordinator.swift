@@ -10,11 +10,15 @@ import RxSwift
 
 class ChecklistCoordinator: BaseParameterCoordinator<User> {
     
-    private let viewModel = ChecklistViewModel()
+    private var viewModel: ChecklistViewModel!
     
     override func start(parameter: Parameter) -> Single<Void> {
+        viewModel = .init(user: parameter)
+        
         let viewController = ChecklistViewController()
         viewController.dataContext = viewModel
+        
+        navigationController.pushViewController(viewController, animated: true)
         
         return .create { [unowned self] obs in
             viewModel.closed

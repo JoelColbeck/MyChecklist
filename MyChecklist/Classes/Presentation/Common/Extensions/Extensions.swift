@@ -178,6 +178,30 @@ extension Int {
     var isNullable: Bool {
         return self == 0
     }
+    
+    func declination(nominativeSingular: String,
+                     nominativePlural: String,
+                     genitivePlural: String) -> String {
+        let lastNumber = self % 10
+        let twoLastNumbers = self % 100
+        var result = "\(self) "
+        
+        switch twoLastNumbers {
+        case 11, 12, 13, 14:
+            result += genitivePlural
+        default:
+            switch lastNumber {
+            case 1:
+                result += nominativeSingular
+            case 2, 3, 4:
+                result += nominativePlural
+            default:
+                result += genitivePlural
+            }
+        }
+        
+        return result
+    }
 }
 
 extension Double {

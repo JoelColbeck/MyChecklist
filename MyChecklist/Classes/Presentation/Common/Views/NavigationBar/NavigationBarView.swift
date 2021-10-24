@@ -45,15 +45,17 @@ class NavigationBarView: XibView {
     }
     
     // MARK: - Private Properties
-    private var placeholderView = UIView() {
-        didSet {
-            placeholderView
-                .setContentHuggingPriority(.required, for: .horizontal)
-        }
+    private var placeholderView: UIView {
+        let view = UIView()
+        view.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        
+        return view
     }
     
     // MARK: - Private Methods
     private func updateStacks() {
+        clearView()
+        
         if let leftBarItem = leftBarItem {
             itemsStack.addArrangedSubview(leftBarItem)
             itemsStack.addArrangedSubview(placeholderView)
@@ -72,6 +74,10 @@ class NavigationBarView: XibView {
             leftBarItems.forEach { item in
                 leftItemsStack.addArrangedSubview(item)
             }
+            leftItemsStack.addArrangedSubview(placeholderView)
+            leftItemsStack.isHidden = false
+        } else {
+            leftItemsStack.isHidden = true
         }
         
         if let rightBarItems = rightBarItems {
@@ -79,6 +85,10 @@ class NavigationBarView: XibView {
             rightBarItems.forEach { item in
                 rightItemsStack.addArrangedSubview(item)
             }
+            rightItemsStack.addArrangedSubview(placeholderView)
+            rightItemsStack.isHidden = false
+        } else {
+            rightItemsStack.isHidden = true
         }
         configureConstraints()
     }
@@ -86,5 +96,12 @@ class NavigationBarView: XibView {
     private func configureConstraints() {
         leftBarItem?.heightAnchor.constraint(equalToConstant: 35).isActive = true
         rightBarItem?.heightAnchor.constraint(equalToConstant: 35).isActive = true
+    }
+    
+    private func clearView() {
+        leftBarItem?.removeFromSuperview()
+        rightBarItem?.removeFromSuperview()
+        leftItemsStack.clear()
+        rightItemsStack.clear()
     }
 }

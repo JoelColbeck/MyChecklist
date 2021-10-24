@@ -18,6 +18,8 @@ class AuthCoordinator: BaseCoordinator {
         
         navigationController.pushViewController(viewController, animated: true)
         
+        applyBindings()
+        
         return .create { [unowned self] obs in
             viewModel.closed
                 .bind {
@@ -29,6 +31,7 @@ class AuthCoordinator: BaseCoordinator {
     
     private func applyBindings() {
         viewModel.userChecklistPublisher
+            .debug("User Fetched", trimOutput: true)
             .subscribe(onNext: { [unowned self] user in
                 openChecklistScene(user: user)
             })

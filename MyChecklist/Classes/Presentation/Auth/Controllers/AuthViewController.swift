@@ -7,6 +7,7 @@
 
 import UIKit
 import Hero
+import ProgressHUD
 
 class AuthViewController: BaseViewController<AuthViewModel> {
     // MARK: - Outlets
@@ -46,6 +47,7 @@ class AuthViewController: BaseViewController<AuthViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         isHeroEnabled = true
+        ProgressHUD.animationType = .circleStrokeSpin
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,6 +72,16 @@ class AuthViewController: BaseViewController<AuthViewModel> {
                 showAlert(title: "Упс...", message: error, style: .alert)
                     .subscribe()
                     .disposed(by: bag)
+            })
+            .disposed(by: bag)
+        
+        dataContext.isLoading
+            .subscribe(onNext: { isLoading in
+                if isLoading {
+                    ProgressHUD.show()
+                } else {
+                    ProgressHUD.dismiss()
+                }
             })
             .disposed(by: bag)
     }

@@ -11,6 +11,7 @@ import RxSwift
 
 protocol UserFetchable {
     func getUsers(byId id: String) -> Single<[User]>
+    func getAnchors() -> Single<[TestAnchor]>
 }
 
 class UserService {
@@ -25,5 +26,14 @@ extension UserService: UserFetchable {
                 return .error(error)
             }
             .map([User].self)
+    }
+    
+    func getAnchors() -> Single<[TestAnchor]> {
+        provider.rx.request(.getAnchors )
+            .catch { error in
+                print(error.localizedDescription)
+                return .error(error)
+            }
+            .map([TestAnchor].self)
     }
 }
