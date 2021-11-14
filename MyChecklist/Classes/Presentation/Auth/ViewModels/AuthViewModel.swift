@@ -15,6 +15,7 @@ class AuthViewModel: BaseViewModel {
     let sendCodePublisher = PublishRelay<String>()
     let errorPublisher = PublishRelay<String>()
     let userChecklistPublisher = PublishRelay<User>()
+    let passNewTestPublisher = PublishRelay<Void>()
     
     // MARK: - Private Properties
     private let userService: UserFetchable

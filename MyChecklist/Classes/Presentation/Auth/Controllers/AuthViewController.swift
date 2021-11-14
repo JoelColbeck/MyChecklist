@@ -66,6 +66,10 @@ class AuthViewController: BaseViewController<AuthViewModel> {
             .bind(to: dataContext.sendCodePublisher)
             .disposed(by: bag)
         
+        newTestButton.rx.tap
+            .bind(to: dataContext.passNewTestPublisher)
+            .disposed(by: bag)
+        
         dataContext.errorPublisher
             .subscribe(onNext: { [unowned self] error in
                 textField.clear()
