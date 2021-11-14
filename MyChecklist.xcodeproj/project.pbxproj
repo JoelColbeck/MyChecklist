@@ -12,6 +12,7 @@
 		C72E1817274153E500191706 /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1816274153E500191706 /* SurveyViewModel.swift */; };
 		C72E181A2741543900191706 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E18182741543900191706 /* SurveyViewController.swift */; };
 		C72E181B2741543900191706 /* SurveyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72E18192741543900191706 /* SurveyViewController.xib */; };
+		C72E181D27415C9300191706 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E181C27415C9300191706 /* Survey.swift */; };
 		C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C73417962725647C005FC8C9 /* Gilroy-Regular.ttf */; };
 		C7418B0F2710E03F0018A233 /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B0E2710E03F0018A233 /* TestService.swift */; };
 		C7418B242710E3F70018A233 /* MyChecklistUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B232710E3F70018A233 /* MyChecklistUnitTests.swift */; };
@@ -95,6 +96,7 @@
 		C72E1816274153E500191706 /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
 		C72E18182741543900191706 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C72E18192741543900191706 /* SurveyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyViewController.xib; sourceTree = "<group>"; };
+		C72E181C27415C9300191706 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		C73417962725647C005FC8C9 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		C7418B0E2710E03F0018A233 /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
 		C7418B212710E3F70018A233 /* MyChecklistUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyChecklistUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				C789C70F27104065001E7B75 /* TestAnchorJSON.swift */,
+				C72E181C27415C9300191706 /* Survey.swift */,
 				C789C6FD27103649001E7B75 /* User.swift */,
 			);
 			path = Models;
@@ -846,6 +849,7 @@
 				C784886627007CFC003240C9 /* UIWindow+Extensions.swift in Sources */,
 				C784887027007D22003240C9 /* InteractiveClosableManager.swift in Sources */,
 				C784886A27007CFC003240C9 /* TableView+Extensions.swift in Sources */,
+				C72E181D27415C9300191706 /* Survey.swift in Sources */,
 				C72E1814274153DC00191706 /* SurveyCoordinator.swift in Sources */,
 				C784886427007CFC003240C9 /* Differ.swift in Sources */,
 				C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */,
