@@ -21,6 +21,10 @@ final class SurveyCoordinator: BaseCoordinator {
         viewController.modalPresentationStyle = .pageSheet
         
         navigationController.present(viewController, animated: true)
-        return .create()
+        return .create { [unowned self] obs in
+            viewModel.closed.bind {
+                obs(.success(()))
+            }
+        }
     }
 }

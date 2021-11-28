@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		53BB920D9E11FD3B8D67736B /* Pods_MyChecklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */; };
+		C72C66162753C27F00802B2D /* BodyMetricsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C66142753C27F00802B2D /* BodyMetricsCell.swift */; };
+		C72C66172753C27F00802B2D /* BodyMetricsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72C66152753C27F00802B2D /* BodyMetricsCell.xib */; };
 		C72E1814274153DC00191706 /* SurveyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1813274153DC00191706 /* SurveyCoordinator.swift */; };
 		C72E1817274153E500191706 /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1816274153E500191706 /* SurveyViewModel.swift */; };
 		C72E181A2741543900191706 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E18182741543900191706 /* SurveyViewController.swift */; };
@@ -70,6 +72,7 @@
 		C789C71027104065001E7B75 /* TestAnchorJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C70F27104065001E7B75 /* TestAnchorJSON.swift */; };
 		C7AB92C4270F761000E4827B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C3270F761000E4827B /* Constants.swift */; };
 		C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* UserApiMethod.swift */; };
+		C7AE4A2D2753BBF6001FA74A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE4A2C2753BBF6001FA74A /* Array+Extensions.swift */; };
 		C7C96DD1271223B30084FF0C /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C96DD0271223B30084FF0C /* PinCodeView.swift */; };
 		C7C96DD3271223B90084FF0C /* PinCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C96DD2271223B90084FF0C /* PinCodeView.xib */; };
 		C7D3E38B2700949F00A08407 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */; };
@@ -97,6 +100,8 @@
 		1490C37008ADFB04917EC3DB /* Pods-MyChecklist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChecklist.debug.xcconfig"; path = "Target Support Files/Pods-MyChecklist/Pods-MyChecklist.debug.xcconfig"; sourceTree = "<group>"; };
 		42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyChecklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634AC44DAE9B43728C008EFE /* Pods-MyChecklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChecklist.release.xcconfig"; path = "Target Support Files/Pods-MyChecklist/Pods-MyChecklist.release.xcconfig"; sourceTree = "<group>"; };
+		C72C66142753C27F00802B2D /* BodyMetricsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMetricsCell.swift; sourceTree = "<group>"; };
+		C72C66152753C27F00802B2D /* BodyMetricsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyMetricsCell.xib; sourceTree = "<group>"; };
 		C72E1813274153DC00191706 /* SurveyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCoordinator.swift; sourceTree = "<group>"; };
 		C72E1816274153E500191706 /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
 		C72E18182741543900191706 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 		C789C70F27104065001E7B75 /* TestAnchorJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnchorJSON.swift; sourceTree = "<group>"; };
 		C7AB92C3270F761000E4827B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7AB92C5270F772E00E4827B /* UserApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiMethod.swift; sourceTree = "<group>"; };
+		C7AE4A2C2753BBF6001FA74A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		C7C96DD0271223B30084FF0C /* PinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
 		C7C96DD2271223B90084FF0C /* PinCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinCodeView.xib; sourceTree = "<group>"; };
 		C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				C72E1820274177BF00191706 /* FirstPageCell */,
+				C7AE4A302753BF1D001FA74A /* SecondPageCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -488,6 +495,7 @@
 				C784885927007CFC003240C9 /* UIWindow+Extensions.swift */,
 				C784885A27007CFC003240C9 /* UIScrollView+Extensions.swift */,
 				C784885B27007CFC003240C9 /* Rx */,
+				C7AE4A2C2753BBF6001FA74A /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -652,6 +660,15 @@
 				C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C7AE4A302753BF1D001FA74A /* SecondPageCell */ = {
+			isa = PBXGroup;
+			children = (
+				C72C66142753C27F00802B2D /* BodyMetricsCell.swift */,
+				C72C66152753C27F00802B2D /* BodyMetricsCell.xib */,
+			);
+			path = SecondPageCell;
 			sourceTree = "<group>";
 		};
 		C7C96DCF271223A30084FF0C /* PinCodeView */ = {
@@ -825,6 +842,7 @@
 				C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */,
 				C7D3E393270094D600A08407 /* AuthViewController.xib in Resources */,
 				C72E1829274178FB00191706 /* IncrementView.xib in Resources */,
+				C72C66172753C27F00802B2D /* BodyMetricsCell.xib in Resources */,
 				C784889327008EEF003240C9 /* Colors.xcassets in Resources */,
 				C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */,
 				C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */,
@@ -896,6 +914,7 @@
 				C784886027007CFC003240C9 /* String+Extensions.swift in Sources */,
 				C789C70C27103E7B001E7B75 /* ChecklistViewController.swift in Sources */,
 				C72E1827274178F100191706 /* IncrementView.swift in Sources */,
+				C7AE4A2D2753BBF6001FA74A /* Array+Extensions.swift in Sources */,
 				C72E1823274177DB00191706 /* GenderQuestionCell.swift in Sources */,
 				C784886127007CFC003240C9 /* UIFont+Extensions.swift in Sources */,
 				C784886327007CFC003240C9 /* UIView+Frame.swift in Sources */,
@@ -904,6 +923,7 @@
 				C7848880270080BE003240C9 /* MainViewModel.swift in Sources */,
 				C72E181A2741543900191706 /* SurveyViewController.swift in Sources */,
 				C784887127007D22003240C9 /* InteractiveClosableView.swift in Sources */,
+				C72C66162753C27F00802B2D /* BodyMetricsCell.swift in Sources */,
 				C7D3E39C2700ACC600A08407 /* XibView.swift in Sources */,
 				C784886627007CFC003240C9 /* UIWindow+Extensions.swift in Sources */,
 				C784887027007D22003240C9 /* InteractiveClosableManager.swift in Sources */,

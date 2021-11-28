@@ -63,7 +63,6 @@ final class IncrementViewModel: BaseViewModel {
                 let newValue = value + step
                 return newValue > maxValue ? maxValue : newValue
             }
-            .debug("Plus Publisher", trimOutput: false)
             .bind(to: valuePublisher)
             .disposed(by: bag)
         

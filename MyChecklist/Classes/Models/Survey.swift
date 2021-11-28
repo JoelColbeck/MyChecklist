@@ -8,13 +8,13 @@
 import Foundation
 
 struct Survey: Codable {
-    var gender: Gender
+    var gender: Gender?
     var age: Int = 18
     var height: Int = 170
     var weight: Int = 70
     var smoke: Smoke?
     var alcohol: Alcohol?
-    var bloodPressure: BloodPressure
+    var bloodPressure: BloodPressure?
     var hasHighCholesterol = false // high cholesterol
     var hasDiabetes  = false // diabetes
     var hasBrokenBone = false // brokeBone
@@ -76,7 +76,10 @@ struct Survey: Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: Self.CodingKeys)
         
-        try container.encode(gender, forKey: .gender)
+        if let gender = gender {
+            try container.encode(gender, forKey: .gender)
+        }
+        
         try container.encode(age, forKey: .age)
         try container.encode(weight, forKey: .weight)
         try container.encode(height, forKey: .height)
@@ -89,7 +92,10 @@ struct Survey: Codable {
             try container.encode(alcohol, forKey: .alcohol)
         }
         
-        try container.encode(bloodPressure.rawValue, forKey: .bloodPressure)
+        if let bloodPressure = bloodPressure {
+            try container.encode(bloodPressure.rawValue, forKey: .bloodPressure)
+        }
+        
         try container.encode(["\(hasHighCholesterol)"], forKey: .hasHighCholesterol)
         try container.encode(["\(hasDiabetes)"], forKey: .hasDiabetes)
         try container.encode(["\(hasBrokenBone)"], forKey: .hasBrokenBone)
@@ -128,7 +134,7 @@ struct Survey: Codable {
     }
 }
 
-enum Gender: String, Codable {
+enum Gender: String, Codable, CaseIterable {
     case man
     case woman
 }
