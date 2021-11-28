@@ -12,20 +12,15 @@ final class SurveyCoordinator: BaseCoordinator {
     
     // MARK: - Private Properties
     private let viewModel = SurveyViewModel()
-    private let presenter: UIViewController
-    
-    // MARK: - Initializers
-    init(presenter: UIViewController) {
-        self.presenter = presenter
-        super.init()
-    }
     
     // MARK: - Public Methods
     override func start() -> Single<Void> {
         let viewController = SurveyViewController()
         viewController.dataContext = viewModel
         
-        presenter.show(viewController, sender: presenter)
+        viewController.modalPresentationStyle = .pageSheet
+        
+        navigationController.present(viewController, animated: true)
         return .create()
     }
 }

@@ -13,8 +13,13 @@
 		C72E181A2741543900191706 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E18182741543900191706 /* SurveyViewController.swift */; };
 		C72E181B2741543900191706 /* SurveyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72E18192741543900191706 /* SurveyViewController.xib */; };
 		C72E181D27415C9300191706 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E181C27415C9300191706 /* Survey.swift */; };
+		C72E1823274177DB00191706 /* GenderQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1821274177DB00191706 /* GenderQuestionCell.swift */; };
+		C72E1824274177DB00191706 /* GenderQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72E1822274177DB00191706 /* GenderQuestionCell.xib */; };
+		C72E1827274178F100191706 /* IncrementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1826274178F100191706 /* IncrementView.swift */; };
+		C72E1829274178FB00191706 /* IncrementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72E1828274178FB00191706 /* IncrementView.xib */; };
+		C72E182F27417DAC00191706 /* IncrementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E182E27417DAC00191706 /* IncrementViewModel.swift */; };
 		C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C73417962725647C005FC8C9 /* Gilroy-Regular.ttf */; };
-		C7418B0F2710E03F0018A233 /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B0E2710E03F0018A233 /* TestService.swift */; };
+		C7418B0F2710E03F0018A233 /* TestAnchorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B0E2710E03F0018A233 /* TestAnchorService.swift */; };
 		C7418B242710E3F70018A233 /* MyChecklistUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B232710E3F70018A233 /* MyChecklistUnitTests.swift */; };
 		C7418B2D2710E78B0018A233 /* YearViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7418B2B2710E78B0018A233 /* YearViewCell.swift */; };
 		C7418B2E2710E78B0018A233 /* YearViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7418B2C2710E78B0018A233 /* YearViewCell.xib */; };
@@ -97,8 +102,13 @@
 		C72E18182741543900191706 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C72E18192741543900191706 /* SurveyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyViewController.xib; sourceTree = "<group>"; };
 		C72E181C27415C9300191706 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		C72E1821274177DB00191706 /* GenderQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestionCell.swift; sourceTree = "<group>"; };
+		C72E1822274177DB00191706 /* GenderQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderQuestionCell.xib; sourceTree = "<group>"; };
+		C72E1826274178F100191706 /* IncrementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementView.swift; sourceTree = "<group>"; };
+		C72E1828274178FB00191706 /* IncrementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncrementView.xib; sourceTree = "<group>"; };
+		C72E182E27417DAC00191706 /* IncrementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementViewModel.swift; sourceTree = "<group>"; };
 		C73417962725647C005FC8C9 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
-		C7418B0E2710E03F0018A233 /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
+		C7418B0E2710E03F0018A233 /* TestAnchorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnchorService.swift; sourceTree = "<group>"; };
 		C7418B212710E3F70018A233 /* MyChecklistUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyChecklistUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7418B232710E3F70018A233 /* MyChecklistUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChecklistUnitTests.swift; sourceTree = "<group>"; };
 		C7418B2B2710E78B0018A233 /* YearViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewCell.swift; sourceTree = "<group>"; };
@@ -204,6 +214,7 @@
 		C72E180E274153AD00191706 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				C72E181E274177BA00191706 /* Views */,
 				C72E1815274153DF00191706 /* ViewModels */,
 				C72E1812274153CD00191706 /* Coordinators */,
 				C72E180F274153B500191706 /* Controllers */,
@@ -236,10 +247,53 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		C72E181E274177BA00191706 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C72E181F274177BD00191706 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C72E181F274177BD00191706 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C72E1820274177BF00191706 /* FirstPageCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C72E1820274177BF00191706 /* FirstPageCell */ = {
+			isa = PBXGroup;
+			children = (
+				C72E1821274177DB00191706 /* GenderQuestionCell.swift */,
+				C72E1822274177DB00191706 /* GenderQuestionCell.xib */,
+			);
+			path = FirstPageCell;
+			sourceTree = "<group>";
+		};
+		C72E1825274178E100191706 /* IncrementView */ = {
+			isa = PBXGroup;
+			children = (
+				C72E182D27417DA300191706 /* ViewModels */,
+				C72E1826274178F100191706 /* IncrementView.swift */,
+				C72E1828274178FB00191706 /* IncrementView.xib */,
+			);
+			path = IncrementView;
+			sourceTree = "<group>";
+		};
+		C72E182D27417DA300191706 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C72E182E27417DAC00191706 /* IncrementViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		C7418B0D2710E0340018A233 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C7418B0E2710E03F0018A233 /* TestService.swift */,
+				C7418B0E2710E03F0018A233 /* TestAnchorService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -647,6 +701,7 @@
 		C7D3E394270096E700A08407 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C72E1825274178E100191706 /* IncrementView */,
 				C7D3E39D2700BC0200A08407 /* SeparatedTextField */,
 				C7D3E395270096F900A08407 /* NavigationBar */,
 				C7D3E39B2700ACC600A08407 /* XibView.swift */,
@@ -765,9 +820,11 @@
 				C784889127008CAD003240C9 /* Gilroy-Semibold.ttf in Resources */,
 				C7418B2E2710E78B0018A233 /* YearViewCell.xib in Resources */,
 				C784888B27008418003240C9 /* MainViewController.xib in Resources */,
+				C72E1824274177DB00191706 /* GenderQuestionCell.xib in Resources */,
 				C789C70D27103E7B001E7B75 /* ChecklistViewController.xib in Resources */,
 				C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */,
 				C7D3E393270094D600A08407 /* AuthViewController.xib in Resources */,
+				C72E1829274178FB00191706 /* IncrementView.xib in Resources */,
 				C784889327008EEF003240C9 /* Colors.xcassets in Resources */,
 				C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */,
 				C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */,
@@ -838,6 +895,8 @@
 			files = (
 				C784886027007CFC003240C9 /* String+Extensions.swift in Sources */,
 				C789C70C27103E7B001E7B75 /* ChecklistViewController.swift in Sources */,
+				C72E1827274178F100191706 /* IncrementView.swift in Sources */,
+				C72E1823274177DB00191706 /* GenderQuestionCell.swift in Sources */,
 				C784886127007CFC003240C9 /* UIFont+Extensions.swift in Sources */,
 				C784886327007CFC003240C9 /* UIView+Frame.swift in Sources */,
 				C74A2C0C26C6F1A9001F5508 /* AppDelegate.swift in Sources */,
@@ -855,6 +914,7 @@
 				C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */,
 				C784884527007A8E003240C9 /* CommonNavigationController.swift in Sources */,
 				C7418B3F2711C23E0018A233 /* ChecklistYearModel.swift in Sources */,
+				C72E182F27417DAC00191706 /* IncrementViewModel.swift in Sources */,
 				C789C6FC2710352B001E7B75 /* UserService.swift in Sources */,
 				C7D3E38B2700949F00A08407 /* AuthCoordinator.swift in Sources */,
 				C784885F27007CFC003240C9 /* UIViewAnchor+Extensions.swift in Sources */,
@@ -862,7 +922,7 @@
 				C789C6FE27103649001E7B75 /* User.swift in Sources */,
 				C784887D270080B4003240C9 /* MainCoordinator.swift in Sources */,
 				C72E1817274153E500191706 /* SurveyViewModel.swift in Sources */,
-				C7418B0F2710E03F0018A233 /* TestService.swift in Sources */,
+				C7418B0F2710E03F0018A233 /* TestAnchorService.swift in Sources */,
 				C784886727007CFC003240C9 /* UIScrollView+Extensions.swift in Sources */,
 				C7D3E3982700971100A08407 /* NavigationBarView.swift in Sources */,
 				C784884A27007B0A003240C9 /* BaseViewModel.swift in Sources */,

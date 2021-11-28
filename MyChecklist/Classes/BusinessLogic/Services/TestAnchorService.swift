@@ -1,5 +1,5 @@
 //
-//  TestService.swift
+//  TestAnchorService.swift
 //  MyChecklist
 //
 //  Created by Башир Арсланалиев on 08.10.2021.
@@ -8,9 +8,9 @@
 import Foundation
 import RxSwift
 
-final class TestService {
+final class TestAnchorService {
     // MARK: - Public Properties
-    static let shared = TestService()
+    static let shared = TestAnchorService()
     
     private(set) lazy var testAnchors = decodeTestAnchors()
     private let bag = DisposeBag()

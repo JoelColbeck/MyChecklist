@@ -36,11 +36,23 @@ class AuthCoordinator: BaseCoordinator {
                 openChecklistScene(user: user)
             })
             .disposed(by: bag)
+        
+        viewModel.passNewTestPublisher
+            .subscribe(onNext: { [unowned self] in
+                openSurvey()
+            })
+            .disposed(by: bag)
     }
     
     private func openChecklistScene(user: User) {
         let coordinator = ChecklistCoordinator()
         coordinator.navigationController = navigationController
         start(coordinator: coordinator, parameter: user)
+    }
+    
+    private func openSurvey() {
+        let coordinator = SurveyCoordinator()
+        coordinator.navigationController = navigationController
+        start(coordinator: coordinator)
     }
 }

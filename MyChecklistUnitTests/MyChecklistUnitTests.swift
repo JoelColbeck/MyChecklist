@@ -19,7 +19,7 @@ class MyChecklistUnitTests: XCTestCase {
     }
     
     func testTestServiceHasAnchors() throws {
-        let service = TestService.shared
+        let service = TestAnchorService.shared
         let exampleAnchor = "hiv"
         
         let resultElem = service.testAnchors[exampleAnchor]

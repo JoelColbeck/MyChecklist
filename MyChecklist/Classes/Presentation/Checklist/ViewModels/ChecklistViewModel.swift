@@ -16,7 +16,7 @@ final class ChecklistViewModel: BaseViewModel {
     let sections = BehaviorRelay<[SectionModel]>(value: [])
     
     // MARK: - Private Properties
-    private let testService = TestService.shared
+    private let testService = TestAnchorService.shared
     private var checklistPublisher = BehaviorRelay<[ChecklistYearModel]>(value: [])
     
     // MARK: - Initializers

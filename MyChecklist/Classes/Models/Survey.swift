@@ -14,9 +14,7 @@ struct Survey: Codable {
     var weight: Int = 70
     var smoke: Smoke?
     var alcohol: Alcohol?
-    var bloodPressureTop: Int = 140
-    var bloodPressureLow: Int = 90
-    var bpUndefined = false
+    var bloodPressure: BloodPressure
     var hasHighCholesterol = false // high cholesterol
     var hasDiabetes  = false // diabetes
     var hasBrokenBone = false // brokeBone
@@ -48,9 +46,8 @@ struct Survey: Codable {
     enum CodingKeys: String, CodingKey {
         case gender, age, height, weight
         case smoke, alcohol
-        case bloodPressureTop, bloodPressureLow
+        case bloodPressure
         case prostateCancerDetails, stomachCancerDetails, colonCancerDetails
-        case bpUndefined = "bp-undefined"
         case hasHighCholesterol = "high cholesterol"
         case hasDiabetes = "diabetes"
         case hasBrokenBone = "brokeBone"
@@ -92,13 +89,7 @@ struct Survey: Codable {
             try container.encode(alcohol, forKey: .alcohol)
         }
         
-        if bpUndefined {
-            try container.encode("true", forKey: .bpUndefined)
-        } else {
-            try container.encode(bloodPressureTop, forKey: .bloodPressureTop)
-            try container.encode(bloodPressureLow, forKey: .bloodPressureLow)
-        }
-        
+        try container.encode(bloodPressure.rawValue, forKey: .bloodPressure)
         try container.encode(["\(hasHighCholesterol)"], forKey: .hasHighCholesterol)
         try container.encode(["\(hasDiabetes)"], forKey: .hasDiabetes)
         try container.encode(["\(hasBrokenBone)"], forKey: .hasBrokenBone)
@@ -154,9 +145,10 @@ enum Alcohol: String, Codable {
     case noDrinker
 }
 
-struct BloodPressure: Codable {
-    var bloodPressureTop: Int = 120
-    var bloodPressureLow: Int = 80
+enum BloodPressure: String, Codable {
+    case low
+    case normal
+    case high
 }
 
 enum ProstateCancerDetails: String, Codable {
