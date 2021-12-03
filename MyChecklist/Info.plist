@@ -19,14 +19,14 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>"Gilroy-Bold.ttf"</string>
-		<string>"Gilroy-Semibold.ttf"</string>
-		<string>"Gilroy-Regular.ttf"</string>
+		<string>&quot;Gilroy-Bold.ttf&quot;</string>
+		<string>&quot;Gilroy-Semibold.ttf&quot;</string>
+		<string>&quot;Gilroy-Regular.ttf&quot;</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -64,5 +64,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
