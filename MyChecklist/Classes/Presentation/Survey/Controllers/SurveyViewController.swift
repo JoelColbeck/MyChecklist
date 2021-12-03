@@ -18,6 +18,8 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
         didSet {
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 0
+            layout.minimumInteritemSpacing = 0
             
             collectionView.isPagingEnabled = true
             collectionView.showsHorizontalScrollIndicator = false
@@ -29,6 +31,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             
             collectionView.register(nib: GenderQuestionCell.self)
             collectionView.register(nib: BodyMetricsCell.self)
+            collectionView.register(nib: SmokeAlcoholCell.self)
         }
     }
     
@@ -113,6 +116,28 @@ private extension SurveyViewController {
                 cell.weightValue
                     .bind(to: dataContext.weightInput)
                     .disposed(by: bag)
+                
+                return cell
+                
+            case .smokeAlcohol:
+                guard let cell = collectionView
+                        .dequeueReusableCell(
+                            withReuseIdentifier: "SmokeAlcoholCell",
+                            for: indexPath
+                        ) as? SmokeAlcoholCell
+                else { return nil }
+                
+                let smokeAlcoholViewModel = dataContext.smokeAlcoholViewModel
+                cell.viewModel = smokeAlcoholViewModel
+                cell.setup()
+                
+                smokeAlcoholViewModel.selectedSmoke
+                    .bind(to: dataContext.smokeInput)
+                    .disposed(by: cell.bag)
+                
+                smokeAlcoholViewModel.selectedAlcohol
+                    .bind(to: dataContext.alcoholInput)
+                    .disposed(by: cell.bag)
                 
                 return cell
                 

@@ -139,13 +139,13 @@ enum Gender: String, Codable, CaseIterable {
     case woman
 }
 
-enum Smoke: String, Codable {
+enum Smoke: String, Codable, CaseIterable {
     case smokingNow
     case quitSmoking
     case noSmoking
 }
 
-enum Alcohol: String, Codable {
+enum Alcohol: String, Codable, CaseIterable {
     case heavyDrinker
     case lightDrinker
     case noDrinker

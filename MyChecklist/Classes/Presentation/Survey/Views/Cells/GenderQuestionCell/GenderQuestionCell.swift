@@ -9,12 +9,14 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-final class GenderQuestionCell: UICollectionViewCell {
+// TODO: Redesign with viewModel
+final class GenderQuestionCell: BaseCollectionViewCell {
     // MARK: - Outlets
     @IBOutlet private weak var pickerView: UIPickerView! {
         didSet {
             pickerView.dataSource = self
             pickerView.delegate = self
+            
         }
     }
     
@@ -22,14 +24,6 @@ final class GenderQuestionCell: UICollectionViewCell {
     var selectedItem: Observable<Gender?> {
         pickerView.rx.itemSelected
             .map { Gender.allCases[safe: $0.row - 1] }
-    }
-    
-    private(set) var bag = DisposeBag()
-    
-    // MARK: - Life Cycle
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        bag = DisposeBag()
     }
 }
 

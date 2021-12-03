@@ -10,6 +10,8 @@
 		53BB920D9E11FD3B8D67736B /* Pods_MyChecklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */; };
 		C72C66162753C27F00802B2D /* BodyMetricsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C66142753C27F00802B2D /* BodyMetricsCell.swift */; };
 		C72C66172753C27F00802B2D /* BodyMetricsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72C66152753C27F00802B2D /* BodyMetricsCell.xib */; };
+		C72C6620275403F900802B2D /* SmokeAlcoholCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C661E275403F900802B2D /* SmokeAlcoholCell.swift */; };
+		C72C6621275403F900802B2D /* SmokeAlcoholCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72C661F275403F900802B2D /* SmokeAlcoholCell.xib */; };
 		C72E1814274153DC00191706 /* SurveyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1813274153DC00191706 /* SurveyCoordinator.swift */; };
 		C72E1817274153E500191706 /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E1816274153E500191706 /* SurveyViewModel.swift */; };
 		C72E181A2741543900191706 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E18182741543900191706 /* SurveyViewController.swift */; };
@@ -84,6 +86,9 @@
 		C7D3E39C2700ACC600A08407 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E39B2700ACC600A08407 /* XibView.swift */; };
 		C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E39E2700BC1D00A08407 /* SeparatedTextField.swift */; };
 		C7D3E3A32700C32200A08407 /* SeparatedTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D3E3A22700C32100A08407 /* SeparatedTextField.xib */; };
+		C7FA3FF7275AB2C800450CA2 /* SmokeAlcoholViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA3FF6275AB2C800450CA2 /* SmokeAlcoholViewModel.swift */; };
+		C7FA3FFF275AB32800450CA2 /* ReactiveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA3FFE275AB32800450CA2 /* ReactiveCollectionViewCell.swift */; };
+		C7FA4001275ABF9300450CA2 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA4000275ABF9300450CA2 /* BaseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +107,8 @@
 		634AC44DAE9B43728C008EFE /* Pods-MyChecklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChecklist.release.xcconfig"; path = "Target Support Files/Pods-MyChecklist/Pods-MyChecklist.release.xcconfig"; sourceTree = "<group>"; };
 		C72C66142753C27F00802B2D /* BodyMetricsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMetricsCell.swift; sourceTree = "<group>"; };
 		C72C66152753C27F00802B2D /* BodyMetricsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyMetricsCell.xib; sourceTree = "<group>"; };
+		C72C661E275403F900802B2D /* SmokeAlcoholCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeAlcoholCell.swift; sourceTree = "<group>"; };
+		C72C661F275403F900802B2D /* SmokeAlcoholCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmokeAlcoholCell.xib; sourceTree = "<group>"; };
 		C72E1813274153DC00191706 /* SurveyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCoordinator.swift; sourceTree = "<group>"; };
 		C72E1816274153E500191706 /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
 		C72E18182741543900191706 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +186,9 @@
 		C7D3E39B2700ACC600A08407 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		C7D3E39E2700BC1D00A08407 /* SeparatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatedTextField.swift; sourceTree = "<group>"; };
 		C7D3E3A22700C32100A08407 /* SeparatedTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatedTextField.xib; sourceTree = "<group>"; };
+		C7FA3FF6275AB2C800450CA2 /* SmokeAlcoholViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeAlcoholViewModel.swift; sourceTree = "<group>"; };
+		C7FA3FFE275AB32800450CA2 /* ReactiveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7FA4000275ABF9300450CA2 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +225,16 @@
 				42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C72C661D275403E700802B2D /* SmokeAlcoholCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7FA3FF5275AB2BB00450CA2 /* ViewModels */,
+				C72C661E275403F900802B2D /* SmokeAlcoholCell.swift */,
+				C72C661F275403F900802B2D /* SmokeAlcoholCell.xib */,
+			);
+			path = SmokeAlcoholCell;
 			sourceTree = "<group>";
 		};
 		C72E180E274153AD00191706 /* Survey */ = {
@@ -264,19 +284,20 @@
 		C72E181F274177BD00191706 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				C72E1820274177BF00191706 /* FirstPageCell */,
-				C7AE4A302753BF1D001FA74A /* SecondPageCell */,
+				C72C661D275403E700802B2D /* SmokeAlcoholCell */,
+				C72E1820274177BF00191706 /* GenderQuestionCell */,
+				C7AE4A302753BF1D001FA74A /* BodyMetricsCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		C72E1820274177BF00191706 /* FirstPageCell */ = {
+		C72E1820274177BF00191706 /* GenderQuestionCell */ = {
 			isa = PBXGroup;
 			children = (
 				C72E1821274177DB00191706 /* GenderQuestionCell.swift */,
 				C72E1822274177DB00191706 /* GenderQuestionCell.xib */,
 			);
-			path = FirstPageCell;
+			path = GenderQuestionCell;
 			sourceTree = "<group>";
 		};
 		C72E1825274178E100191706 /* IncrementView */ = {
@@ -662,13 +683,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		C7AE4A302753BF1D001FA74A /* SecondPageCell */ = {
+		C7AE4A302753BF1D001FA74A /* BodyMetricsCell */ = {
 			isa = PBXGroup;
 			children = (
 				C72C66142753C27F00802B2D /* BodyMetricsCell.swift */,
 				C72C66152753C27F00802B2D /* BodyMetricsCell.xib */,
 			);
-			path = SecondPageCell;
+			path = BodyMetricsCell;
 			sourceTree = "<group>";
 		};
 		C7C96DCF271223A30084FF0C /* PinCodeView */ = {
@@ -722,6 +743,7 @@
 				C7D3E39D2700BC0200A08407 /* SeparatedTextField */,
 				C7D3E395270096F900A08407 /* NavigationBar */,
 				C7D3E39B2700ACC600A08407 /* XibView.swift */,
+				C7FA4002275ABFFF00450CA2 /* CollectionViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -742,6 +764,23 @@
 				C7D3E3A22700C32100A08407 /* SeparatedTextField.xib */,
 			);
 			path = SeparatedTextField;
+			sourceTree = "<group>";
+		};
+		C7FA3FF5275AB2BB00450CA2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C7FA3FF6275AB2C800450CA2 /* SmokeAlcoholViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C7FA4002275ABFFF00450CA2 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C7FA3FFE275AB32800450CA2 /* ReactiveCollectionViewCell.swift */,
+				C7FA4000275ABF9300450CA2 /* BaseCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -846,6 +885,7 @@
 				C784889327008EEF003240C9 /* Colors.xcassets in Resources */,
 				C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */,
 				C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */,
+				C72C6621275403F900802B2D /* SmokeAlcoholCell.xib in Resources */,
 				C7418B392710E7E80018A233 /* AnchorView.xib in Resources */,
 				C7D3E3A32700C32200A08407 /* SeparatedTextField.xib in Resources */,
 				C784888F27008CA7003240C9 /* Gilroy-Bold.ttf in Resources */,
@@ -929,6 +969,7 @@
 				C784887027007D22003240C9 /* InteractiveClosableManager.swift in Sources */,
 				C784886A27007CFC003240C9 /* TableView+Extensions.swift in Sources */,
 				C72E181D27415C9300191706 /* Survey.swift in Sources */,
+				C7FA4001275ABF9300450CA2 /* BaseCollectionViewCell.swift in Sources */,
 				C72E1814274153DC00191706 /* SurveyCoordinator.swift in Sources */,
 				C784886427007CFC003240C9 /* Differ.swift in Sources */,
 				C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */,
@@ -945,6 +986,7 @@
 				C7418B0F2710E03F0018A233 /* TestAnchorService.swift in Sources */,
 				C784886727007CFC003240C9 /* UIScrollView+Extensions.swift in Sources */,
 				C7D3E3982700971100A08407 /* NavigationBarView.swift in Sources */,
+				C72C6620275403F900802B2D /* SmokeAlcoholCell.swift in Sources */,
 				C784884A27007B0A003240C9 /* BaseViewModel.swift in Sources */,
 				C784887227007D22003240C9 /* InteractiveClosableManagerProvider.swift in Sources */,
 				C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */,
@@ -966,7 +1008,9 @@
 				C789C70727103DEB001E7B75 /* ChecklistCoordinator.swift in Sources */,
 				C784888A27008418003240C9 /* MainViewController.swift in Sources */,
 				C784884727007AD6003240C9 /* BaseViewController.swift in Sources */,
+				C7FA3FF7275AB2C800450CA2 /* SmokeAlcoholViewModel.swift in Sources */,
 				C784885027007C5E003240C9 /* UIThrobber.swift in Sources */,
+				C7FA3FFF275AB32800450CA2 /* ReactiveCollectionViewCell.swift in Sources */,
 				C7D3E392270094D600A08407 /* AuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

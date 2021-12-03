@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BodyMetricsCell: UICollectionViewCell {
+final class BodyMetricsCell: BaseCollectionViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var ageView: IncrementView! {
@@ -55,8 +55,6 @@ class BodyMetricsCell: UICollectionViewCell {
     }
     
     // MARK: - Public Properties
-    private(set) var bag = DisposeBag()
-    
     var ageValue: Observable<Int> {
         ageView.value
             .compactMap { Int($0) }
@@ -70,11 +68,5 @@ class BodyMetricsCell: UICollectionViewCell {
     var weightValue: Observable<Int> {
         weightView.value
             .compactMap { Int($0) }
-    }
-    
-    // MARK: - Life Cycle
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        bag = DisposeBag()
     }
 }

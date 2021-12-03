@@ -25,10 +25,15 @@ final class SurveyViewModel: BaseViewModel {
     let ageInput = PublishRelay<Int>()
     let heightInput = PublishRelay<Int>()
     let weightInput = PublishRelay<Int>()
+    let smokeInput = PublishRelay<Smoke?>()
+    let alcoholInput = PublishRelay<Alcohol?>()
     
     var closed = PublishRelay<Void>()
     
     // MARK: - Public Properties
+    var smokeAlcoholViewModel: SmokeAlcoholViewModel {
+        SmokeAlcoholViewModel()
+    }
     
     // MARK: - Private Properties
     private let snapshotPublisher = BehaviorRelay<SurveySnapshot?>(value: nil)
@@ -85,6 +90,26 @@ final class SurveyViewModel: BaseViewModel {
             .bind(to: surveyRelay)
             .disposed(by: bag)
         
+        smokeInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newSmoke, survey in
+                var newSurvey = survey
+                newSurvey.smoke = newSmoke
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        alcoholInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newAlcohol, survey in
+                var newSurvey = survey
+                newSurvey.alcohol = newAlcohol
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
     }
 }
 
@@ -94,7 +119,8 @@ private extension SurveyViewModel {
         
         let items = [
             SurveyItemModel.gender,
-            SurveyItemModel.bodyMetrics
+            SurveyItemModel.bodyMetrics,
+            SurveyItemModel.smokeAlcohol
         ]
         
         snapshot.appendSections([0])
@@ -109,4 +135,5 @@ private extension SurveyViewModel {
 enum SurveyItemModel: Hashable {
     case gender
     case bodyMetrics
+    case smokeAlcohol
 }
