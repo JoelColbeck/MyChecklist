@@ -17,16 +17,25 @@ final class SmokeAlcoholViewModel: BaseViewModel {
     // MARK: - Outputs
     var selectedSmoke: Observable<Smoke?> {
         selectedSmokeRow
-            .map { Smoke.allCases[safe: $0] }
+            .map { Smoke.allCases[safe: $0 - 1] }
     }
     
     var selectedAlcohol: Observable<Alcohol?> {
         selectedAlcoholRow
-            .map { Alcohol.allCases[safe: $0] }
+            .map { Alcohol.allCases[safe: $0 - 1] }
+    }
+    
+    // MARK: - Public Properties
+    var smokeNumberOfRows: Int {
+        Smoke.allCases.count + 1
+    }
+    
+    var alcoholNumberOfRows: Int {
+        Alcohol.allCases.count + 1
     }
     
     // MARK: - Public Methods
-    func titleForSmoke(_ row: Int) -> String? {
+    func smokeTitle(forRow row: Int) -> String? {
         guard let smoke = Smoke.allCases[safe: row - 1] else { return nil }
         switch smoke {
         case .smokingNow:
@@ -38,7 +47,7 @@ final class SmokeAlcoholViewModel: BaseViewModel {
         }
     }
     
-    func titleForAlcohol(_ row: Int) -> String? {
+    func alcoholTitle(forRow row: Int) -> String? {
         guard let alcohol = Alcohol.allCases[safe: row - 1] else { return nil }
         switch alcohol {
         case .heavyDrinker:

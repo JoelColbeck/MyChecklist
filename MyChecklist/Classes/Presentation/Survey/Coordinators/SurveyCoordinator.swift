@@ -17,8 +17,9 @@ final class SurveyCoordinator: BaseCoordinator {
     override func start() -> Single<Void> {
         let viewController = SurveyViewController()
         viewController.dataContext = viewModel
-        
-        viewController.modalPresentationStyle = .pageSheet
+        // TODO: Disable interactive dismissal of VC
+        // Uncomment this line
+//        viewController.isModalInPresentation = true
         
         navigationController.present(viewController, animated: true)
         return .create { [unowned self] obs in

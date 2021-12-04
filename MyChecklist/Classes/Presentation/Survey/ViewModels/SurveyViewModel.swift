@@ -27,13 +27,9 @@ final class SurveyViewModel: BaseViewModel {
     let weightInput = PublishRelay<Int>()
     let smokeInput = PublishRelay<Smoke?>()
     let alcoholInput = PublishRelay<Alcohol?>()
+    let bloodPressureInput = PublishRelay<BloodPressure?>()
     
     var closed = PublishRelay<Void>()
-    
-    // MARK: - Public Properties
-    var smokeAlcoholViewModel: SmokeAlcoholViewModel {
-        SmokeAlcoholViewModel()
-    }
     
     // MARK: - Private Properties
     private let snapshotPublisher = BehaviorRelay<SurveySnapshot?>(value: nil)
@@ -49,6 +45,11 @@ final class SurveyViewModel: BaseViewModel {
     
     override func applyBinding() {
         super.applyBinding()
+        
+        surveyRelay
+            .debug("SurveyRelay", trimOutput: false)
+            .subscribe()
+            .disposed(by: bag)
         
         genderInput
             .withLatestFrom(surveyRelay) { ($0, $1) }
@@ -110,6 +111,16 @@ final class SurveyViewModel: BaseViewModel {
             .bind(to: surveyRelay)
             .disposed(by: bag)
         
+        bloodPressureInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newBloodPressure, survey in
+                var newSurvey = survey
+                newSurvey.bloodPressure = newBloodPressure
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
     }
 }
 
@@ -120,7 +131,8 @@ private extension SurveyViewModel {
         let items = [
             SurveyItemModel.gender,
             SurveyItemModel.bodyMetrics,
-            SurveyItemModel.smokeAlcohol
+            SurveyItemModel.smokeAlcohol,
+            SurveyItemModel.bloodPressure
         ]
         
         snapshot.appendSections([0])
@@ -136,4 +148,5 @@ enum SurveyItemModel: Hashable {
     case gender
     case bodyMetrics
     case smokeAlcohol
+    case bloodPressure
 }

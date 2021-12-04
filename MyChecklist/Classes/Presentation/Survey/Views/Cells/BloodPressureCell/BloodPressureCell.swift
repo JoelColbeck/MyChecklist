@@ -1,35 +1,29 @@
 //
-//  GenderQuestionCell.swift
+//  BloodPressureCell.swift
 //  MyChecklist
 //
-//  Created by Башир Арсланалиев on 14.11.2021.
+//  Created by Башир Арсланалиев on 04.12.2021.
 //
 
 import UIKit
-import RxCocoa
-import RxSwift
 
-// TODO: Redesign with viewModel
-final class GenderQuestionCell: ReactiveCollectionViewCell<GenderQuestionViewModel> {
-    // MARK: - Outlets
+final class BloodPressureCell: ReactiveCollectionViewCell<BloodPressureViewModel> {
     @IBOutlet private weak var pickerView: UIPickerView! {
         didSet {
             pickerView.dataSource = self
             pickerView.delegate = self
-            
         }
     }
     
-    // MARK: - Public Methods
     override func applyBindings() {
         pickerView.rx.itemSelected
             .map { $0.row }
-            .bind(to: viewModel.selectedGenderInput)
+            .bind(to: viewModel.bloodPressureInput)
             .disposed(by: bag)
     }
 }
 
-extension GenderQuestionCell: UIPickerViewDataSource {
+extension BloodPressureCell: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
@@ -39,8 +33,8 @@ extension GenderQuestionCell: UIPickerViewDataSource {
     }
 }
 
-extension GenderQuestionCell: UIPickerViewDelegate {
+extension BloodPressureCell: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.genderTitle(forRow: row)
+        viewModel.bloodPressureTitle(forRow: row)
     }
 }

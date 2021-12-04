@@ -8,14 +8,14 @@
 import UIKit
 
 final class SmokeAlcoholCell: ReactiveCollectionViewCell<SmokeAlcoholViewModel> {
-    @IBOutlet weak var smokePicker: UIPickerView! {
+    @IBOutlet private weak var smokePicker: UIPickerView! {
         didSet {
             smokePicker.dataSource = self
             smokePicker.delegate = self
         }
     }
     
-    @IBOutlet weak var alcoholPicker: UIPickerView! {
+    @IBOutlet private weak var alcoholPicker: UIPickerView! {
         didSet {
             alcoholPicker.dataSource = self
             alcoholPicker.delegate = self
@@ -41,18 +41,24 @@ extension SmokeAlcoholCell: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        4
+        switch pickerView {
+        case let picker where picker === smokePicker:
+            return viewModel.smokeNumberOfRows
+        case let picker where picker === alcoholPicker:
+            return viewModel.alcoholNumberOfRows
+        default:
+            return 0
+        }
     }
 }
 
 extension SmokeAlcoholCell: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        guard row > 0 else { return nil }
         switch pickerView {
         case let picker where picker === smokePicker:
-            return viewModel.titleForSmoke(row)
+            return viewModel.smokeTitle(forRow: row)
         case let picker where picker === alcoholPicker:
-            return viewModel.titleForAlcohol(row)
+            return viewModel.alcoholTitle(forRow: row)
         default:
             return nil
         }

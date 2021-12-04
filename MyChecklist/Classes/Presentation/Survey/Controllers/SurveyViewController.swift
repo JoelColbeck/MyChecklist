@@ -32,6 +32,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             collectionView.register(nib: GenderQuestionCell.self)
             collectionView.register(nib: BodyMetricsCell.self)
             collectionView.register(nib: SmokeAlcoholCell.self)
+            collectionView.register(nib: BloodPressureCell.self)
         }
     }
     
@@ -91,9 +92,13 @@ private extension SurveyViewController {
                         ) as? GenderQuestionCell
                 else { return nil }
                 
-                cell.selectedItem
+                let genderViewModel = GenderQuestionViewModel()
+                cell.viewModel = genderViewModel
+                
+                genderViewModel.genderOutput
+                    .debug("GenderObservable")
                     .bind(to: dataContext.genderInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 return cell
                 
@@ -115,7 +120,7 @@ private extension SurveyViewController {
                 
                 cell.weightValue
                     .bind(to: dataContext.weightInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 return cell
                 
@@ -127,9 +132,8 @@ private extension SurveyViewController {
                         ) as? SmokeAlcoholCell
                 else { return nil }
                 
-                let smokeAlcoholViewModel = dataContext.smokeAlcoholViewModel
+                let smokeAlcoholViewModel = SmokeAlcoholViewModel()
                 cell.viewModel = smokeAlcoholViewModel
-                cell.setup()
                 
                 smokeAlcoholViewModel.selectedSmoke
                     .bind(to: dataContext.smokeInput)
@@ -141,6 +145,22 @@ private extension SurveyViewController {
                 
                 return cell
                 
+            case .bloodPressure:
+                guard let cell = collectionView
+                        .dequeueReusableCell(
+                            withReuseIdentifier: "BloodPressureCell",
+                            for: indexPath
+                        ) as? BloodPressureCell
+                else { return nil }
+                
+                let bloodViewModel = BloodPressureViewModel()
+                cell.viewModel = bloodViewModel
+                
+                bloodViewModel.bloodPressureOutput
+                    .bind(to: dataContext.bloodPressureInput)
+                    .disposed(by: cell.bag)
+                
+                return cell
             default:
                 return nil
             }

@@ -10,13 +10,18 @@ import RxSwift
 
 class ReactiveCollectionViewCell<ViewModel>: BaseCollectionViewCell where ViewModel: BaseViewModel {
     // MARK: - Public Properties
-    var viewModel: ViewModel!
+    var viewModel: ViewModel! {
+        didSet {
+            setup()
+        }
+    }
     
     // MARK: - Public Methods
-    func setup() {
+    func applyBindings() { }
+    
+    // MARK: - Private Methods
+    private func setup() {
         viewModel.initialize()
         applyBindings()
     }
-    
-    func applyBindings() { }
 }

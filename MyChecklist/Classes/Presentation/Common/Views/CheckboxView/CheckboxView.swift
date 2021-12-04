@@ -1,0 +1,12 @@
+//
+//  CheckboxView.swift
+//  MyChecklist
+//
+//  Created by Башир Арсланалиев on 04.12.2021.
+//
+
+import UIKit
+
+final class CheckboxView: XibView {
+    
+}

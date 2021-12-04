@@ -11,8 +11,8 @@ import RxSwift
 class BaseCollectionViewCell: UICollectionViewCell {
     private(set) var bag = DisposeBag()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func prepareForReuse() {
+        super.prepareForReuse()
         bag = DisposeBag()
     }
 }

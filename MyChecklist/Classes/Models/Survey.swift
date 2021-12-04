@@ -151,7 +151,7 @@ enum Alcohol: String, Codable, CaseIterable {
     case noDrinker
 }
 
-enum BloodPressure: String, Codable {
+enum BloodPressure: String, Codable, CaseIterable {
     case low
     case normal
     case high

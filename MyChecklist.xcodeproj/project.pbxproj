@@ -34,6 +34,12 @@
 		C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74A2C0D26C6F1A9001F5508 /* SceneDelegate.swift */; };
 		C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74A2C1426C6F1AB001F5508 /* Assets.xcassets */; };
 		C74A2C1826C6F1AB001F5508 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74A2C1626C6F1AB001F5508 /* LaunchScreen.storyboard */; };
+		C753B67A275B5E3F00BC9B78 /* BloodPressureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B678275B5E3F00BC9B78 /* BloodPressureCell.swift */; };
+		C753B67B275B5E3F00BC9B78 /* BloodPressureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B679275B5E3F00BC9B78 /* BloodPressureCell.xib */; };
+		C753B67E275B5E5400BC9B78 /* BloodPressureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B67D275B5E5400BC9B78 /* BloodPressureViewModel.swift */; };
+		C753B681275B5FBA00BC9B78 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B680275B5FBA00BC9B78 /* CheckboxView.swift */; };
+		C753B683275B5FCF00BC9B78 /* CheckboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B682275B5FCF00BC9B78 /* CheckboxView.xib */; };
+		C753B686275B60DF00BC9B78 /* GenderQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */; };
 		C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884127007A59003240C9 /* BaseCoordinator.swift */; };
 		C784884527007A8E003240C9 /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884427007A8E003240C9 /* CommonNavigationController.swift */; };
 		C784884727007AD6003240C9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884627007AD6003240C9 /* BaseViewController.swift */; };
@@ -134,6 +140,12 @@
 		C74A2C1426C6F1AB001F5508 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C74A2C1726C6F1AB001F5508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C74A2C1926C6F1AB001F5508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C753B678275B5E3F00BC9B78 /* BloodPressureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureCell.swift; sourceTree = "<group>"; };
+		C753B679275B5E3F00BC9B78 /* BloodPressureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodPressureCell.xib; sourceTree = "<group>"; };
+		C753B67D275B5E5400BC9B78 /* BloodPressureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureViewModel.swift; sourceTree = "<group>"; };
+		C753B680275B5FBA00BC9B78 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
+		C753B682275B5FCF00BC9B78 /* CheckboxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxView.xib; sourceTree = "<group>"; };
+		C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestionViewModel.swift; sourceTree = "<group>"; };
 		C784884127007A59003240C9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCoordinator.swift; path = ../../../../../../../../Documents/BaseCoordinator.swift; sourceTree = "<group>"; };
 		C784884427007A8E003240C9 /* CommonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonNavigationController.swift; path = ../../../../../../../../Documents/CommonNavigationController.swift; sourceTree = "<group>"; };
 		C784884627007AD6003240C9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../../../../../../../../Documents/BaseViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +296,7 @@
 		C72E181F274177BD00191706 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C753B677275B5E0A00BC9B78 /* BloodPressureCell */,
 				C72C661D275403E700802B2D /* SmokeAlcoholCell */,
 				C72E1820274177BF00191706 /* GenderQuestionCell */,
 				C7AE4A302753BF1D001FA74A /* BodyMetricsCell */,
@@ -294,6 +307,7 @@
 		C72E1820274177BF00191706 /* GenderQuestionCell */ = {
 			isa = PBXGroup;
 			children = (
+				C753B684275B60D400BC9B78 /* ViewModels */,
 				C72E1821274177DB00191706 /* GenderQuestionCell.swift */,
 				C72E1822274177DB00191706 /* GenderQuestionCell.xib */,
 			);
@@ -410,6 +424,41 @@
 				C74A2C1926C6F1AB001F5508 /* Info.plist */,
 			);
 			path = MyChecklist;
+			sourceTree = "<group>";
+		};
+		C753B677275B5E0A00BC9B78 /* BloodPressureCell */ = {
+			isa = PBXGroup;
+			children = (
+				C753B67C275B5E4900BC9B78 /* ViewModels */,
+				C753B678275B5E3F00BC9B78 /* BloodPressureCell.swift */,
+				C753B679275B5E3F00BC9B78 /* BloodPressureCell.xib */,
+			);
+			path = BloodPressureCell;
+			sourceTree = "<group>";
+		};
+		C753B67C275B5E4900BC9B78 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C753B67D275B5E5400BC9B78 /* BloodPressureViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C753B67F275B5FA600BC9B78 /* CheckboxView */ = {
+			isa = PBXGroup;
+			children = (
+				C753B680275B5FBA00BC9B78 /* CheckboxView.swift */,
+				C753B682275B5FCF00BC9B78 /* CheckboxView.xib */,
+			);
+			path = CheckboxView;
+			sourceTree = "<group>";
+		};
+		C753B684275B60D400BC9B78 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C784879D270074E6003240C9 /* Classes */ = {
@@ -739,6 +788,7 @@
 		C7D3E394270096E700A08407 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C753B67F275B5FA600BC9B78 /* CheckboxView */,
 				C72E1825274178E100191706 /* IncrementView */,
 				C7D3E39D2700BC0200A08407 /* SeparatedTextField */,
 				C7D3E395270096F900A08407 /* NavigationBar */,
@@ -874,7 +924,9 @@
 			files = (
 				C74A2C1826C6F1AB001F5508 /* LaunchScreen.storyboard in Resources */,
 				C784889127008CAD003240C9 /* Gilroy-Semibold.ttf in Resources */,
+				C753B683275B5FCF00BC9B78 /* CheckboxView.xib in Resources */,
 				C7418B2E2710E78B0018A233 /* YearViewCell.xib in Resources */,
+				C753B67B275B5E3F00BC9B78 /* BloodPressureCell.xib in Resources */,
 				C784888B27008418003240C9 /* MainViewController.xib in Resources */,
 				C72E1824274177DB00191706 /* GenderQuestionCell.xib in Resources */,
 				C789C70D27103E7B001E7B75 /* ChecklistViewController.xib in Resources */,
@@ -957,8 +1009,10 @@
 				C7AE4A2D2753BBF6001FA74A /* Array+Extensions.swift in Sources */,
 				C72E1823274177DB00191706 /* GenderQuestionCell.swift in Sources */,
 				C784886127007CFC003240C9 /* UIFont+Extensions.swift in Sources */,
+				C753B67E275B5E5400BC9B78 /* BloodPressureViewModel.swift in Sources */,
 				C784886327007CFC003240C9 /* UIView+Frame.swift in Sources */,
 				C74A2C0C26C6F1A9001F5508 /* AppDelegate.swift in Sources */,
+				C753B686275B60DF00BC9B78 /* GenderQuestionViewModel.swift in Sources */,
 				C784886827007CFC003240C9 /* Single+Extensions.swift in Sources */,
 				C7848880270080BE003240C9 /* MainViewModel.swift in Sources */,
 				C72E181A2741543900191706 /* SurveyViewController.swift in Sources */,
@@ -997,6 +1051,7 @@
 				C7AB92C4270F761000E4827B /* Constants.swift in Sources */,
 				C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */,
 				C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */,
+				C753B681275B5FBA00BC9B78 /* CheckboxView.swift in Sources */,
 				C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */,
 				C7418B362710E7C50018A233 /* AnchorView.swift in Sources */,
 				C784887827007E5B003240C9 /* StartUpViewController.swift in Sources */,
@@ -1008,6 +1063,7 @@
 				C789C70727103DEB001E7B75 /* ChecklistCoordinator.swift in Sources */,
 				C784888A27008418003240C9 /* MainViewController.swift in Sources */,
 				C784884727007AD6003240C9 /* BaseViewController.swift in Sources */,
+				C753B67A275B5E3F00BC9B78 /* BloodPressureCell.swift in Sources */,
 				C7FA3FF7275AB2C800450CA2 /* SmokeAlcoholViewModel.swift in Sources */,
 				C784885027007C5E003240C9 /* UIThrobber.swift in Sources */,
 				C7FA3FFF275AB32800450CA2 /* ReactiveCollectionViewCell.swift in Sources */,
