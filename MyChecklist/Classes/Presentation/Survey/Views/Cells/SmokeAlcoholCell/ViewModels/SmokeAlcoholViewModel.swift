@@ -36,7 +36,7 @@ final class SmokeAlcoholViewModel: BaseViewModel {
     
     // MARK: - Public Methods
     func smokeTitle(forRow row: Int) -> String? {
-        guard let smoke = Smoke.allCases[safe: row - 1] else { return nil }
+        guard let smoke = Smoke.allCases[safe: row - 1] else { return "Затрудняюсь ответить" }
         switch smoke {
         case .smokingNow:
             return "Курю сейчас"
@@ -48,7 +48,7 @@ final class SmokeAlcoholViewModel: BaseViewModel {
     }
     
     func alcoholTitle(forRow row: Int) -> String? {
-        guard let alcohol = Alcohol.allCases[safe: row - 1] else { return nil }
+        guard let alcohol = Alcohol.allCases[safe: row - 1] else { return "Затрудняюсь ответить" }
         switch alcohol {
         case .heavyDrinker:
             return "Чаще раза в неделю"

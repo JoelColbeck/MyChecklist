@@ -38,8 +38,10 @@
 		C753B67B275B5E3F00BC9B78 /* BloodPressureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B679275B5E3F00BC9B78 /* BloodPressureCell.xib */; };
 		C753B67E275B5E5400BC9B78 /* BloodPressureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B67D275B5E5400BC9B78 /* BloodPressureViewModel.swift */; };
 		C753B681275B5FBA00BC9B78 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B680275B5FBA00BC9B78 /* CheckboxView.swift */; };
-		C753B683275B5FCF00BC9B78 /* CheckboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B682275B5FCF00BC9B78 /* CheckboxView.xib */; };
 		C753B686275B60DF00BC9B78 /* GenderQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */; };
+		C753B68A275B6D0100BC9B78 /* AdditionalQuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B688275B6D0100BC9B78 /* AdditionalQuestionsCell.swift */; };
+		C753B68B275B6D0100BC9B78 /* AdditionalQuestionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B689275B6D0100BC9B78 /* AdditionalQuestionsCell.xib */; };
+		C753B690275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B68F275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift */; };
 		C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884127007A59003240C9 /* BaseCoordinator.swift */; };
 		C784884527007A8E003240C9 /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884427007A8E003240C9 /* CommonNavigationController.swift */; };
 		C784884727007AD6003240C9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884627007AD6003240C9 /* BaseViewController.swift */; };
@@ -144,8 +146,10 @@
 		C753B679275B5E3F00BC9B78 /* BloodPressureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodPressureCell.xib; sourceTree = "<group>"; };
 		C753B67D275B5E5400BC9B78 /* BloodPressureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureViewModel.swift; sourceTree = "<group>"; };
 		C753B680275B5FBA00BC9B78 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
-		C753B682275B5FCF00BC9B78 /* CheckboxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxView.xib; sourceTree = "<group>"; };
 		C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestionViewModel.swift; sourceTree = "<group>"; };
+		C753B688275B6D0100BC9B78 /* AdditionalQuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalQuestionsCell.swift; sourceTree = "<group>"; };
+		C753B689275B6D0100BC9B78 /* AdditionalQuestionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalQuestionsCell.xib; sourceTree = "<group>"; };
+		C753B68F275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalQuestionsViewModel.swift; sourceTree = "<group>"; };
 		C784884127007A59003240C9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCoordinator.swift; path = ../../../../../../../../Documents/BaseCoordinator.swift; sourceTree = "<group>"; };
 		C784884427007A8E003240C9 /* CommonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonNavigationController.swift; path = ../../../../../../../../Documents/CommonNavigationController.swift; sourceTree = "<group>"; };
 		C784884627007AD6003240C9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../../../../../../../../Documents/BaseViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 		C72E181F274177BD00191706 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C753B687275B6CF100BC9B78 /* AdditionalQuestionsCell */,
 				C753B677275B5E0A00BC9B78 /* BloodPressureCell */,
 				C72C661D275403E700802B2D /* SmokeAlcoholCell */,
 				C72E1820274177BF00191706 /* GenderQuestionCell */,
@@ -448,7 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				C753B680275B5FBA00BC9B78 /* CheckboxView.swift */,
-				C753B682275B5FCF00BC9B78 /* CheckboxView.xib */,
 			);
 			path = CheckboxView;
 			sourceTree = "<group>";
@@ -457,6 +461,24 @@
 			isa = PBXGroup;
 			children = (
 				C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C753B687275B6CF100BC9B78 /* AdditionalQuestionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C753B68C275B6D0B00BC9B78 /* ViewModels */,
+				C753B688275B6D0100BC9B78 /* AdditionalQuestionsCell.swift */,
+				C753B689275B6D0100BC9B78 /* AdditionalQuestionsCell.xib */,
+			);
+			path = AdditionalQuestionsCell;
+			sourceTree = "<group>";
+		};
+		C753B68C275B6D0B00BC9B78 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C753B68F275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -924,10 +946,10 @@
 			files = (
 				C74A2C1826C6F1AB001F5508 /* LaunchScreen.storyboard in Resources */,
 				C784889127008CAD003240C9 /* Gilroy-Semibold.ttf in Resources */,
-				C753B683275B5FCF00BC9B78 /* CheckboxView.xib in Resources */,
 				C7418B2E2710E78B0018A233 /* YearViewCell.xib in Resources */,
 				C753B67B275B5E3F00BC9B78 /* BloodPressureCell.xib in Resources */,
 				C784888B27008418003240C9 /* MainViewController.xib in Resources */,
+				C753B68B275B6D0100BC9B78 /* AdditionalQuestionsCell.xib in Resources */,
 				C72E1824274177DB00191706 /* GenderQuestionCell.xib in Resources */,
 				C789C70D27103E7B001E7B75 /* ChecklistViewController.xib in Resources */,
 				C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */,
@@ -1027,6 +1049,7 @@
 				C72E1814274153DC00191706 /* SurveyCoordinator.swift in Sources */,
 				C784886427007CFC003240C9 /* Differ.swift in Sources */,
 				C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */,
+				C753B690275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift in Sources */,
 				C784884527007A8E003240C9 /* CommonNavigationController.swift in Sources */,
 				C7418B3F2711C23E0018A233 /* ChecklistYearModel.swift in Sources */,
 				C72E182F27417DAC00191706 /* IncrementViewModel.swift in Sources */,
@@ -1061,6 +1084,7 @@
 				C7C96DD1271223B30084FF0C /* PinCodeView.swift in Sources */,
 				C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */,
 				C789C70727103DEB001E7B75 /* ChecklistCoordinator.swift in Sources */,
+				C753B68A275B6D0100BC9B78 /* AdditionalQuestionsCell.swift in Sources */,
 				C784888A27008418003240C9 /* MainViewController.swift in Sources */,
 				C784884727007AD6003240C9 /* BaseViewController.swift in Sources */,
 				C753B67A275B5E3F00BC9B78 /* BloodPressureCell.swift in Sources */,

@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum SurveyError: Error {
+    case genderWasNotChosen
+}
+
 struct Survey: Codable {
     var gender: Gender?
     var age: Int = 18
@@ -78,6 +82,8 @@ struct Survey: Codable {
         
         if let gender = gender {
             try container.encode(gender, forKey: .gender)
+        } else {
+            throw SurveyError.genderWasNotChosen
         }
         
         try container.encode(age, forKey: .age)

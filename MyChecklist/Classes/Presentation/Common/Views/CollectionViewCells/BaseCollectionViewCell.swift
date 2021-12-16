@@ -15,4 +15,6 @@ class BaseCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         bag = DisposeBag()
     }
+    
+    func applyBindings() { }
 }

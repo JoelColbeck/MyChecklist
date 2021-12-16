@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class SmokeAlcoholCell: ReactiveCollectionViewCell<SmokeAlcoholViewModel> {
+    // MARK: - Outlets
     @IBOutlet private weak var smokePicker: UIPickerView! {
         didSet {
             smokePicker.dataSource = self
@@ -22,6 +24,7 @@ final class SmokeAlcoholCell: ReactiveCollectionViewCell<SmokeAlcoholViewModel> 
         }
     }
     
+    // MARK: - LC
     override func applyBindings() {
         smokePicker.rx.itemSelected
             .map { $0.row }

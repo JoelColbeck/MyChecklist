@@ -26,8 +26,11 @@ final class GenderQuestionViewModel: BaseViewModel {
     
     // MARK: - Public Methods
     func genderTitle(forRow row: Int) -> String? {
-        guard let gender = Gender.allCases[safe: row - 1] else { return nil }
+        guard let gender = Gender.allCases[safe: row - 1] else { return "Не выбран" }
         
-        return gender.rawValue
+        switch gender {
+        case .man: return "Мужской"
+        case .woman: return "Женский"
+        }
     }
 }

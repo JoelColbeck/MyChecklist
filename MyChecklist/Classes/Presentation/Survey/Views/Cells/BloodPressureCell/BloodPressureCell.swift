@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class BloodPressureCell: ReactiveCollectionViewCell<BloodPressureViewModel> {
     @IBOutlet private weak var pickerView: UIPickerView! {

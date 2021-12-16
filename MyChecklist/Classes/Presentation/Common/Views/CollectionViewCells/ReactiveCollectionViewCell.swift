@@ -16,9 +16,6 @@ class ReactiveCollectionViewCell<ViewModel>: BaseCollectionViewCell where ViewMo
         }
     }
     
-    // MARK: - Public Methods
-    func applyBindings() { }
-    
     // MARK: - Private Methods
     private func setup() {
         viewModel.initialize()

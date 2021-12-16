@@ -20,6 +20,7 @@ final class ChecklistViewController: BaseViewController<ChecklistViewModel> {
             logoImageView.heroID = "logoImage"
             
             let pinCodeView = PinCodeView()
+            // TODO: Написать динамически
             pinCodeView.configure(code: "7271")
             
             let shareButton = UIButton()

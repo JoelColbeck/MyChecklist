@@ -18,21 +18,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="301" height="105"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Sd3-8Q-DMg">
-                        <rect key="frame" x="0.0" y="0.0" width="301" height="265"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Sd3-8Q-DMg">
+                        <rect key="frame" x="16" y="0.0" width="269" height="185"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k18-m5-8UH" customClass="IncrementView" customModule="MyChecklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="301" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="269" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6n-nN-P6g" customClass="IncrementView" customModule="MyChecklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="80" width="301" height="105"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZa-ZQ-I2U" customClass="IncrementView" customModule="MyChecklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="215" width="301" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-ce-UBM">
+                                <rect key="frame" x="0.0" y="80" width="269" height="105"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6n-nN-P6g" customClass="IncrementView" customModule="MyChecklist" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="105"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZa-ZQ-I2U" customClass="IncrementView" customModule="MyChecklist" customModuleProvider="target">
+                                        <rect key="frame" x="149.5" y="0.0" width="119.5" height="105"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -41,6 +46,7 @@
             <constraints>
                 <constraint firstItem="Sd3-8Q-DMg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="726-bW-VFe"/>
                 <constraint firstItem="Sd3-8Q-DMg" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Swm-sA-Vzh"/>
+                <constraint firstItem="Sd3-8Q-DMg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="UgC-d1-XGj"/>
             </constraints>
             <size key="customSize" width="301" height="105"/>
             <connections>

@@ -35,6 +35,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             collectionView.register(nib: BloodPressureCell.self)
         }
     }
+    weak var tapGesture: UITapGestureRecognizer!
     
     // MARK: - Public Properties
     typealias DataSource = UICollectionViewDiffableDataSource<Int, SurveyItemModel>
@@ -45,7 +46,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
     // MARK: - LC
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureHidingKeyboard()
     }
     
     override func applyBinding() {
@@ -65,6 +66,20 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
     deinit {
         dataContext?.closed.accept(())
     }
+    
+    // MARK: - Private Methods
+    private func configureHidingKeyboard() {
+        let tap = UITapGestureRecognizer()
+        view.addGestureRecognizer(tap)
+        
+        tap.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: bag)
+        
+        self.tapGesture = tap
+    }
 }
 
 extension SurveyViewController: UICollectionViewDelegateFlowLayout {
@@ -72,8 +87,13 @@ extension SurveyViewController: UICollectionViewDelegateFlowLayout {
         return collectionView.frame.size
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        pageControl.currentPage = collectionView.indexPathsForVisibleItems.first?.row ?? 0
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = collectionView.contentOffset.x
+        let cellWidth = collectionView.frame.width
+        
+        let cellNumber = Int((offset / cellWidth).rounded(.toNearestOrEven))
+        
+        pageControl.currentPage = cellNumber
     }
 }
 
@@ -96,7 +116,6 @@ private extension SurveyViewController {
                 cell.viewModel = genderViewModel
                 
                 genderViewModel.genderOutput
-                    .debug("GenderObservable")
                     .bind(to: dataContext.genderInput)
                     .disposed(by: cell.bag)
                 
