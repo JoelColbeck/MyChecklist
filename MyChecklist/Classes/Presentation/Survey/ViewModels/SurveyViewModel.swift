@@ -132,7 +132,8 @@ private extension SurveyViewModel {
             SurveyItemModel.gender,
             SurveyItemModel.bodyMetrics,
             SurveyItemModel.smokeAlcohol,
-            SurveyItemModel.bloodPressure
+            SurveyItemModel.bloodPressure,
+            SurveyItemModel.additionalQuestions
         ]
         
         snapshot.appendSections([0])
@@ -149,4 +150,5 @@ enum SurveyItemModel: Hashable {
     case bodyMetrics
     case smokeAlcohol
     case bloodPressure
+    case additionalQuestions
 }

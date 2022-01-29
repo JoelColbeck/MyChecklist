@@ -33,6 +33,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             collectionView.register(nib: BodyMetricsCell.self)
             collectionView.register(nib: SmokeAlcoholCell.self)
             collectionView.register(nib: BloodPressureCell.self)
+            collectionView.register(nib: AdditionalQuestionsCell.self)
         }
     }
     weak var tapGesture: UITapGestureRecognizer!
@@ -180,7 +181,16 @@ private extension SurveyViewController {
                     .disposed(by: cell.bag)
                 
                 return cell
-            default:
+            case .additionalQuestions:
+                guard let cell = collectionView
+                        .dequeueReusableCell(
+                            withReuseIdentifier: "AdditionalQuestionsCell",
+                            for: indexPath
+                        ) as? AdditionalQuestionsCell
+                else { return nil }
+                
+                return cell
+            @unknown default:
                 return nil
             }
         }

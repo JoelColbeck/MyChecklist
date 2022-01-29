@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		53BB920D9E11FD3B8D67736B /* Pods_MyChecklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */; };
+		C704191027A55D0400D9EB03 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C704190F27A55D0400D9EB03 /* CheckboxView.swift */; };
+		C704191227A55D1C00D9EB03 /* CheckboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C704191127A55D1C00D9EB03 /* CheckboxView.xib */; };
+		C716A9E4278C365100C73C4F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716A9E3278C365100C73C4F /* BaseViewController.swift */; };
+		C716A9E6278C369200C73C4F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716A9E5278C369200C73C4F /* BaseViewModel.swift */; };
+		C716A9E8278C383600C73C4F /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C716A9E7278C383600C73C4F /* CommonNavigationController.swift */; };
 		C72C66162753C27F00802B2D /* BodyMetricsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C66142753C27F00802B2D /* BodyMetricsCell.swift */; };
 		C72C66172753C27F00802B2D /* BodyMetricsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72C66152753C27F00802B2D /* BodyMetricsCell.xib */; };
 		C72C6620275403F900802B2D /* SmokeAlcoholCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C661E275403F900802B2D /* SmokeAlcoholCell.swift */; };
@@ -37,15 +42,11 @@
 		C753B67A275B5E3F00BC9B78 /* BloodPressureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B678275B5E3F00BC9B78 /* BloodPressureCell.swift */; };
 		C753B67B275B5E3F00BC9B78 /* BloodPressureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B679275B5E3F00BC9B78 /* BloodPressureCell.xib */; };
 		C753B67E275B5E5400BC9B78 /* BloodPressureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B67D275B5E5400BC9B78 /* BloodPressureViewModel.swift */; };
-		C753B681275B5FBA00BC9B78 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B680275B5FBA00BC9B78 /* CheckboxView.swift */; };
 		C753B686275B60DF00BC9B78 /* GenderQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */; };
 		C753B68A275B6D0100BC9B78 /* AdditionalQuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B688275B6D0100BC9B78 /* AdditionalQuestionsCell.swift */; };
 		C753B68B275B6D0100BC9B78 /* AdditionalQuestionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B689275B6D0100BC9B78 /* AdditionalQuestionsCell.xib */; };
 		C753B690275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B68F275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift */; };
 		C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884127007A59003240C9 /* BaseCoordinator.swift */; };
-		C784884527007A8E003240C9 /* CommonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884427007A8E003240C9 /* CommonNavigationController.swift */; };
-		C784884727007AD6003240C9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884627007AD6003240C9 /* BaseViewController.swift */; };
-		C784884A27007B0A003240C9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884927007B0A003240C9 /* BaseViewModel.swift */; };
 		C784885027007C5E003240C9 /* UIThrobber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884F27007C5E003240C9 /* UIThrobber.swift */; };
 		C784885F27007CFC003240C9 /* UIViewAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784885227007CFC003240C9 /* UIViewAnchor+Extensions.swift */; };
 		C784886027007CFC003240C9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784885327007CFC003240C9 /* String+Extensions.swift */; };
@@ -113,6 +114,11 @@
 		1490C37008ADFB04917EC3DB /* Pods-MyChecklist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChecklist.debug.xcconfig"; path = "Target Support Files/Pods-MyChecklist/Pods-MyChecklist.debug.xcconfig"; sourceTree = "<group>"; };
 		42CA260335FD4B9400BEF04C /* Pods_MyChecklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyChecklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634AC44DAE9B43728C008EFE /* Pods-MyChecklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChecklist.release.xcconfig"; path = "Target Support Files/Pods-MyChecklist/Pods-MyChecklist.release.xcconfig"; sourceTree = "<group>"; };
+		C704190F27A55D0400D9EB03 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
+		C704191127A55D1C00D9EB03 /* CheckboxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxView.xib; sourceTree = "<group>"; };
+		C716A9E3278C365100C73C4F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C716A9E5278C369200C73C4F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		C716A9E7278C383600C73C4F /* CommonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationController.swift; sourceTree = "<group>"; };
 		C72C66142753C27F00802B2D /* BodyMetricsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMetricsCell.swift; sourceTree = "<group>"; };
 		C72C66152753C27F00802B2D /* BodyMetricsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyMetricsCell.xib; sourceTree = "<group>"; };
 		C72C661E275403F900802B2D /* SmokeAlcoholCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeAlcoholCell.swift; sourceTree = "<group>"; };
@@ -145,15 +151,11 @@
 		C753B678275B5E3F00BC9B78 /* BloodPressureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureCell.swift; sourceTree = "<group>"; };
 		C753B679275B5E3F00BC9B78 /* BloodPressureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodPressureCell.xib; sourceTree = "<group>"; };
 		C753B67D275B5E5400BC9B78 /* BloodPressureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodPressureViewModel.swift; sourceTree = "<group>"; };
-		C753B680275B5FBA00BC9B78 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestionViewModel.swift; sourceTree = "<group>"; };
 		C753B688275B6D0100BC9B78 /* AdditionalQuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalQuestionsCell.swift; sourceTree = "<group>"; };
 		C753B689275B6D0100BC9B78 /* AdditionalQuestionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalQuestionsCell.xib; sourceTree = "<group>"; };
 		C753B68F275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalQuestionsViewModel.swift; sourceTree = "<group>"; };
 		C784884127007A59003240C9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCoordinator.swift; path = ../../../../../../../../Documents/BaseCoordinator.swift; sourceTree = "<group>"; };
-		C784884427007A8E003240C9 /* CommonNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonNavigationController.swift; path = ../../../../../../../../Documents/CommonNavigationController.swift; sourceTree = "<group>"; };
-		C784884627007AD6003240C9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../../../../../../../../Documents/BaseViewController.swift; sourceTree = "<group>"; };
-		C784884927007B0A003240C9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = ../../../../../../../../Documents/BaseViewModel.swift; sourceTree = "<group>"; };
 		C784884F27007C5E003240C9 /* UIThrobber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIThrobber.swift; path = ../../../../../../../../Documents/UIThrobber.swift; sourceTree = "<group>"; };
 		C784885227007CFC003240C9 /* UIViewAnchor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewAnchor+Extensions.swift"; sourceTree = "<group>"; };
 		C784885327007CFC003240C9 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -452,7 +454,8 @@
 		C753B67F275B5FA600BC9B78 /* CheckboxView */ = {
 			isa = PBXGroup;
 			children = (
-				C753B680275B5FBA00BC9B78 /* CheckboxView.swift */,
+				C704190F27A55D0400D9EB03 /* CheckboxView.swift */,
+				C704191127A55D1C00D9EB03 /* CheckboxView.xib */,
 			);
 			path = CheckboxView;
 			sourceTree = "<group>";
@@ -551,8 +554,8 @@
 		C784884327007A84003240C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C784884427007A8E003240C9 /* CommonNavigationController.swift */,
-				C784884627007AD6003240C9 /* BaseViewController.swift */,
+				C716A9E3278C365100C73C4F /* BaseViewController.swift */,
+				C716A9E7278C383600C73C4F /* CommonNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -560,7 +563,7 @@
 		C784884827007AF3003240C9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C784884927007B0A003240C9 /* BaseViewModel.swift */,
+				C716A9E5278C369200C73C4F /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -965,6 +968,7 @@
 				C784888F27008CA7003240C9 /* Gilroy-Bold.ttf in Resources */,
 				C72E181B2741543900191706 /* SurveyViewController.xib in Resources */,
 				C7C96DD3271223B90084FF0C /* PinCodeView.xib in Resources */,
+				C704191227A55D1C00D9EB03 /* CheckboxView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,10 +1051,10 @@
 				C72E181D27415C9300191706 /* Survey.swift in Sources */,
 				C7FA4001275ABF9300450CA2 /* BaseCollectionViewCell.swift in Sources */,
 				C72E1814274153DC00191706 /* SurveyCoordinator.swift in Sources */,
+				C704191027A55D0400D9EB03 /* CheckboxView.swift in Sources */,
 				C784886427007CFC003240C9 /* Differ.swift in Sources */,
 				C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */,
 				C753B690275B6E1400BC9B78 /* AdditionalQuestionsViewModel.swift in Sources */,
-				C784884527007A8E003240C9 /* CommonNavigationController.swift in Sources */,
 				C7418B3F2711C23E0018A233 /* ChecklistYearModel.swift in Sources */,
 				C72E182F27417DAC00191706 /* IncrementViewModel.swift in Sources */,
 				C789C6FC2710352B001E7B75 /* UserService.swift in Sources */,
@@ -1060,11 +1064,12 @@
 				C789C6FE27103649001E7B75 /* User.swift in Sources */,
 				C784887D270080B4003240C9 /* MainCoordinator.swift in Sources */,
 				C72E1817274153E500191706 /* SurveyViewModel.swift in Sources */,
+				C716A9E4278C365100C73C4F /* BaseViewController.swift in Sources */,
 				C7418B0F2710E03F0018A233 /* TestAnchorService.swift in Sources */,
+				C716A9E6278C369200C73C4F /* BaseViewModel.swift in Sources */,
 				C784886727007CFC003240C9 /* UIScrollView+Extensions.swift in Sources */,
 				C7D3E3982700971100A08407 /* NavigationBarView.swift in Sources */,
 				C72C6620275403F900802B2D /* SmokeAlcoholCell.swift in Sources */,
-				C784884A27007B0A003240C9 /* BaseViewModel.swift in Sources */,
 				C784887227007D22003240C9 /* InteractiveClosableManagerProvider.swift in Sources */,
 				C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */,
 				C7D3E38E270094C000A08407 /* AuthViewModel.swift in Sources */,
@@ -1074,8 +1079,8 @@
 				C7AB92C4270F761000E4827B /* Constants.swift in Sources */,
 				C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */,
 				C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */,
-				C753B681275B5FBA00BC9B78 /* CheckboxView.swift in Sources */,
 				C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */,
+				C716A9E8278C383600C73C4F /* CommonNavigationController.swift in Sources */,
 				C7418B362710E7C50018A233 /* AnchorView.swift in Sources */,
 				C784887827007E5B003240C9 /* StartUpViewController.swift in Sources */,
 				C784887327007D22003240C9 /* InteractiveClosableViewModel.swift in Sources */,
@@ -1086,7 +1091,6 @@
 				C789C70727103DEB001E7B75 /* ChecklistCoordinator.swift in Sources */,
 				C753B68A275B6D0100BC9B78 /* AdditionalQuestionsCell.swift in Sources */,
 				C784888A27008418003240C9 /* MainViewController.swift in Sources */,
-				C784884727007AD6003240C9 /* BaseViewController.swift in Sources */,
 				C753B67A275B5E3F00BC9B78 /* BloodPressureCell.swift in Sources */,
 				C7FA3FF7275AB2C800450CA2 /* SmokeAlcoholViewModel.swift in Sources */,
 				C784885027007C5E003240C9 /* UIThrobber.swift in Sources */,
