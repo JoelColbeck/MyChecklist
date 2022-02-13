@@ -189,9 +189,19 @@ private extension SurveyViewController {
                         ) as? AdditionalQuestionsCell
                 else { return nil }
                 
+                cell.cholesterolSelectedObservable
+                    .bind(to: dataContext.highCholesterolInput)
+                    .disposed(by: cell.bag)
+                
+                cell.diabetesSelectedObservable
+                    .bind(to: dataContext.diabetesInput)
+                    .disposed(by: bag)
+                
+                cell.brokenBonesSelectedObservable
+                    .bind(to: dataContext.brokenBonesInput)
+                    .disposed(by: bag)
+                
                 return cell
-            @unknown default:
-                return nil
             }
         }
     }

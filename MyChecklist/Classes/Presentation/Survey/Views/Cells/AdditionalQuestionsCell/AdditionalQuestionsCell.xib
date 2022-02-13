@@ -19,10 +19,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-rS-jEe">
-                        <rect key="frame" x="20" y="0.0" width="212" height="424"/>
+                        <rect key="frame" x="20" y="0.0" width="212" height="465"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHw-6R-Dpo">
+                                <rect key="frame" x="0.0" y="0.0" width="212" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFD-ov-lHQ" userLabel="Cholesterol" customClass="CheckboxView" customModule="MyChecklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="212" height="128"/>
+                                <rect key="frame" x="0.0" y="40.5" width="212" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="mainTextFontSize">
@@ -31,11 +37,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-d2-K6e" userLabel="Diabetes" customClass="CheckboxView" customModule="MyChecklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="148" width="212" height="128"/>
+                                <rect key="frame" x="0.0" y="188.5" width="212" height="128.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORz-uh-EU6" userLabel="Broken Bones" customClass="CheckboxView" customModule="MyChecklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="296" width="212" height="128"/>
+                                <rect key="frame" x="0.0" y="337" width="212" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -53,6 +59,7 @@
                 <outlet property="brokenBonesCheckbox" destination="ORz-uh-EU6" id="sUX-ma-mTy"/>
                 <outlet property="cholesterolCheckbox" destination="DFD-ov-lHQ" id="Qev-JI-ZG3"/>
                 <outlet property="diabetesCheckbox" destination="msJ-d2-K6e" id="h3K-8S-LLa"/>
+                <outlet property="headerLabel" destination="NHw-6R-Dpo" id="Xwi-8i-sug"/>
             </connections>
             <point key="canvasLocation" x="278.26086956521743" y="107.47767857142857"/>
         </collectionViewCell>

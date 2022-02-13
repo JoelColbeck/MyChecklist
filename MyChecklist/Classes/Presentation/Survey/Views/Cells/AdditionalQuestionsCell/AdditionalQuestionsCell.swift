@@ -16,7 +16,7 @@ final class AdditionalQuestionsCell: ReactiveCollectionViewCell<AdditionalQuesti
     }
     
     // MARK: - Outlets
-    @IBOutlet weak var cholesterolCheckbox: CheckboxView! {
+    @IBOutlet private weak var cholesterolCheckbox: CheckboxView! {
         didSet {
             cholesterolCheckbox.mainText = "У меня повышен холестерин"
             cholesterolCheckbox.mainTextFontSize = UIConstants.primaryTextSize
@@ -25,20 +25,39 @@ final class AdditionalQuestionsCell: ReactiveCollectionViewCell<AdditionalQuesti
         }
     }
     
-    @IBOutlet weak var diabetesCheckbox: CheckboxView! {
+    @IBOutlet private weak var diabetesCheckbox: CheckboxView! {
         didSet {
             diabetesCheckbox.mainText = "У меня диабет"
             diabetesCheckbox.mainTextFontSize = UIConstants.primaryTextSize
         }
     }
     
-    @IBOutlet weak var brokenBonesCheckbox: CheckboxView! {
+    @IBOutlet private weak var brokenBonesCheckbox: CheckboxView! {
         didSet {
             brokenBonesCheckbox.mainText = "У меня был перелом при легком инциденте"
             brokenBonesCheckbox.mainTextFontSize = UIConstants.primaryTextSize
             brokenBonesCheckbox.helpText = "Например, если вы случайно ломали руку или иную часть тела в легком, на первый взгляд, несущественном прошествии."
             brokenBonesCheckbox.helpTextFontSize = UIConstants.secondaryTextSize
         }
+    }
+    @IBOutlet private weak var headerLabel: UILabel! {
+        didSet {
+            headerLabel.text = "Хронические заболевания"
+            headerLabel.font = .gilroyBold(ofSize: UIConstants.headerFontSize)
+        }
+    }
+    
+    // MARK: - Outputs
+    var cholesterolSelectedObservable: Observable<Bool> {
+        cholesterolCheckbox.isSelectedObservable
+    }
+    
+    var diabetesSelectedObservable: Observable<Bool> {
+        diabetesCheckbox.isSelectedObservable
+    }
+    
+    var brokenBonesSelectedObservable: Observable<Bool> {
+        brokenBonesCheckbox.isSelectedObservable
     }
     
     // MARK: - Life Cycle

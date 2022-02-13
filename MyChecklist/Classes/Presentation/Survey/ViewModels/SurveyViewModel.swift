@@ -28,8 +28,11 @@ final class SurveyViewModel: BaseViewModel {
     let smokeInput = PublishRelay<Smoke?>()
     let alcoholInput = PublishRelay<Alcohol?>()
     let bloodPressureInput = PublishRelay<BloodPressure?>()
+    let highCholesterolInput = PublishRelay<Bool>()
+    let diabetesInput = PublishRelay<Bool>()
+    let brokenBonesInput = PublishRelay<Bool>()
     
-    var closed = PublishRelay<Void>()
+    let closed = PublishRelay<Void>()
     
     // MARK: - Private Properties
     private let snapshotPublisher = BehaviorRelay<SurveySnapshot?>(value: nil)
@@ -121,6 +124,35 @@ final class SurveyViewModel: BaseViewModel {
             .bind(to: surveyRelay)
             .disposed(by: bag)
         
+        highCholesterolInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasHighCholesterol = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        diabetesInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasDiabetes = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        brokenBonesInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasBrokenBone = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
     }
 }
 
