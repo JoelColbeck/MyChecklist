@@ -84,6 +84,7 @@
 		C7AB92C4270F761000E4827B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C3270F761000E4827B /* Constants.swift */; };
 		C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* UserApiMethod.swift */; };
 		C7AE4A2D2753BBF6001FA74A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE4A2C2753BBF6001FA74A /* Array+Extensions.swift */; };
+		C7BF438627B85D8B00B94A98 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BF438527B85D8B00B94A98 /* UIConstants.swift */; };
 		C7C96DD1271223B30084FF0C /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C96DD0271223B30084FF0C /* PinCodeView.swift */; };
 		C7C96DD3271223B90084FF0C /* PinCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7C96DD2271223B90084FF0C /* PinCodeView.xib */; };
 		C7D3E38B2700949F00A08407 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */; };
@@ -193,6 +194,7 @@
 		C7AB92C3270F761000E4827B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7AB92C5270F772E00E4827B /* UserApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiMethod.swift; sourceTree = "<group>"; };
 		C7AE4A2C2753BBF6001FA74A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		C7BF438527B85D8B00B94A98 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		C7C96DD0271223B30084FF0C /* PinCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
 		C7C96DD2271223B90084FF0C /* PinCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinCodeView.xib; sourceTree = "<group>"; };
 		C7D3E38A2700949F00A08407 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -486,6 +488,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		C769F61527B19EC1009A131F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C7BF438527B85D8B00B94A98 /* UIConstants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		C784879D270074E6003240C9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +542,7 @@
 		C784883F27007A36003240C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C769F61527B19EC1009A131F /* Utility */,
 				C7D3E394270096E700A08407 /* Views */,
 				C784885127007CFC003240C9 /* Extensions */,
 				C784884E27007C56003240C9 /* Components */,
@@ -1088,6 +1099,7 @@
 				C789C70927103E3D001E7B75 /* ChecklistViewModel.swift in Sources */,
 				C7C96DD1271223B30084FF0C /* PinCodeView.swift in Sources */,
 				C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */,
+				C7BF438627B85D8B00B94A98 /* UIConstants.swift in Sources */,
 				C789C70727103DEB001E7B75 /* ChecklistCoordinator.swift in Sources */,
 				C753B68A275B6D0100BC9B78 /* AdditionalQuestionsCell.swift in Sources */,
 				C784888A27008418003240C9 /* MainViewController.swift in Sources */,

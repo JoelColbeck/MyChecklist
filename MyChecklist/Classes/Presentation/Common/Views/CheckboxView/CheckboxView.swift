@@ -11,57 +11,96 @@ import RxSwift
 
 final class CheckboxView: XibView {
     
-    enum Constants {
-        static let checkboxSelectedImage = "checkmark.square.fill"
-        
-        static let checkboxUnselectedImage = "square"
+    private enum Constants {
+        static let checkboxEmptyImage = "iconCheckboxEmpty"
+        static let checkboxSelectedImage = "iconCheckboxSelected"
     }
     
     // MARK: - Outlets
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView! {
+        didSet {
+            imageView.image = UIImage(named: Constants.checkboxEmptyImage)
+        }
+    }
     @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var helpButton: UIButton!
+    @IBOutlet private weak var helpLabel: UILabel!
     private var tapGesture: UITapGestureRecognizer!
+    @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Public Properties
     var isSelectedObservable: Observable<Bool> {
         isSelectedPublisher.asObservable()
     }
     
-    var helpButtonTapped: Observable<String> {
-        helpButton.rx.tap
-            .withLatestFrom(helpTextPublisher) { $1 }
-    }
-    
-    var text: String? {
+    var mainText: String? {
         get {
-            label.text
+            label.attributedText?.string
         }
         
         set {
-            label.text = newValue
+            guard let str = newValue else { return }
+            
+            let range = NSRange(location: 0, length: str.length)
+            
+            let attributedString = NSMutableAttributedString(string: str)
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            
+            attributedString.addAttribute(
+                .paragraphStyle,
+                value: paragraphStyle,
+                range: range
+            )
+            
+            label.attributedText = attributedString
         }
     }
     
-    var needHelp = false {
-        didSet {
-            helpButton.isHidden = !needHelp
-        }
-    }
-    
-    var helpText: String {
+    @IBInspectable
+    var mainTextFontSize: CGFloat {
         get {
-            helpTextPublisher.value
+            label.font.pointSize
         }
         
         set {
-            helpTextPublisher.accept(newValue)
+            label.font = label.font.withSize(newValue)
+        }
+    }
+    
+    var helpText: String? {
+        get {
+            helpLabel.text
+        }
+        
+        set {
+            helpLabel.isHidden = (newValue == nil)
+            helpLabel.text = newValue
+        }
+    }
+    
+    @IBInspectable
+    var helpTextFontSize: CGFloat {
+        get {
+            helpLabel.font.pointSize
+        }
+        
+        set {
+            helpLabel.font = helpLabel.font.withSize(newValue)
+        }
+    }
+    
+    var checkboxSize: CGFloat {
+        get {
+            imageHeightConstraint.constant
+        }
+        
+        set {
+            imageHeightConstraint.constant = newValue
         }
     }
     
     // MARK: - Private Properties
     private let isSelectedPublisher = BehaviorRelay(value: false)
-    private let helpTextPublisher = BehaviorRelay(value: "")
     private let bag = DisposeBag()
     
     // MARK: - Inits
@@ -83,22 +122,19 @@ final class CheckboxView: XibView {
     
     private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer()
-        
-        self.tapGesture = tapGesture
         imageView.addGestureRecognizer(tapGesture)
+        self.tapGesture = tapGesture
     }
     
     private func applyBindings() {
         isSelectedPublisher
             .skip(1)
             .subscribe(onNext: { [unowned self] isSelected in
-                let tintColor: UIColor = isSelected ? .red : .black
-                let imageName = isSelected ?
-                Constants.checkboxSelectedImage :
-                Constants.checkboxUnselectedImage
-                
-                imageView.tintColor = tintColor
-                imageView.image = UIImage(systemName: imageName)
+                imageView.image = UIImage(
+                    named: isSelected ?
+                        Constants.checkboxSelectedImage :
+                        Constants.checkboxEmptyImage
+                )
             })
             .disposed(by: bag)
         

@@ -12,7 +12,11 @@ import RxCocoa
 final class IncrementView: XibView {
     // MARK: - Outlets
     @IBOutlet private weak var calculatorView: UIView!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.font = titleLabel.font.withSize(UIConstants.primaryTextSize)
+        }
+    }
     @IBOutlet private weak var minusButton: UIButton!
     @IBOutlet private weak var plusButton: UIButton!
     @IBOutlet private weak var textField: UITextField! {

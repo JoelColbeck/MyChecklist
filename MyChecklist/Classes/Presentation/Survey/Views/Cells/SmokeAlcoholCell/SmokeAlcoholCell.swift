@@ -9,11 +9,24 @@ import UIKit
 import RxCocoa
 
 final class SmokeAlcoholCell: ReactiveCollectionViewCell<SmokeAlcoholViewModel> {
+    
     // MARK: - Outlets
+    @IBOutlet weak var smokeLabel: UILabel! {
+        didSet {
+            smokeLabel.font = smokeLabel.font.withSize(UIConstants.headerFontSize)
+        }
+    }
     @IBOutlet private weak var smokePicker: UIPickerView! {
         didSet {
             smokePicker.dataSource = self
             smokePicker.delegate = self
+        }
+    }
+    
+    
+    @IBOutlet weak var alcoholLabel: UILabel! {
+        didSet {
+            alcoholLabel.font = alcoholLabel.font.withSize(UIConstants.headerFontSize)
         }
     }
     
@@ -56,14 +69,26 @@ extension SmokeAlcoholCell: UIPickerViewDataSource {
 }
 
 extension SmokeAlcoholCell: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let resultLabel: UILabel
+        
+        if let view = view as? UILabel {
+            resultLabel = view
+        } else {
+            resultLabel = UILabel()
+        }
+        
+        resultLabel.font = .gilroySemibold(ofSize: UIConstants.pickerRowSize)
+        resultLabel.textAlignment = .center
+        
         switch pickerView {
         case let picker where picker === smokePicker:
-            return viewModel.smokeTitle(forRow: row)
+            resultLabel.text = viewModel.smokeTitle(forRow: row)
         case let picker where picker === alcoholPicker:
-            return viewModel.alcoholTitle(forRow: row)
-        default:
-            return nil
+            resultLabel.text = viewModel.alcoholTitle(forRow: row)
+        default: fatalError("Unexpected UIPickerView in file \(#file)\nline: \(#line)")
         }
+        
+        return resultLabel
     }
 }

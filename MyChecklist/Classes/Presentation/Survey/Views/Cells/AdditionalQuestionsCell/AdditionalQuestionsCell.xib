@@ -24,6 +24,11 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFD-ov-lHQ" userLabel="Cholesterol" customClass="CheckboxView" customModule="MyChecklist" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="212" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="mainTextFontSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-d2-K6e" userLabel="Diabetes" customClass="CheckboxView" customModule="MyChecklist" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="148" width="212" height="128"/>

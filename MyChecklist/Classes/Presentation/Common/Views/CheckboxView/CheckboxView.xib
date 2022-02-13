@@ -8,10 +8,16 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gilroy-Semibold.ttf">
+            <string>Gilroy-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckboxView" customModule="MyChecklist" customModuleProvider="target">
             <connections>
-                <outlet property="helpButton" destination="F4b-M0-cE7" id="DjI-OX-3k2"/>
+                <outlet property="helpLabel" destination="Df0-qy-g47" id="mGR-HT-eoY"/>
+                <outlet property="imageHeightConstraint" destination="U1B-ac-WF0" id="cig-Uc-IR1"/>
                 <outlet property="imageView" destination="yMb-oR-qi5" id="UjQ-UK-aGF"/>
                 <outlet property="label" destination="y5B-Kc-ZVy" id="XQu-Pr-Oew"/>
             </connections>
@@ -21,30 +27,40 @@
             <rect key="frame" x="0.0" y="0.0" width="403" height="91"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uT4-sZ-zBZ">
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uT4-sZ-zBZ">
                     <rect key="frame" x="0.0" y="0.0" width="403" height="91"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yMb-oR-qi5">
-                            <rect key="frame" x="0.0" y="1" width="25" height="22.5"/>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="yMb-oR-qi5">
+                            <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
                             <color key="tintColor" systemColor="labelColor"/>
                             <gestureRecognizers/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="25" id="U1B-ac-WF0"/>
-                                <constraint firstAttribute="width" constant="25" id="tru-DA-C43"/>
+                                <constraint firstAttribute="height" constant="37" id="U1B-ac-WF0"/>
+                                <constraint firstAttribute="width" secondItem="yMb-oR-qi5" secondAttribute="height" id="f5y-Na-lsf"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой холестерин повышен" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5B-Kc-ZVy">
-                            <rect key="frame" x="35" y="0.0" width="337" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4b-M0-cE7">
-                            <rect key="frame" x="382" y="0.0" width="21" height="21"/>
-                            <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="questionmark.circle.fill" catalog="system"/>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YyE-fZ-XYu">
+                            <rect key="frame" x="57" y="0.0" width="346" height="22"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой холестерин повышен" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5B-Kc-ZVy" userLabel="Main Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="346" height="22"/>
+                                    <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мой холестерин повышен" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df0-qy-g47" userLabel="Help Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="346" height="0.0"/>
+                                    <fontDescription key="fontDescription" name="Gilroy-Semibold" family="Gilroy" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
             </subviews>
@@ -61,13 +77,8 @@
         </view>
     </objects>
     <resources>
-        <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="square" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

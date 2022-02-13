@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "iconCheckboxEmpty.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

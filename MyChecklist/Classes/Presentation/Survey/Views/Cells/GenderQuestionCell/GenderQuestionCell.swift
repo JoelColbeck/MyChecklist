@@ -19,6 +19,11 @@ final class GenderQuestionCell: ReactiveCollectionViewCell<GenderQuestionViewMod
             
         }
     }
+    @IBOutlet weak var headerLabel: UILabel! {
+        didSet {
+            headerLabel.font = headerLabel.font.withSize(UIConstants.headerFontSize)
+        }
+    }
     
     // MARK: - Public Methods
     override func applyBindings() {
@@ -40,7 +45,19 @@ extension GenderQuestionCell: UIPickerViewDataSource {
 }
 
 extension GenderQuestionCell: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.genderTitle(forRow: row)
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let resultLabel: UILabel
+        
+        if let view = view as? UILabel {
+            resultLabel = view
+        } else {
+            resultLabel = UILabel()
+            resultLabel.font = .gilroySemibold(ofSize: UIConstants.pickerRowSize)
+            resultLabel.textAlignment = .center
+        }
+        
+        resultLabel.text = viewModel.genderTitle(forRow: row)
+            
+        return resultLabel
     }
 }

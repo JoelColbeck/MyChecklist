@@ -16,6 +16,12 @@ final class BloodPressureCell: ReactiveCollectionViewCell<BloodPressureViewModel
         }
     }
     
+    @IBOutlet weak var headerLabel: UILabel! {
+        didSet {
+            headerLabel.font = headerLabel.font.withSize(UIConstants.headerFontSize)
+        }
+    }
+    
     override func applyBindings() {
         pickerView.rx.itemSelected
             .map { $0.row }
@@ -35,7 +41,19 @@ extension BloodPressureCell: UIPickerViewDataSource {
 }
 
 extension BloodPressureCell: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        viewModel.bloodPressureTitle(forRow: row)
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let resultLabel: UILabel
+        
+        if let view = view as? UILabel {
+            resultLabel = view
+        } else {
+            resultLabel = UILabel()
+            resultLabel.textAlignment = .center
+            resultLabel.font = .gilroySemibold(ofSize: UIConstants.pickerRowSize)
+        }
+        
+        resultLabel.text = viewModel.bloodPressureTitle(forRow: row)
+        
+        return resultLabel
     }
 }
