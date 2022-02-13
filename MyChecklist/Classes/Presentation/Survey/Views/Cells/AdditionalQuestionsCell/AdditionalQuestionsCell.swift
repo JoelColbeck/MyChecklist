@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class AdditionalQuestionsCell: ReactiveCollectionViewCell<AdditionalQuestionsViewModel> {
+final class AdditionalQuestionsCell: BaseCollectionViewCell {
     
     private enum Constants {
         static let checkboxSize: CGFloat = 30
