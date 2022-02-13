@@ -72,6 +72,8 @@
 		C784889127008CAD003240C9 /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C784889027008CAD003240C9 /* Gilroy-Semibold.ttf */; };
 		C784889327008EEF003240C9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C784889227008EEF003240C9 /* Colors.xcassets */; };
 		C784889527008FB5003240C9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784889427008FB4003240C9 /* UIColor+Extensions.swift */; };
+		C788FA3A27B9927C00A49772 /* FamilyDiseasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788FA3827B9927C00A49772 /* FamilyDiseasesCell.swift */; };
+		C788FA3B27B9927C00A49772 /* FamilyDiseasesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C788FA3927B9927C00A49772 /* FamilyDiseasesCell.xib */; };
 		C789C6FC2710352B001E7B75 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C6FB2710352B001E7B75 /* UserService.swift */; };
 		C789C6FE27103649001E7B75 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C6FD27103649001E7B75 /* User.swift */; };
 		C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */; };
@@ -181,6 +183,8 @@
 		C784889027008CAD003240C9 /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		C784889227008EEF003240C9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C784889427008FB4003240C9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		C788FA3827B9927C00A49772 /* FamilyDiseasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDiseasesCell.swift; sourceTree = "<group>"; };
+		C788FA3927B9927C00A49772 /* FamilyDiseasesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDiseasesCell.xib; sourceTree = "<group>"; };
 		C789C6FB2710352B001E7B75 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C789C6FD27103649001E7B75 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLoggingPlugin.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 		C72E181F274177BD00191706 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C788FA3327B9916300A49772 /* FamilyDiseases */,
 				C753B687275B6CF100BC9B78 /* AdditionalQuestionsCell */,
 				C753B677275B5E0A00BC9B78 /* BloodPressureCell */,
 				C72C661D275403E700802B2D /* SmokeAlcoholCell */,
@@ -693,6 +698,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C788FA3327B9916300A49772 /* FamilyDiseases */ = {
+			isa = PBXGroup;
+			children = (
+				C788FA3827B9927C00A49772 /* FamilyDiseasesCell.swift */,
+				C788FA3927B9927C00A49772 /* FamilyDiseasesCell.xib */,
+			);
+			path = FamilyDiseases;
+			sourceTree = "<group>";
+		};
 		C789C6F92710351A001E7B75 /* MoyaServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,6 +976,7 @@
 				C784889327008EEF003240C9 /* Colors.xcassets in Resources */,
 				C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */,
 				C7D3E39A2700972800A08407 /* NavigationBarView.xib in Resources */,
+				C788FA3B27B9927C00A49772 /* FamilyDiseasesCell.xib in Resources */,
 				C72C6621275403F900802B2D /* SmokeAlcoholCell.xib in Resources */,
 				C7418B392710E7E80018A233 /* AnchorView.xib in Resources */,
 				C7D3E3A32700C32200A08407 /* SeparatedTextField.xib in Resources */,
@@ -1079,6 +1094,7 @@
 				C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */,
 				C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */,
 				C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */,
+				C788FA3A27B9927C00A49772 /* FamilyDiseasesCell.swift in Sources */,
 				C716A9E8278C383600C73C4F /* CommonNavigationController.swift in Sources */,
 				C7418B362710E7C50018A233 /* AnchorView.swift in Sources */,
 				C784887827007E5B003240C9 /* StartUpViewController.swift in Sources */,

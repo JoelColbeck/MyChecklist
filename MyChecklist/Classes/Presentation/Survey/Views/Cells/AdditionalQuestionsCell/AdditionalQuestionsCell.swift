@@ -11,10 +11,6 @@ import RxCocoa
 
 final class AdditionalQuestionsCell: BaseCollectionViewCell {
     
-    private enum Constants {
-        static let checkboxSize: CGFloat = 30
-    }
-    
     // MARK: - Outlets
     @IBOutlet private weak var cholesterolCheckbox: CheckboxView! {
         didSet {
@@ -22,6 +18,7 @@ final class AdditionalQuestionsCell: BaseCollectionViewCell {
             cholesterolCheckbox.mainTextFontSize = UIConstants.primaryTextSize
             cholesterolCheckbox.helpText = "Отметьте, если вы знаете, что ваш холестерин повышен"
             cholesterolCheckbox.helpTextFontSize = UIConstants.secondaryTextSize
+            cholesterolCheckbox.checkboxSize = UIConstants.surveyCheckboxSize
         }
     }
     
@@ -29,6 +26,7 @@ final class AdditionalQuestionsCell: BaseCollectionViewCell {
         didSet {
             diabetesCheckbox.mainText = "У меня диабет"
             diabetesCheckbox.mainTextFontSize = UIConstants.primaryTextSize
+            diabetesCheckbox.checkboxSize = UIConstants.surveyCheckboxSize
         }
     }
     
@@ -38,11 +36,12 @@ final class AdditionalQuestionsCell: BaseCollectionViewCell {
             brokenBonesCheckbox.mainTextFontSize = UIConstants.primaryTextSize
             brokenBonesCheckbox.helpText = "Например, если вы случайно ломали руку или иную часть тела в легком, на первый взгляд, несущественном прошествии."
             brokenBonesCheckbox.helpTextFontSize = UIConstants.secondaryTextSize
+            brokenBonesCheckbox.checkboxSize = UIConstants.surveyCheckboxSize
         }
     }
     @IBOutlet private weak var headerLabel: UILabel! {
         didSet {
-            headerLabel.text = "Хронические заболевания"
+            headerLabel.text = "Дополнительные вопросы"
             headerLabel.font = .gilroyBold(ofSize: UIConstants.headerFontSize)
         }
     }
@@ -58,16 +57,5 @@ final class AdditionalQuestionsCell: BaseCollectionViewCell {
     
     var brokenBonesSelectedObservable: Observable<Bool> {
         brokenBonesCheckbox.isSelectedObservable
-    }
-    
-    // MARK: - Life Cycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        for view in subviews where view is CheckboxView {
-            guard let checkbox = view as? CheckboxView else { continue }
-            checkbox.mainTextFontSize = UIConstants.primaryTextSize
-            checkbox.helpTextFontSize = UIConstants.secondaryTextSize
-            checkbox.checkboxSize = Constants.checkboxSize
-        }
     }
 }

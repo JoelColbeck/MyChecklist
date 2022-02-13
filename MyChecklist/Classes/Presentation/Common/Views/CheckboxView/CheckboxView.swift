@@ -26,6 +26,7 @@ final class CheckboxView: XibView {
     @IBOutlet private weak var helpLabel: UILabel!
     private var tapGesture: UITapGestureRecognizer!
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var stackView: UIStackView!
     
     // MARK: - Public Properties
     var isSelectedObservable: Observable<Bool> {
@@ -53,10 +54,11 @@ final class CheckboxView: XibView {
             )
             
             label.attributedText = attributedString
+            
+            configureAllignment()
         }
     }
     
-    @IBInspectable
     var mainTextFontSize: CGFloat {
         get {
             label.font.pointSize
@@ -75,10 +77,10 @@ final class CheckboxView: XibView {
         set {
             helpLabel.isHidden = (newValue == nil)
             helpLabel.text = newValue
+            configureAllignment()
         }
     }
     
-    @IBInspectable
     var helpTextFontSize: CGFloat {
         get {
             helpLabel.font.pointSize
@@ -144,5 +146,9 @@ final class CheckboxView: XibView {
             .map { !$0 }
             .bind(to: isSelectedPublisher)
             .disposed(by: bag)
+    }
+    
+    private func configureAllignment() {
+        stackView.alignment = helpLabel.isHidden ? .center : .top
     }
 }

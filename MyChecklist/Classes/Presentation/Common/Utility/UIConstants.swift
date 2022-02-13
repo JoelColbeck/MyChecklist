@@ -13,4 +13,5 @@ enum UIConstants {
     static let pickerRowSize: CGFloat = 18
     static let primaryTextSize: CGFloat = 18
     static let secondaryTextSize: CGFloat = 16
+    static let surveyCheckboxSize: CGFloat = 30
 }

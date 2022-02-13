@@ -160,12 +160,13 @@ private extension SurveyViewModel {
     func generateSnapshot() -> SurveySnapshot {
         var snapshot = SurveySnapshot()
         
-        let items = [
-            SurveyItemModel.gender,
-            SurveyItemModel.bodyMetrics,
-            SurveyItemModel.smokeAlcohol,
-            SurveyItemModel.bloodPressure,
-            SurveyItemModel.additionalQuestions
+        let items: [SurveyItemModel] = [
+//            .gender,
+//            .bodyMetrics,
+//            .smokeAlcohol,
+//            .bloodPressure,
+            .additionalQuestions,
+            .familyDiseases
         ]
         
         snapshot.appendSections([0])
@@ -183,4 +184,5 @@ enum SurveyItemModel: Hashable {
     case smokeAlcohol
     case bloodPressure
     case additionalQuestions
+    case familyDiseases
 }
