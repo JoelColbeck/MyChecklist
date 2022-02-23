@@ -21,7 +21,7 @@ final class SurveyViewModel: BaseViewModel {
     }
     
     // MARK: - Inputs
-    let genderInput = PublishRelay<Gender?>()
+    let genderInput = BehaviorRelay<Gender?>(value: nil)
     let ageInput = PublishRelay<Int>()
     let heightInput = PublishRelay<Int>()
     let weightInput = PublishRelay<Int>()
@@ -31,6 +31,16 @@ final class SurveyViewModel: BaseViewModel {
     let highCholesterolInput = PublishRelay<Bool>()
     let diabetesInput = PublishRelay<Bool>()
     let brokenBonesInput = PublishRelay<Bool>()
+    let familyHeartAttackInput = PublishRelay<Bool>()
+    let familyStrokeInput = PublishRelay<Bool>()
+    let familyHipFractureInput = PublishRelay<Bool>()
+    let familyDiabetesInput = PublishRelay<Bool>()
+    let chronicLungsInput = PublishRelay<Bool>()
+    let chronicCardioInput = PublishRelay<Bool>()
+    let chronicLiverInput = PublishRelay<Bool>()
+    let chronicStomachInput = PublishRelay<Bool>()
+    let chronicKidneysInput = PublishRelay<Bool>()
+    let chronicHivInput = PublishRelay<Bool>()
     
     let closed = PublishRelay<Void>()
     
@@ -153,6 +163,106 @@ final class SurveyViewModel: BaseViewModel {
             }
             .bind(to: surveyRelay)
             .disposed(by: bag)
+        
+        familyHeartAttackInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasFamilyInfarct = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        familyStrokeInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasFamilyInsult = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        familyHipFractureInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasFamilyRelativeHipBroke = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        familyDiabetesInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasFamilyDiabetis = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        chronicLungsInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasChronicLungs = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        chronicCardioInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasChronicHeart = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        chronicLiverInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasChronicLiver = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        chronicStomachInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasChronicStomach = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        chronicKidneysInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasChronicKidneys = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
+        
+        chronicHivInput
+            .withLatestFrom(surveyRelay) { ($0, $1) }
+            .map { newValue, survey in
+                var newSurvey = survey
+                newSurvey.hasHiv = newValue
+                return newSurvey
+            }
+            .bind(to: surveyRelay)
+            .disposed(by: bag)
     }
 }
 
@@ -165,8 +275,8 @@ private extension SurveyViewModel {
 //            .bodyMetrics,
 //            .smokeAlcohol,
 //            .bloodPressure,
-            .additionalQuestions,
-            .familyDiseases
+            .familyDiseases,
+            .chronicDiseases
         ]
         
         snapshot.appendSections([0])
@@ -185,4 +295,5 @@ enum SurveyItemModel: Hashable {
     case bloodPressure
     case additionalQuestions
     case familyDiseases
+    case chronicDiseases
 }

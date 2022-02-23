@@ -35,6 +35,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             collectionView.register(nib: BloodPressureCell.self)
             collectionView.register(nib: AdditionalQuestionsCell.self)
             collectionView.register(nib: FamilyDiseasesCell.self)
+            collectionView.register(class: ChronicDiseasesCell.self)
         }
     }
     weak var tapGesture: UITapGestureRecognizer!
@@ -211,6 +212,55 @@ private extension SurveyViewController {
                             for: indexPath
                         ) as? FamilyDiseasesCell
                 else { return nil }
+                
+                cell.heartAttackSelected
+                    .bind(to: dataContext.familyHeartAttackInput)
+                    .disposed(by: cell.bag)
+                
+                cell.strokeSelected
+                    .bind(to: dataContext.familyStrokeInput)
+                    .disposed(by: bag)
+                
+                cell.hipFractureSelected
+                    .bind(to: dataContext.familyHipFractureInput)
+                    .disposed(by: bag)
+                
+                cell.diabetesSelected
+                    .bind(to: dataContext.familyDiabetesInput)
+                    .disposed(by: bag)
+                
+                return cell
+            case .chronicDiseases:
+                guard let cell = collectionView
+                        .dequeueReusableCell(
+                            withReuseIdentifier: "ChronicDiseasesCell",
+                            for: indexPath
+                        ) as? ChronicDiseasesCell
+                else { return nil }
+                
+                cell.lungsSelected
+                    .bind(to: dataContext.chronicLungsInput)
+                    .disposed(by: cell.bag)
+                
+                cell.cardioSelected
+                    .bind(to: dataContext.chronicCardioInput)
+                    .disposed(by: bag)
+                
+                cell.liverSelected
+                    .bind(to: dataContext.chronicLiverInput)
+                    .disposed(by: cell.bag)
+                
+                cell.stomachSelected
+                    .bind(to: dataContext.chronicStomachInput)
+                    .disposed(by: bag)
+                
+                cell.kidneysSelected
+                    .bind(to: dataContext.chronicKidneysInput)
+                    .disposed(by: bag)
+                
+                cell.hivSelected
+                    .bind(to: dataContext.chronicHivInput)
+                    .disposed(by: bag)
                 
                 return cell
             }

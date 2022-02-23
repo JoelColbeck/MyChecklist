@@ -82,6 +82,7 @@
 		C789C70C27103E7B001E7B75 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C70A27103E7B001E7B75 /* ChecklistViewController.swift */; };
 		C789C70D27103E7B001E7B75 /* ChecklistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C789C70B27103E7B001E7B75 /* ChecklistViewController.xib */; };
 		C789C71027104065001E7B75 /* TestAnchorJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C789C70F27104065001E7B75 /* TestAnchorJSON.swift */; };
+		C78EAC6F27C65AB40082755E /* ChronicDiseasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78EAC6D27C65AB40082755E /* ChronicDiseasesCell.swift */; };
 		C7AB92C4270F761000E4827B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C3270F761000E4827B /* Constants.swift */; };
 		C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* UserApiMethod.swift */; };
 		C7AE4A2D2753BBF6001FA74A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE4A2C2753BBF6001FA74A /* Array+Extensions.swift */; };
@@ -193,6 +194,7 @@
 		C789C70A27103E7B001E7B75 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		C789C70B27103E7B001E7B75 /* ChecklistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChecklistViewController.xib; sourceTree = "<group>"; };
 		C789C70F27104065001E7B75 /* TestAnchorJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnchorJSON.swift; sourceTree = "<group>"; };
+		C78EAC6D27C65AB40082755E /* ChronicDiseasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronicDiseasesCell.swift; sourceTree = "<group>"; };
 		C7AB92C3270F761000E4827B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7AB92C5270F772E00E4827B /* UserApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiMethod.swift; sourceTree = "<group>"; };
 		C7AE4A2C2753BBF6001FA74A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		C72E181F274177BD00191706 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C78EAC6C27C65A980082755E /* ChronicDiseases */,
 				C788FA3327B9916300A49772 /* FamilyDiseases */,
 				C753B687275B6CF100BC9B78 /* AdditionalQuestionsCell */,
 				C753B677275B5E0A00BC9B78 /* BloodPressureCell */,
@@ -760,6 +763,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		C78EAC6C27C65A980082755E /* ChronicDiseases */ = {
+			isa = PBXGroup;
+			children = (
+				C78EAC6D27C65AB40082755E /* ChronicDiseasesCell.swift */,
+			);
+			path = ChronicDiseases;
+			sourceTree = "<group>";
+		};
 		C7AB92C2270F760500E4827B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1095,6 +1106,7 @@
 				C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */,
 				C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */,
 				C788FA3A27B9927C00A49772 /* FamilyDiseasesCell.swift in Sources */,
+				C78EAC6F27C65AB40082755E /* ChronicDiseasesCell.swift in Sources */,
 				C716A9E8278C383600C73C4F /* CommonNavigationController.swift in Sources */,
 				C7418B362710E7C50018A233 /* AnchorView.swift in Sources */,
 				C784887827007E5B003240C9 /* StartUpViewController.swift in Sources */,

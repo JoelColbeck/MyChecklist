@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class FamilyDiseasesCell: BaseCollectionViewCell {
 
@@ -53,6 +54,20 @@ final class FamilyDiseasesCell: BaseCollectionViewCell {
         }
     }
     
+    // MARK: - Output
+    var heartAttackSelected: Observable<Bool> {
+        heartAttackCheckbox.isSelectedObservable
+    }
     
-
+    var strokeSelected: Observable<Bool> {
+        strokeCheckbox.isSelectedObservable
+    }
+    
+    var hipFractureSelected: Observable<Bool> {
+        hipFractureCheckbox.isSelectedObservable
+    }
+    
+    var diabetesSelected: Observable<Bool> {
+        diabetesCheckbox.isSelectedObservable
+    }
 }
