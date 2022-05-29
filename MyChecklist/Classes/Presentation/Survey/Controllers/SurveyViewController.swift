@@ -36,6 +36,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             collectionView.register(nib: AdditionalQuestionsCell.self)
             collectionView.register(nib: FamilyDiseasesCell.self)
             collectionView.register(class: ChronicDiseasesCell.self)
+            collectionView.register(class: RelativeOncologyCell.self)
         }
     }
     weak var tapGesture: UITapGestureRecognizer!
@@ -262,6 +263,17 @@ private extension SurveyViewController {
                     .bind(to: dataContext.chronicHivInput)
                     .disposed(by: bag)
                 
+                return cell
+            case .relativeOncology:
+                guard let cell = collectionView
+                        .dequeueReusableCell(
+                            withReuseIdentifier: "RelativeOncologyCell",
+                            for: indexPath
+                        ) as? RelativeOncologyCell
+                else { return nil }
+                
+                cell.setup(with: dataContext.genderInput.value)
+
                 return cell
             }
         }

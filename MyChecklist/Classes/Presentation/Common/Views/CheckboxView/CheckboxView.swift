@@ -22,7 +22,11 @@ final class CheckboxView: XibView {
             imageView.image = UIImage(named: Constants.checkboxEmptyImage)
         }
     }
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var label: UILabel! {
+        didSet {
+            label.font = .gilroyBold(ofSize: UIConstants.primaryTextSize)
+        }
+    }
     @IBOutlet private weak var helpLabel: UILabel!
     private var tapGesture: UITapGestureRecognizer!
     @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!

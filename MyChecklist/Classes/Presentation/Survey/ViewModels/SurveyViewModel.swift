@@ -74,6 +74,11 @@ final class SurveyViewModel: BaseViewModel {
             .bind(to: surveyRelay)
             .disposed(by: bag)
         
+        genderInput
+            .compactMap { [weak self] _ in self?.generateSnapshot() }
+            .bind(to: snapshotPublisher)
+            .disposed(by: bag)
+        
         ageInput
             .withLatestFrom(surveyRelay) { ($0, $1) }
             .map { newAge, survey in
@@ -270,14 +275,13 @@ private extension SurveyViewModel {
     func generateSnapshot() -> SurveySnapshot {
         var snapshot = SurveySnapshot()
         
-        let items: [SurveyItemModel] = [
-//            .gender,
-//            .bodyMetrics,
-//            .smokeAlcohol,
-//            .bloodPressure,
-            .familyDiseases,
-            .chronicDiseases
+        var items: [SurveyItemModel] = [
+            .gender
         ]
+        
+        if genderInput.value != nil {
+            items.append(.relativeOncology)
+        }
         
         snapshot.appendSections([0])
         snapshot.appendItems(items, toSection: 0)
@@ -296,4 +300,5 @@ enum SurveyItemModel: Hashable {
     case additionalQuestions
     case familyDiseases
     case chronicDiseases
+    case relativeOncology
 }
