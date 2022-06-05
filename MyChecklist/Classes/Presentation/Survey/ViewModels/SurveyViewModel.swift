@@ -41,6 +41,13 @@ final class SurveyViewModel: BaseViewModel {
     let chronicStomachInput = PublishRelay<Bool>()
     let chronicKidneysInput = PublishRelay<Bool>()
     let chronicHivInput = PublishRelay<Bool>()
+    let relativeProstateInput = PublishRelay<Bool>()
+    let relativeCervicalInput = PublishRelay<Bool>()
+    let relativeColonInput = PublishRelay<Bool>()
+    let relativeStomachInput = PublishRelay<Bool>()
+    let relativeLungsInput = PublishRelay<Bool>()
+    let relativeMelanomaInput = PublishRelay<Bool>()
+    
     
     let closed = PublishRelay<Void>()
     
@@ -64,207 +71,98 @@ final class SurveyViewModel: BaseViewModel {
             .subscribe()
             .disposed(by: bag)
         
-        genderInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newGender, survey in
-                var newSurvey = survey
-                newSurvey.gender = newGender
-                return newSurvey
+        let gender = genderInput.do(
+            onNext: { [weak self] gender in
+                switch gender {
+                case .man: self?.relativeProstateInput.accept(false)
+                case .woman: self?.relativeCervicalInput.accept(false)
+                case .none: break
+                }
             }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
+        ).share()
         
-        genderInput
+        gender
             .compactMap { [weak self] _ in self?.generateSnapshot() }
             .bind(to: snapshotPublisher)
             .disposed(by: bag)
         
-        ageInput
+        subscribeSurvey(observable: gender, keyPath: \.gender)
+        subscribeSurvey(observable: ageInput, keyPath: \.age)
+        subscribeSurvey(observable: heightInput, keyPath: \.height)
+        subscribeSurvey(observable: weightInput, keyPath: \.weight)
+        subscribeSurvey(observable: smokeInput, keyPath: \.smoke)
+        subscribeSurvey(observable: alcoholInput, keyPath: \.alcohol)
+        subscribeSurvey(observable: bloodPressureInput, keyPath: \.bloodPressure)
+        subscribeSurvey(observable: highCholesterolInput, keyPath: \.hasHighCholesterol)
+        subscribeSurvey(observable: diabetesInput, keyPath: \.hasDiabetes)
+        subscribeSurvey(observable: brokenBonesInput, keyPath: \.hasBrokenBone)
+        subscribeSurvey(observable: familyHeartAttackInput, keyPath: \.hasFamilyInfarct)
+        subscribeSurvey(observable: familyStrokeInput, keyPath: \.hasFamilyInsult)
+        subscribeSurvey(observable: familyHipFractureInput, keyPath: \.hasFamilyRelativeHipBroke)
+        subscribeSurvey(observable: familyDiabetesInput, keyPath: \.hasFamilyDiabetis)
+        subscribeSurvey(observable: chronicLungsInput, keyPath: \.hasChronicLungs)
+        subscribeSurvey(observable: chronicCardioInput, keyPath: \.hasChronicHeart)
+        subscribeSurvey(observable: chronicLiverInput, keyPath: \.hasChronicLiver)
+        subscribeSurvey(observable: chronicStomachInput, keyPath: \.hasChronicStomach)
+        subscribeSurvey(observable: chronicKidneysInput, keyPath: \.hasChronicKidneys)
+        subscribeSurvey(observable: chronicHivInput, keyPath: \.hasHiv)
+        subscribeSurvey(observable: relativeProstateInput, keyPath: \.hasProstateCancer)
+        subscribeSurvey(observable: relativeCervicalInput, keyPath: \.hasCervicalCancerWoman)
+        subscribeGenderSurvey(
+            observable: relativeColonInput,
+            manKeyPath: \.hasColonCancerMan,
+            womanKeyPath: \.hasColonCancerWoman
+        )
+        subscribeGenderSurvey(
+            observable: relativeStomachInput,
+            manKeyPath: \.hasStomachCancerMan,
+            womanKeyPath: \.hasStomachCancerWoman
+        )
+        
+        subscribeGenderSurvey(
+            observable: relativeLungsInput,
+            manKeyPath: \.hasLungsCancerMan,
+            womanKeyPath: \.hasLungsCancerWoman
+        )
+        subscribeGenderSurvey(
+            observable: relativeMelanomaInput,
+            manKeyPath: \.hasMelanomaMan,
+            womanKeyPath: \.hasMelanomaWoman
+        )
+    }
+    
+    // MARK: - Private Methods
+    private func subscribeSurvey<T: ObservableType>(
+        observable: T,
+        keyPath: WritableKeyPath<Survey, T.Element>
+    ) {
+        observable
             .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newAge, survey in
-                var newSurvey = survey
-                newSurvey.age = newAge
-                return newSurvey
+            .map { value, survey in
+                var survey = survey
+                survey[keyPath: keyPath] = value
+                return survey
             }
             .bind(to: surveyRelay)
             .disposed(by: bag)
-        
-        heightInput
+    }
+    
+    private func subscribeGenderSurvey<T: ObservableType>(
+        observable: T,
+        manKeyPath: WritableKeyPath<Survey, T.Element>,
+        womanKeyPath: WritableKeyPath<Survey, T.Element>
+    ) {
+        observable
             .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newHeight, survey in
-                var newSurvey = survey
-                newSurvey.height = newHeight
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        weightInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newWeight, survey in
-                var newSurvey = survey
-                newSurvey.weight = newWeight
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        smokeInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newSmoke, survey in
-                var newSurvey = survey
-                newSurvey.smoke = newSmoke
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        alcoholInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newAlcohol, survey in
-                var newSurvey = survey
-                newSurvey.alcohol = newAlcohol
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        bloodPressureInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newBloodPressure, survey in
-                var newSurvey = survey
-                newSurvey.bloodPressure = newBloodPressure
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        highCholesterolInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasHighCholesterol = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        diabetesInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasDiabetes = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        brokenBonesInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasBrokenBone = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        familyHeartAttackInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasFamilyInfarct = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        familyStrokeInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasFamilyInsult = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        familyHipFractureInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasFamilyRelativeHipBroke = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        familyDiabetesInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasFamilyDiabetis = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        chronicLungsInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasChronicLungs = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        chronicCardioInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasChronicHeart = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        chronicLiverInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasChronicLiver = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        chronicStomachInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasChronicStomach = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        chronicKidneysInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasChronicKidneys = newValue
-                return newSurvey
-            }
-            .bind(to: surveyRelay)
-            .disposed(by: bag)
-        
-        chronicHivInput
-            .withLatestFrom(surveyRelay) { ($0, $1) }
-            .map { newValue, survey in
-                var newSurvey = survey
-                newSurvey.hasHiv = newValue
-                return newSurvey
+            .withLatestFrom(genderInput) { ($0.0, $0.1, $1) }
+            .map { value, survey, gender in
+                var survey = survey
+                switch gender {
+                case .man: survey[keyPath: manKeyPath] = value
+                case .woman: survey[keyPath: womanKeyPath] = value
+                case .none: break
+                }
+                return survey
             }
             .bind(to: surveyRelay)
             .disposed(by: bag)
@@ -276,11 +174,19 @@ private extension SurveyViewModel {
         var snapshot = SurveySnapshot()
         
         var items: [SurveyItemModel] = [
-            .gender
+            .gender,
         ]
         
-        if genderInput.value != nil {
-            items.append(.relativeOncology)
+        if let gender = genderInput.value {
+            items.append(contentsOf: [
+                .bodyMetrics,
+                .smokeAlcohol,
+                .bloodPressure,
+                .additionalQuestions,
+                .familyDiseases,
+                .chronicDiseases,
+                .relativeOncology(gender: gender),
+            ])
         }
         
         snapshot.appendSections([0])
@@ -300,5 +206,5 @@ enum SurveyItemModel: Hashable {
     case additionalQuestions
     case familyDiseases
     case chronicDiseases
-    case relativeOncology
+    case relativeOncology(gender: Gender)
 }

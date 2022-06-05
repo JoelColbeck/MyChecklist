@@ -45,6 +45,9 @@
 		C753B686275B60DF00BC9B78 /* GenderQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */; };
 		C753B68A275B6D0100BC9B78 /* AdditionalQuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C753B688275B6D0100BC9B78 /* AdditionalQuestionsCell.swift */; };
 		C753B68B275B6D0100BC9B78 /* AdditionalQuestionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C753B689275B6D0100BC9B78 /* AdditionalQuestionsCell.xib */; };
+		C76B762828434F0C00DB212D /* PartialApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762728434F0C00DB212D /* PartialApply.swift */; };
+		C76B762A28434FBD00DB212D /* Uncurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762928434FBD00DB212D /* Uncurry.swift */; };
+		C76B762D284D33B800DB212D /* Weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762C284D33B800DB212D /* Weakify.swift */; };
 		C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884127007A59003240C9 /* BaseCoordinator.swift */; };
 		C784885027007C5E003240C9 /* UIThrobber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884F27007C5E003240C9 /* UIThrobber.swift */; };
 		C784885F27007CFC003240C9 /* UIViewAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784885227007CFC003240C9 /* UIViewAnchor+Extensions.swift */; };
@@ -158,6 +161,9 @@
 		C753B685275B60DF00BC9B78 /* GenderQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderQuestionViewModel.swift; sourceTree = "<group>"; };
 		C753B688275B6D0100BC9B78 /* AdditionalQuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalQuestionsCell.swift; sourceTree = "<group>"; };
 		C753B689275B6D0100BC9B78 /* AdditionalQuestionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalQuestionsCell.xib; sourceTree = "<group>"; };
+		C76B762728434F0C00DB212D /* PartialApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialApply.swift; sourceTree = "<group>"; };
+		C76B762928434FBD00DB212D /* Uncurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncurry.swift; sourceTree = "<group>"; };
+		C76B762C284D33B800DB212D /* Weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weakify.swift; sourceTree = "<group>"; };
 		C784884127007A59003240C9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C784884F27007C5E003240C9 /* UIThrobber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIThrobber.swift; sourceTree = "<group>"; };
 		C784885227007CFC003240C9 /* UIViewAnchor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewAnchor+Extensions.swift"; sourceTree = "<group>"; };
@@ -496,6 +502,24 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		C76B762628434EEF00DB212D /* Functional */ = {
+			isa = PBXGroup;
+			children = (
+				C76B762728434F0C00DB212D /* PartialApply.swift */,
+				C76B762928434FBD00DB212D /* Uncurry.swift */,
+				C76B762C284D33B800DB212D /* Weakify.swift */,
+			);
+			path = Functional;
+			sourceTree = "<group>";
+		};
+		C76B762B284D33A500DB212D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C76B762628434EEF00DB212D /* Functional */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		C784879D270074E6003240C9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +547,7 @@
 		C784879F270075A0003240C9 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				C76B762B284D33A500DB212D /* Common */,
 				C7418B0D2710E0340018A233 /* Services */,
 				C7AB92C2270F760500E4827B /* Network */,
 			);
@@ -1074,6 +1099,7 @@
 				C784886127007CFC003240C9 /* UIFont+Extensions.swift in Sources */,
 				C753B67E275B5E5400BC9B78 /* BloodPressureViewModel.swift in Sources */,
 				C78EAC7327CA17CE0082755E /* RelativeOncologyCell.swift in Sources */,
+				C76B762A28434FBD00DB212D /* Uncurry.swift in Sources */,
 				C784886327007CFC003240C9 /* UIView+Frame.swift in Sources */,
 				C74A2C0C26C6F1A9001F5508 /* AppDelegate.swift in Sources */,
 				C753B686275B60DF00BC9B78 /* GenderQuestionViewModel.swift in Sources */,
@@ -1113,6 +1139,7 @@
 				C789C71027104065001E7B75 /* TestAnchorJSON.swift in Sources */,
 				C784886927007CFC003240C9 /* ObserverType+Extension.swift in Sources */,
 				C784886527007CFC003240C9 /* Extensions.swift in Sources */,
+				C76B762828434F0C00DB212D /* PartialApply.swift in Sources */,
 				C7AB92C4270F761000E4827B /* Constants.swift in Sources */,
 				C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */,
 				C7D3E39F2700BC1D00A08407 /* SeparatedTextField.swift in Sources */,
@@ -1122,6 +1149,7 @@
 				C716A9E8278C383600C73C4F /* CommonNavigationController.swift in Sources */,
 				C7418B362710E7C50018A233 /* AnchorView.swift in Sources */,
 				C784887827007E5B003240C9 /* StartUpViewController.swift in Sources */,
+				C76B762D284D33B800DB212D /* Weakify.swift in Sources */,
 				C784887327007D22003240C9 /* InteractiveClosableViewModel.swift in Sources */,
 				C7418B2D2710E78B0018A233 /* YearViewCell.swift in Sources */,
 				C789C70927103E3D001E7B75 /* ChecklistViewModel.swift in Sources */,

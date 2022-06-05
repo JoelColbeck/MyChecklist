@@ -120,6 +120,11 @@ final class CheckboxView: XibView {
         setupView()
     }
     
+    // MARK: - Public Methods
+    func update(isSelected: Bool) {
+        isSelectedPublisher.accept(isSelected)
+    }
+    
     // MARK: - Private Methods
     private func setupView() {
         configureTapGesture()

@@ -57,6 +57,7 @@ final class BodyMetricsCell: BaseCollectionViewCell {
     // MARK: - Public Properties
     var ageValue: Observable<Int> {
         ageView.value
+            .debug()
             .compactMap { Int($0) }
     }
     

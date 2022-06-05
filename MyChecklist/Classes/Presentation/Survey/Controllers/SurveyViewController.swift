@@ -264,7 +264,7 @@ private extension SurveyViewController {
                     .disposed(by: bag)
                 
                 return cell
-            case .relativeOncology:
+            case let .relativeOncology(gender):
                 guard let cell = collectionView
                         .dequeueReusableCell(
                             withReuseIdentifier: "RelativeOncologyCell",
@@ -272,7 +272,31 @@ private extension SurveyViewController {
                         ) as? RelativeOncologyCell
                 else { return nil }
                 
-                cell.setup(with: dataContext.genderInput.value)
+                cell.setup(with: gender)
+                
+                cell.prostateSelected
+                    .bind(to: dataContext.relativeProstateInput)
+                    .disposed(by: bag)
+                
+                cell.cervicalSelected
+                    .bind(to: dataContext.relativeCervicalInput)
+                    .disposed(by: bag)
+                
+                cell.colonSelected
+                    .bind(to: dataContext.relativeColonInput)
+                    .disposed(by: bag)
+                
+                cell.stomachSelected
+                    .bind(to: dataContext.relativeStomachInput)
+                    .disposed(by: bag)
+                
+                cell.lungsSelected
+                    .bind(to: dataContext.relativeLungsInput)
+                    .disposed(by: bag)
+                
+                cell.melanomaSelected
+                    .bind(to: dataContext.relativeMelanomaInput)
+                    .disposed(by: bag)
 
                 return cell
             }

@@ -7,14 +7,36 @@
 
 import UIKit
 import RxRelay
+import RxSwift
 
 final class RelativeOncologyCell: BaseCollectionViewCell {
     // MARK: - Outputs
+    var prostateSelected: Observable<Bool> {
+        prostateCheckbox.isSelectedObservable
+    }
     
+    var cervicalSelected: Observable<Bool> {
+        cervicalCheckbox.isSelectedObservable
+    }
+    
+    var colonSelected: Observable<Bool> {
+        colonCheckbox.isSelectedObservable
+    }
+    
+    var stomachSelected: Observable<Bool> {
+        stomachCheckbox.isSelectedObservable
+    }
+    
+    var lungsSelected: Observable<Bool> {
+        lungsCheckbox.isSelectedObservable
+    }
+    
+    var melanomaSelected: Observable<Bool> {
+        melanomaCheckbox.isSelectedObservable
+    }
     
     // MARK: - Private Properties
     private var gender: Gender!
-    private var isSetted: Bool = false
     
     // MARK: - Inits
     override init(frame: CGRect) {
@@ -27,26 +49,24 @@ final class RelativeOncologyCell: BaseCollectionViewCell {
     
     // MARK: - Public Methods
     func setup(with gender: Gender?) {
-        guard !isSetted else { return }
         self.gender = gender
-        contentView.addSubview(primatyStackView)
+        primaryStackView.removeFromSuperview()
+        primaryStackView.clear()
+        contentView.addSubview(primaryStackView)
         configureStackView()
         
-        isSetted = true
-    }
-    
-    func update(with gender: Gender?) {
-        
+        prostateCheckbox.update(isSelected: false)
+        cervicalCheckbox.update(isSelected: false)
     }
     
     // MARK: - Private Methods
     private func configureStackView() {
         NSLayoutConstraint.activate([
-            primatyStackView.centerXAnchor
+            primaryStackView.centerXAnchor
                 .constraint(equalTo: contentView.centerXAnchor),
-            primatyStackView.centerYAnchor
+            primaryStackView.centerYAnchor
                 .constraint(equalTo: contentView.centerYAnchor),
-            primatyStackView.leadingAnchor
+            primaryStackView.leadingAnchor
                 .constraint(equalTo: contentView.leadingAnchor, constant: 20)
         ])
         
@@ -67,11 +87,11 @@ final class RelativeOncologyCell: BaseCollectionViewCell {
             stomachCheckbox,
             lungsCheckbox,
             melanomaCheckbox
-        ].forEach { primatyStackView.addArrangedSubview($0) }
+        ].forEach { primaryStackView.addArrangedSubview($0) }
     }
     
     // MARK: - Views
-    private let primatyStackView: UIStackView = {
+    private let primaryStackView: UIStackView = {
         let view = UIStackView()
         view.spacing = 20
         view.axis = .vertical
