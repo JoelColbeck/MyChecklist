@@ -48,6 +48,9 @@
 		C76B762828434F0C00DB212D /* PartialApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762728434F0C00DB212D /* PartialApply.swift */; };
 		C76B762A28434FBD00DB212D /* Uncurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762928434FBD00DB212D /* Uncurry.swift */; };
 		C76B762D284D33B800DB212D /* Weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762C284D33B800DB212D /* Weakify.swift */; };
+		C76B7633284D4E3100DB212D /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B7631284D4E3100DB212D /* PickerCell.swift */; };
+		C76B7636284D4E7C00DB212D /* PickerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B7635284D4E7C00DB212D /* PickerCellViewModel.swift */; };
+		C76B76382854B3D200DB212D /* TitleConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B76372854B3D200DB212D /* TitleConvertible.swift */; };
 		C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884127007A59003240C9 /* BaseCoordinator.swift */; };
 		C784885027007C5E003240C9 /* UIThrobber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784884F27007C5E003240C9 /* UIThrobber.swift */; };
 		C784885F27007CFC003240C9 /* UIViewAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784885227007CFC003240C9 /* UIViewAnchor+Extensions.swift */; };
@@ -164,6 +167,9 @@
 		C76B762728434F0C00DB212D /* PartialApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialApply.swift; sourceTree = "<group>"; };
 		C76B762928434FBD00DB212D /* Uncurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncurry.swift; sourceTree = "<group>"; };
 		C76B762C284D33B800DB212D /* Weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weakify.swift; sourceTree = "<group>"; };
+		C76B7631284D4E3100DB212D /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
+		C76B7635284D4E7C00DB212D /* PickerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCellViewModel.swift; sourceTree = "<group>"; };
+		C76B76372854B3D200DB212D /* TitleConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleConvertible.swift; sourceTree = "<group>"; };
 		C784884127007A59003240C9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C784884F27007C5E003240C9 /* UIThrobber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIThrobber.swift; sourceTree = "<group>"; };
 		C784885227007CFC003240C9 /* UIViewAnchor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewAnchor+Extensions.swift"; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 		C72E181F274177BD00191706 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C76B762E284D4DEF00DB212D /* PickerCell */,
 				C78EAC7127CA17A70082755E /* RelativeOncologyCell */,
 				C78EAC6C27C65A980082755E /* ChronicDiseases */,
 				C788FA3327B9916300A49772 /* FamilyDiseases */,
@@ -520,6 +527,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C76B762E284D4DEF00DB212D /* PickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				C76B7631284D4E3100DB212D /* PickerCell.swift */,
+				C76B7635284D4E7C00DB212D /* PickerCellViewModel.swift */,
+			);
+			path = PickerCell;
+			sourceTree = "<group>";
+		};
 		C784879D270074E6003240C9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +575,7 @@
 			children = (
 				C789C70F27104065001E7B75 /* TestAnchorJSON.swift */,
 				C72E181C27415C9300191706 /* Survey.swift */,
+				C76B76372854B3D200DB212D /* TitleConvertible.swift */,
 				C789C6FD27103649001E7B75 /* User.swift */,
 			);
 			path = Models;
@@ -1103,6 +1120,7 @@
 				C784886327007CFC003240C9 /* UIView+Frame.swift in Sources */,
 				C74A2C0C26C6F1A9001F5508 /* AppDelegate.swift in Sources */,
 				C753B686275B60DF00BC9B78 /* GenderQuestionViewModel.swift in Sources */,
+				C76B76382854B3D200DB212D /* TitleConvertible.swift in Sources */,
 				C784886827007CFC003240C9 /* Single+Extensions.swift in Sources */,
 				C7848880270080BE003240C9 /* MainViewModel.swift in Sources */,
 				C72E181A2741543900191706 /* SurveyViewController.swift in Sources */,
@@ -1112,6 +1130,7 @@
 				C784886627007CFC003240C9 /* UIWindow+Extensions.swift in Sources */,
 				C784887027007D22003240C9 /* InteractiveClosableManager.swift in Sources */,
 				C784886A27007CFC003240C9 /* TableView+Extensions.swift in Sources */,
+				C76B7633284D4E3100DB212D /* PickerCell.swift in Sources */,
 				C72E181D27415C9300191706 /* Survey.swift in Sources */,
 				C7FA4001275ABF9300450CA2 /* BaseCollectionViewCell.swift in Sources */,
 				C72E1814274153DC00191706 /* SurveyCoordinator.swift in Sources */,
@@ -1152,6 +1171,7 @@
 				C76B762D284D33B800DB212D /* Weakify.swift in Sources */,
 				C784887327007D22003240C9 /* InteractiveClosableViewModel.swift in Sources */,
 				C7418B2D2710E78B0018A233 /* YearViewCell.swift in Sources */,
+				C76B7636284D4E7C00DB212D /* PickerCellViewModel.swift in Sources */,
 				C789C70927103E3D001E7B75 /* ChecklistViewModel.swift in Sources */,
 				C7C96DD1271223B30084FF0C /* PinCodeView.swift in Sources */,
 				C784884227007A59003240C9 /* BaseCoordinator.swift in Sources */,

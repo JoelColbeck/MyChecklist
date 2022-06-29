@@ -13,6 +13,7 @@ final class SurveyViewModel: BaseViewModel {
     var snapshotOutput: Observable<SurveySnapshot> {
         snapshotPublisher
             .compactMap { $0 }
+            .observe(on: MainScheduler.instance)
     }
     
     var numberOfQuestionsOutput: Observable<Int> {
@@ -47,7 +48,9 @@ final class SurveyViewModel: BaseViewModel {
     let relativeStomachInput = PublishRelay<Bool>()
     let relativeLungsInput = PublishRelay<Bool>()
     let relativeMelanomaInput = PublishRelay<Bool>()
-    
+    let prostateCancerDetailsInput = PublishRelay<ProstateCancerDetails?>()
+    let colonCancerDetailsInput = PublishRelay<ColonCancerDetails?>()
+    let stomachCancerDetailsInput = PublishRelay<StomachCancerDetails?>()
     
     let closed = PublishRelay<Void>()
     
@@ -81,10 +84,7 @@ final class SurveyViewModel: BaseViewModel {
             }
         ).share()
         
-        gender
-            .compactMap { [weak self] _ in self?.generateSnapshot() }
-            .bind(to: snapshotPublisher)
-            .disposed(by: bag)
+        generateSnapshot(byUpdates: gender)
         
         subscribeSurvey(observable: gender, keyPath: \.gender)
         subscribeSurvey(observable: ageInput, keyPath: \.age)
@@ -129,6 +129,9 @@ final class SurveyViewModel: BaseViewModel {
             manKeyPath: \.hasMelanomaMan,
             womanKeyPath: \.hasMelanomaWoman
         )
+        generateSnapshot(byUpdates: relativeProstateInput)
+        generateSnapshot(byUpdates: relativeColonInput)
+        generateSnapshot(byUpdates: relativeStomachInput)
     }
     
     // MARK: - Private Methods
@@ -167,6 +170,13 @@ final class SurveyViewModel: BaseViewModel {
             .bind(to: surveyRelay)
             .disposed(by: bag)
     }
+    
+    private func generateSnapshot<T: ObservableType>(byUpdates observable: T) {
+        observable
+            .compactMap { [weak self] _ in self?.generateSnapshot() }
+            .bind(to: snapshotPublisher)
+            .disposed(by: bag)
+    }
 }
 
 private extension SurveyViewModel {
@@ -179,14 +189,26 @@ private extension SurveyViewModel {
         
         if let gender = genderInput.value {
             items.append(contentsOf: [
-                .bodyMetrics,
-                .smokeAlcohol,
-                .bloodPressure,
-                .additionalQuestions,
-                .familyDiseases,
-                .chronicDiseases,
+//                .bodyMetrics,
+//                .smokeAlcohol,
+//                .bloodPressure,
+//                .additionalQuestions,
+//                .familyDiseases,
+//                .chronicDiseases,
                 .relativeOncology(gender: gender),
             ])
+        }
+        
+        if surveyRelay.value.hasProstateCancer {
+            items.append(.prostateCancerDetails)
+        }
+        
+        if surveyRelay.value.hasColonCancerMan || surveyRelay.value.hasColonCancerWoman {
+            items.append(.colonCancerDetails)
+        }
+
+        if surveyRelay.value.hasStomachCancerMan || surveyRelay.value.hasStomachCancerWoman  {
+            items.append(.stomachCancerDetails)
         }
         
         snapshot.appendSections([0])
@@ -207,4 +229,7 @@ enum SurveyItemModel: Hashable {
     case familyDiseases
     case chronicDiseases
     case relativeOncology(gender: Gender)
+    case prostateCancerDetails
+    case colonCancerDetails
+    case stomachCancerDetails
 }

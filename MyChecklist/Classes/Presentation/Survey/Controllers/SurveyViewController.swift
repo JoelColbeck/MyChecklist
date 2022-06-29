@@ -37,6 +37,9 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             collectionView.register(nib: FamilyDiseasesCell.self)
             collectionView.register(class: ChronicDiseasesCell.self)
             collectionView.register(class: RelativeOncologyCell.self)
+            collectionView.register(class: PickerCell<ProstateCancerDetails>.self)
+            collectionView.register(class: PickerCell<ColonCancerDetails>.self)
+            collectionView.register(class: PickerCell<StomachCancerDetails>.self)
         }
     }
     weak var tapGesture: UITapGestureRecognizer!
@@ -111,7 +114,7 @@ private extension SurveyViewController {
             case .gender:
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "GenderQuestionCell",
+                            withReuseIdentifier: GenderQuestionCell.identifier,
                             for: indexPath
                         ) as? GenderQuestionCell
                 else { return nil }
@@ -128,7 +131,7 @@ private extension SurveyViewController {
             case .bodyMetrics:
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "BodyMetricsCell",
+                            withReuseIdentifier: BodyMetricsCell.identifier,
                             for: indexPath
                         ) as? BodyMetricsCell
                 else { return nil }
@@ -150,7 +153,7 @@ private extension SurveyViewController {
             case .smokeAlcohol:
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "SmokeAlcoholCell",
+                            withReuseIdentifier: SmokeAlcoholCell.identifier,
                             for: indexPath
                         ) as? SmokeAlcoholCell
                 else { return nil }
@@ -171,7 +174,7 @@ private extension SurveyViewController {
             case .bloodPressure:
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "BloodPressureCell",
+                            withReuseIdentifier: BloodPressureCell.identifier,
                             for: indexPath
                         ) as? BloodPressureCell
                 else { return nil }
@@ -187,7 +190,7 @@ private extension SurveyViewController {
             case .additionalQuestions:
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "AdditionalQuestionsCell",
+                            withReuseIdentifier: AdditionalQuestionsCell.identifier,
                             for: indexPath
                         ) as? AdditionalQuestionsCell
                 else { return nil }
@@ -209,7 +212,7 @@ private extension SurveyViewController {
             case .familyDiseases:
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "FamilyDiseasesCell",
+                            withReuseIdentifier: FamilyDiseasesCell.identifier,
                             for: indexPath
                         ) as? FamilyDiseasesCell
                 else { return nil }
@@ -234,7 +237,7 @@ private extension SurveyViewController {
             case .chronicDiseases:
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "ChronicDiseasesCell",
+                            withReuseIdentifier: ChronicDiseasesCell.identifier,
                             for: indexPath
                         ) as? ChronicDiseasesCell
                 else { return nil }
@@ -267,7 +270,7 @@ private extension SurveyViewController {
             case let .relativeOncology(gender):
                 guard let cell = collectionView
                         .dequeueReusableCell(
-                            withReuseIdentifier: "RelativeOncologyCell",
+                            withReuseIdentifier: RelativeOncologyCell.identifier,
                             for: indexPath
                         ) as? RelativeOncologyCell
                 else { return nil }
@@ -299,7 +302,21 @@ private extension SurveyViewController {
                     .disposed(by: bag)
 
                 return cell
+            case .prostateCancerDetails:
+                guard let cell = collectionView
+                        .dequeueReusableCell(
+                            withReuseIdentifier: PickerCell<ProstateCancerDetails>.identifier,
+                            for: indexPath
+                        ) as? PickerCell<ProstateCancerDetails>
+                else { return nil }
+                
+                
+                
+                return cell
+            case .stomachCancerDetails: break
+            case .colonCancerDetails: break
             }
+            return nil
         }
     }
 }

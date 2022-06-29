@@ -737,8 +737,8 @@ extension UICollectionView {
     func register<T: UICollectionViewCell>(nib: T.Type) {
         self.register(UINib(nibName: String(describing: nib), bundle: nil), forCellWithReuseIdentifier: String(describing: nib))
     }
-    func register<T: UICollectionViewCell>(class cellClass: T.Type) {
-        self.register(cellClass, forCellWithReuseIdentifier: String(describing: cellClass))
+    func register<T: BaseCollectionViewCell>(class cellClass: T.Type) {
+        self.register(cellClass, forCellWithReuseIdentifier: T.identifier)
     }
 }
 
