@@ -22,8 +22,8 @@ class ChecklistCoordinator: BaseParameterCoordinator<User> {
         
         return .create { [unowned self] obs in
             viewModel.closed
-                .bind {
-                    navigationController.popViewController(animated: true)
+                .bind { [weak self] in
+                    self?.navigationController.popViewController(animated: true)
                     obs(.success(()))
                 }
         }

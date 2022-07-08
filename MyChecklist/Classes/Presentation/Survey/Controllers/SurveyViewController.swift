@@ -117,6 +117,8 @@ extension SurveyViewController: UICollectionViewDelegateFlowLayout {
         let cellNumber = Int((offset / cellWidth).rounded(.toNearestOrEven))
         
         pageControl.currentPage = cellNumber
+        
+        view.endEditing(true)
     }
 }
 

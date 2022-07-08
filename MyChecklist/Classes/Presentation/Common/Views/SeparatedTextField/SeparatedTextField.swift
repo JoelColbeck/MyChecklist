@@ -70,23 +70,24 @@ class SeparatedTextField: XibView {
                         getter: { $0.textOrEmpty },
                         setter: { $0.text = $1 })
                     .skip(1)
-                    .subscribe(onNext: { text in
-                        updateValuePublisher.accept(())
+                    .subscribe(onNext: { [weak self] text in
+                        guard let self = self else { return }
+                        self.updateValuePublisher.accept(())
                         if text.isEmpty {
                             let prevTextField: UITextField
 
-                            switch getFirstFreeTextFieldIndex() - 1 {
+                            switch self.getFirstFreeTextFieldIndex() - 1 {
                             case let x where x < 0:
-                                prevTextField = textFields.first!
+                                prevTextField = self.textFields.first!
                             case let x where x >= 0:
-                                prevTextField = textFields[x]
+                                prevTextField = self.textFields[x]
                             default:
-                                prevTextField = textFields.first!
+                                prevTextField = self.textFields.first!
                             }
 
                             prevTextField.becomeFirstResponder()
                         } else {
-                            let nextTextField = textFields[getFirstFreeTextFieldIndex()]
+                            let nextTextField = self.textFields[self.getFirstFreeTextFieldIndex()]
 
                             nextTextField.becomeFirstResponder()
                         }

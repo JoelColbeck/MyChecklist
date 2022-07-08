@@ -61,7 +61,7 @@ class BaseCoordinator: AnyCoordinatable {
         let result = coordinator.start()
         result.subscribe(onSuccess: { [weak self] _ in
             self?.release(coordinator: coordinator)
-        }, onError: { [weak self] _ in
+        }, onFailure: { [weak self] _ in
             self?.release(coordinator: coordinator)
         }).disposed(by: bag)
         return result
@@ -74,7 +74,7 @@ class BaseCoordinator: AnyCoordinatable {
         let result = coordinator.start()
         result.subscribe(onSuccess: { [weak self] _ in
             self?.release(coordinator: coordinator)
-        }, onError: { [weak self] _ in
+        }, onFailure: { [weak self] _ in
             self?.release(coordinator: coordinator)
         }).disposed(by: bag)
         return result
@@ -87,7 +87,7 @@ class BaseCoordinator: AnyCoordinatable {
         let result = coordinator.start(parameter: parameter)
         result.subscribe(onSuccess: { [weak self] _ in
             self?.release(coordinator: coordinator)
-        }, onError: { [weak self] _ in
+        }, onFailure: { [weak self] _ in
             self?.release(coordinator: coordinator)
         }).disposed(by: bag)
         return result
