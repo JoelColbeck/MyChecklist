@@ -108,6 +108,9 @@ final class SurveyViewModel: BaseViewModel {
         subscribeSurvey(observable: chronicHivInput, keyPath: \.hasHiv)
         subscribeSurvey(observable: relativeProstateInput, keyPath: \.hasProstateCancer)
         subscribeSurvey(observable: relativeCervicalInput, keyPath: \.hasCervicalCancerWoman)
+        subscribeSurvey(observable: prostateCancerDetailsInput, keyPath: \.prostateCancerDetails)
+        subscribeSurvey(observable: colonCancerDetailsInput, keyPath: \.colonCancerDetails)
+        subscribeSurvey(observable: stomachCancerDetailsInput, keyPath: \.stomachCancerDetails)
         subscribeGenderSurvey(
             observable: relativeColonInput,
             manKeyPath: \.hasColonCancerMan,
@@ -132,6 +135,27 @@ final class SurveyViewModel: BaseViewModel {
         generateSnapshot(byUpdates: relativeProstateInput)
         generateSnapshot(byUpdates: relativeColonInput)
         generateSnapshot(byUpdates: relativeStomachInput)
+        relativeProstateInput
+            .subscribe(onNext: { [weak self] value in
+                if !value {
+                    self?.prostateCancerDetailsInput.accept(nil)
+                }
+            })
+            .disposed(by: bag)
+        relativeColonInput
+            .subscribe(onNext: { [weak self] value in
+                if !value {
+                    self?.colonCancerDetailsInput.accept(nil)
+                }
+            })
+            .disposed(by: bag)
+        relativeStomachInput
+            .subscribe(onNext: { [weak self] value in
+                if !value {
+                    self?.stomachCancerDetailsInput.accept(nil)
+                }
+            })
+            .disposed(by: bag)
     }
     
     // MARK: - Private Methods
@@ -186,23 +210,23 @@ private extension SurveyViewModel {
         var items: [SurveyItemModel] = [
             .gender,
         ]
-        
+
         if let gender = genderInput.value {
             items.append(contentsOf: [
-//                .bodyMetrics,
-//                .smokeAlcohol,
-//                .bloodPressure,
-//                .additionalQuestions,
-//                .familyDiseases,
-//                .chronicDiseases,
+                .bodyMetrics,
+                .smokeAlcohol,
+                .bloodPressure,
+                .additionalQuestions,
+                .familyDiseases,
+                .chronicDiseases,
                 .relativeOncology(gender: gender),
             ])
         }
-        
+
         if surveyRelay.value.hasProstateCancer {
             items.append(.prostateCancerDetails)
         }
-        
+
         if surveyRelay.value.hasColonCancerMan || surveyRelay.value.hasColonCancerWoman {
             items.append(.colonCancerDetails)
         }

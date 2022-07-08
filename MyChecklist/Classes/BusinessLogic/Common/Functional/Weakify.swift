@@ -18,6 +18,17 @@ func weakify<T: AnyObject>(
     }
 }
 
+func weakify<T: AnyObject, U>(
+    _ target: T,
+    in action: @escaping (T) -> (U) -> Void
+) -> (U) -> Void {
+    { [weak target] t1 in
+        if let target = target {
+            action(target)(t1)
+        }
+    }
+}
+
 func weakify<T: AnyObject, T1, T2>(
     _ target: T,
     in action: @escaping (T) -> (T1, T2) -> Void

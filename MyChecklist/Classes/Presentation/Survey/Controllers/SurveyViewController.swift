@@ -37,9 +37,18 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             collectionView.register(nib: FamilyDiseasesCell.self)
             collectionView.register(class: ChronicDiseasesCell.self)
             collectionView.register(class: RelativeOncologyCell.self)
-            collectionView.register(class: PickerCell<ProstateCancerDetails>.self)
-            collectionView.register(class: PickerCell<ColonCancerDetails>.self)
-            collectionView.register(class: PickerCell<StomachCancerDetails>.self)
+            collectionView.register(
+                TitleCell.self,
+                forCellWithReuseIdentifier: String(describing: ProstateCancerDetails.self)
+            )
+            collectionView.register(
+                TitleCell.self,
+                forCellWithReuseIdentifier: String(describing: StomachCancerDetails.self)
+            )
+            collectionView.register(
+                TitleCell.self,
+                forCellWithReuseIdentifier: String(describing: ColonCancerDetails.self)
+            )
         }
     }
     weak var tapGesture: UITapGestureRecognizer!
@@ -47,8 +56,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
     // MARK: - Public Properties
     typealias DataSource = UICollectionViewDiffableDataSource<Int, SurveyItemModel>
     
-    // MARK: - Private Properties
-    private lazy var dataSource = generateDataSource()
+    
     
     // MARK: - LC
     override func viewDidLoad() {
@@ -87,6 +95,14 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
         
         self.tapGesture = tap
     }
+    
+    // MARK: - Private Properties
+    
+    private lazy var dataSource = generateDataSource()
+    
+    private lazy var prostateCancerRadio = RadioListView<ProstateCancerDetails?>()
+    private lazy var stomachCancerRadio = RadioListView<StomachCancerDetails?>()
+    private lazy var colonCancerRadio = RadioListView<ColonCancerDetails?>()
 }
 
 extension SurveyViewController: UICollectionViewDelegateFlowLayout {
@@ -201,11 +217,11 @@ private extension SurveyViewController {
                 
                 cell.diabetesSelectedObservable
                     .bind(to: dataContext.diabetesInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.brokenBonesSelectedObservable
                     .bind(to: dataContext.brokenBonesInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 return cell
                 
@@ -223,15 +239,15 @@ private extension SurveyViewController {
                 
                 cell.strokeSelected
                     .bind(to: dataContext.familyStrokeInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.hipFractureSelected
                     .bind(to: dataContext.familyHipFractureInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.diabetesSelected
                     .bind(to: dataContext.familyDiabetesInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 return cell
             case .chronicDiseases:
@@ -248,7 +264,7 @@ private extension SurveyViewController {
                 
                 cell.cardioSelected
                     .bind(to: dataContext.chronicCardioInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.liverSelected
                     .bind(to: dataContext.chronicLiverInput)
@@ -256,15 +272,15 @@ private extension SurveyViewController {
                 
                 cell.stomachSelected
                     .bind(to: dataContext.chronicStomachInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.kidneysSelected
                     .bind(to: dataContext.chronicKidneysInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.hivSelected
                     .bind(to: dataContext.chronicHivInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 return cell
             case let .relativeOncology(gender):
@@ -279,44 +295,64 @@ private extension SurveyViewController {
                 
                 cell.prostateSelected
                     .bind(to: dataContext.relativeProstateInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.cervicalSelected
                     .bind(to: dataContext.relativeCervicalInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.colonSelected
                     .bind(to: dataContext.relativeColonInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.stomachSelected
                     .bind(to: dataContext.relativeStomachInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.lungsSelected
                     .bind(to: dataContext.relativeLungsInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
                 
                 cell.melanomaSelected
                     .bind(to: dataContext.relativeMelanomaInput)
-                    .disposed(by: bag)
+                    .disposed(by: cell.bag)
 
                 return cell
-            case .prostateCancerDetails:
+            case .prostateCancerDetails, .colonCancerDetails, .stomachCancerDetails:
                 guard let cell = collectionView
-                        .dequeueReusableCell(
-                            withReuseIdentifier: PickerCell<ProstateCancerDetails>.identifier,
-                            for: indexPath
-                        ) as? PickerCell<ProstateCancerDetails>
+                    .dequeueReusableCell(
+                        withReuseIdentifier: String(describing: ProstateCancerDetails.self),
+                        for: indexPath
+                    ) as? TitleCell
                 else { return nil }
                 
+                let title: String
+                let radioView: UIView
                 
+                switch itemIdentifier {
+                case .prostateCancerDetails:
+                    title = "простаты"
+                    radioView = prostateCancerRadio
+                case .colonCancerDetails:
+                    title = "прямой кишки"
+                    radioView = colonCancerRadio
+                case .stomachCancerDetails:
+                    title = "желудка"
+                    radioView = stomachCancerRadio
+                default:
+                    assertionFailure("Should not be called here")
+                    title = ""
+                    radioView = UIView()
+                    break
+                }
+                
+                cell.setup(
+                    title: "Пожалуйста, расскажите подробнее про рак \(title) у родственников",
+                    view: radioView
+                )
                 
                 return cell
-            case .stomachCancerDetails: break
-            case .colonCancerDetails: break
             }
-            return nil
         }
     }
 }

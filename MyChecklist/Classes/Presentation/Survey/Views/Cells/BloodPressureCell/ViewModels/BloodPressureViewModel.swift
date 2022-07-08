@@ -24,8 +24,10 @@ final class BloodPressureViewModel: BaseViewModel {
         BloodPressure.allCases.count + 1
     }
     
-    func bloodPressureTitle(forRow row: Int) -> String? {
-        guard let bloodPressure = BloodPressure.allCases[safe: row - 1] else { return nil }
+    func bloodPressureTitle(forRow row: Int) -> String {
+        guard let bloodPressure = BloodPressure.allCases[safe: row - 1] else {
+            return "Затрудняюсь ответить"
+        }
         
         switch bloodPressure {
         case .high: return "Высокое"

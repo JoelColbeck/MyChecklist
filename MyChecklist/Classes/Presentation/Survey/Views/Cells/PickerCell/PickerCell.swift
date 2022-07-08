@@ -10,18 +10,6 @@ import UIKit
 final class PickerCell<T: CaseIterable & TitleConvertible>:
     ReactiveCollectionViewCell<PickerCellViewModel<T>>,
     UIPickerViewDelegate, UIPickerViewDataSource {
-    // MARK: - Output
-    
-    
-    // MARK: - Inits
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initalize()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) was not implemented")
-    }
     
     // MARK: - Public Methods
     override func applyBindings() {
@@ -32,8 +20,8 @@ final class PickerCell<T: CaseIterable & TitleConvertible>:
         
     }
     
-    // MARK: - Private Methods
-    private func initalize() {
+    override func initialize() {
+        super.initialize()
         pickerView.dataSource = self
         pickerView.delegate = self
         
@@ -97,15 +85,8 @@ final class PickerCell<T: CaseIterable & TitleConvertible>:
             resultLabel.font = .gilroySemibold(ofSize: UIConstants.pickerRowSize)
             resultLabel.numberOfLines = 2
         }
-        
-        let text: String
-        if row == 0 {
-            text = "Затрудняюсь ответить"
-        } else {
-            text = Self.titles[row - 1]
-        }
-        
-        resultLabel.text = text
+
+        resultLabel.text = Self.titles[safe: row - 1] ?? "Затрудняюсь ответить"
         
         return resultLabel
     }

@@ -49,14 +49,15 @@ final class RelativeOncologyCell: BaseCollectionViewCell {
     
     // MARK: - Public Methods
     func setup(with gender: Gender?) {
-        self.gender = gender
         primaryStackView.removeFromSuperview()
         primaryStackView.clear()
         contentView.addSubview(primaryStackView)
+        if self.gender != gender {
+            prostateCheckbox.update(isSelected: false)
+            cervicalCheckbox.update(isSelected: false)
+        }
+        self.gender = gender
         configureStackView()
-        
-        prostateCheckbox.update(isSelected: false)
-        cervicalCheckbox.update(isSelected: false)
     }
     
     // MARK: - Private Methods
