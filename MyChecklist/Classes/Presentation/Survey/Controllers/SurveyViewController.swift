@@ -13,7 +13,7 @@ typealias SurveySnapshot = NSDiffableDataSourceSnapshot<Int, SurveyItemModel>
 
 final class SurveyViewController: BaseViewController<SurveyViewModel> {
     // MARK: - Outlets
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var surveyNavigation: SurveyNavigationView!
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             let layout = UICollectionViewFlowLayout()
@@ -23,6 +23,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             
             collectionView.isPagingEnabled = true
             collectionView.showsHorizontalScrollIndicator = false
+            collectionView.isScrollEnabled = false
             
             collectionView.collectionViewLayout = layout
             
@@ -51,6 +52,7 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             )
         }
     }
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     weak var tapGesture: UITapGestureRecognizer!
     
     // MARK: - Public Properties
@@ -74,7 +76,36 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
             .disposed(by: bag)
         
         dataContext.numberOfQuestionsOutput
-            .bind(to: pageControl.rx.numberOfPages)
+            .bind(to: surveyNavigation.maxCountBehavior)
+            .disposed(by: bag)
+        
+        surveyNavigation.currentBehavior.accept(1)
+        
+        surveyNavigation.nextTap
+            .withLatestFrom(surveyNavigation.currentBehavior.asDriver())
+            .emit(onNext: weakify(self, in: type(of: self).scrollToPage(_:)))
+            .disposed(by: bag)
+        
+        surveyNavigation.backTap
+            .withLatestFrom(surveyNavigation.currentBehavior.asDriver())
+            .emit(onNext: weakify(self, in: type(of: self).scrollToPage(_:)))
+            .disposed(by: bag)
+        
+        let getRectFromNotification = { (notification: Notification) -> CGRect in
+            (notification.userInfo?[Self.keyboardFrameEndUserInfoKey] as? NSValue)?
+                .cgRectValue ?? .zero
+        }
+        
+        NotificationCenter.keyboardWillShow
+            .observe(on: MainScheduler.instance)
+            .map(getRectFromNotification)
+            .map { [weak self] in -($0.height - (self?.safeAreaInsets.bottom ?? 0)) }
+            .bind(to: bottomConstraint.rx.animatedConstant)
+            .disposed(by: bag)
+        
+        NotificationCenter.keyboardWillHide
+            .map { _ in 0 }
+            .bind(to: bottomConstraint.rx.animatedConstant)
             .disposed(by: bag)
     }
     
@@ -96,6 +127,15 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
         self.tapGesture = tap
     }
     
+    private func scrollToPage(_ newPage: Int) {
+        let newPage = IndexPath(row: newPage - 1, section: 0)
+        collectionView.scrollToItem(
+            at: newPage,
+            at: .centeredHorizontally,
+            animated: true
+        )
+    }
+
     // MARK: - Private Properties
     
     private lazy var dataSource = generateDataSource()
@@ -108,17 +148,6 @@ final class SurveyViewController: BaseViewController<SurveyViewModel> {
 extension SurveyViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = collectionView.contentOffset.x
-        let cellWidth = collectionView.frame.width
-        
-        let cellNumber = Int((offset / cellWidth).rounded(.toNearestOrEven))
-        
-        pageControl.currentPage = cellNumber
-        
-        view.endEditing(true)
     }
 }
 
