@@ -59,7 +59,6 @@ final class RadioListView<T: RadioEnum>: UIView {
                     .disposed(by: bag)
                 return button
             }
-            .onSide(buttonsStack.addArrangedSubview(_:))
     }
     
     private func subscribe() {

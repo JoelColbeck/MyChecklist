@@ -13,3 +13,10 @@ func partialApply<T, U, V, R>(_ block: @escaping (T, U, V) -> R, p1: T) -> (U, V
     }
     return forward(p2:p3:)
 }
+
+func partialApply<T, R>(_ block: @escaping (T) -> R, _ p1: T) -> () -> R {
+    func forward() -> R {
+        block(p1)
+    }
+    return forward
+}

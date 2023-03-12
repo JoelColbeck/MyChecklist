@@ -9,8 +9,4 @@ target 'MyChecklist' do
   pod 'RxCocoa', :inhibit_warnings => true
   pod 'RxDataSources', :inhibit_warnings => true
   pod 'Moya/RxSwift', :inhibit_warnings => true
-  pod 'lottie-ios', :inhibit_warnings => true
-  pod 'Hero', :inhibit_warnings => true
-  pod 'ProgressHUD', :inhibit_warnings => true
-
 end
