@@ -67,7 +67,6 @@ final class RadioButton: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .gilroySemibold(ofSize: UIConstants.pickerRowSize)
         label.numberOfLines = 0
         label.baselineAdjustment = .alignCenters
         label.translatesAutoresizingMaskIntoConstraints = false
