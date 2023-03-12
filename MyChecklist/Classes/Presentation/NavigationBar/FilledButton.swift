@@ -73,6 +73,9 @@ final class FilledButton: UIView {
         self.viewState = viewState
         var config = UIButton.Configuration.plain()
         config.image = UIImage(descriptor: viewState.image)
+        var insets = config.contentInsets
+        insets.top = 10
+        config.contentInsets = insets
 
         button.configuration = config
         backgroundColor = viewState.backgroundColor

@@ -98,6 +98,7 @@ final class NavigationBarView: UIView {
             equalTo: yearPicker.trailingAnchor,
             constant: itemSpacing
         )
+        checklistsButton.widthAnchor.constraint(equalToConstant: itemHeight)
         checklistsButton.trailingAnchor.constraint(
             equalTo: trailingAnchor,
             constant: -horizontalInset
@@ -181,5 +182,5 @@ private let titleHorizontalInset: CGFloat = 25
 private let horizontalInset: CGFloat = 18
 private let topInset: CGFloat = 15
 private let itemSpacing: CGFloat = 10
-private let itemHeight: CGFloat = 70
+private let itemHeight: CGFloat = 55
 private let bottomSpacing: CGFloat = 20

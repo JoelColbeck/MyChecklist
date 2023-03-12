@@ -25,7 +25,6 @@
 		C76B762A28434FBD00DB212D /* Uncurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762928434FBD00DB212D /* Uncurry.swift */; };
 		C76B762D284D33B800DB212D /* Weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762C284D33B800DB212D /* Weakify.swift */; };
 		C76B76382854B3D200DB212D /* TitleConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B76372854B3D200DB212D /* TitleConvertible.swift */; };
-		C784888A27008418003240C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C784888827008418003240C9 /* MainViewController.swift */; };
 		C784888F27008CA7003240C9 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C784888E27008CA4003240C9 /* Gilroy-Bold.ttf */; };
 		C784889127008CAD003240C9 /* Gilroy-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C784889027008CAD003240C9 /* Gilroy-Semibold.ttf */; };
 		C784889327008EEF003240C9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C784889227008EEF003240C9 /* Colors.xcassets */; };
@@ -43,6 +42,7 @@
 		C7AB92C4270F761000E4827B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C3270F761000E4827B /* Constants.swift */; };
 		C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* UserApiMethod.swift */; };
 		C7F34EF02878507400A8DB74 /* Optional+Conformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */; };
+		C7F69A3829BE89F700AD7F62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F69A3729BE89F700AD7F62 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		C76B762928434FBD00DB212D /* Uncurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncurry.swift; sourceTree = "<group>"; };
 		C76B762C284D33B800DB212D /* Weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weakify.swift; sourceTree = "<group>"; };
 		C76B76372854B3D200DB212D /* TitleConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleConvertible.swift; sourceTree = "<group>"; };
-		C784888827008418003240C9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C784888E27008CA4003240C9 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		C784889027008CAD003240C9 /* Gilroy-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Semibold.ttf"; sourceTree = "<group>"; };
 		C784889227008EEF003240C9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		C7AB92C3270F761000E4827B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7AB92C5270F772E00E4827B /* UserApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiMethod.swift; sourceTree = "<group>"; };
 		C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Conformance.swift"; sourceTree = "<group>"; };
+		C7F69A3729BE89F700AD7F62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,13 +236,13 @@
 		C784879E2700758B003240C9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C7F69A3629BE89F200AD7F62 /* Main */,
 				C72B9F2029B90A4F008D78B4 /* Constraints */,
 				C78AE85F29AEABB800477D16 /* Images */,
 				C78AE85C29AEA52100477D16 /* Localization */,
 				C78AE85729AE9DCB00477D16 /* Palette */,
 				C78AE85329AE979100477D16 /* NavigationBar */,
 				C71F5DB0286C78B400957208 /* RadioButtons */,
-				C784887927007EBB003240C9 /* Main */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -267,14 +267,6 @@
 				C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		C784887927007EBB003240C9 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				C784888827008418003240C9 /* MainViewController.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		C784888C27008C9B003240C9 /* Common */ = {
@@ -355,6 +347,14 @@
 				C789C70027103BAF001E7B75 /* NetworkLoggingPlugin.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C7F69A3629BE89F200AD7F62 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C7F69A3729BE89F700AD7F62 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,6 +519,7 @@
 				C78AE86E29B8DA2B00477D16 /* FunctionComposition.swift in Sources */,
 				C7F34EF02878507400A8DB74 /* Optional+Conformance.swift in Sources */,
 				C72B9F2229B90A56008D78B4 /* ConstraintActivator.swift in Sources */,
+				C7F69A3829BE89F700AD7F62 /* MainViewController.swift in Sources */,
 				C72E181D27415C9300191706 /* Survey.swift in Sources */,
 				C789C6FC2710352B001E7B75 /* UserService.swift in Sources */,
 				C71F5DB6286CC12100957208 /* RadioButton.swift in Sources */,
@@ -538,7 +539,6 @@
 				C76B762D284D33B800DB212D /* Weakify.swift in Sources */,
 				C78AE86729B8C90A00477D16 /* SegmentedControl.swift in Sources */,
 				C78AE85529AE979A00477D16 /* NavigationBarView.swift in Sources */,
-				C784888A27008418003240C9 /* MainViewController.swift in Sources */,
 				C78AE85929AE9DE200477D16 /* Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,8 +52,10 @@ final class SegmentedControl: UIView {
 
     func clearSelection() {
         selectedIndex = nil
+        self.selectedBackgroundLeadingConstraint.constant = self.frame.maxX
         UIView.animate(withDuration: 0.5) {
             self.selectedBackground.alpha = 0
+            self.layoutIfNeeded()
         }
     }
     
