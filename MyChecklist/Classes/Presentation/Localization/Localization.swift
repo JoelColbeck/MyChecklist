@@ -10,4 +10,5 @@ import Foundation
 enum Localization {
     static let currentYear = "На этот год"
     static let futureYears = "В будущем"
+    static let mainTitle = "Мой чеклист"
 }

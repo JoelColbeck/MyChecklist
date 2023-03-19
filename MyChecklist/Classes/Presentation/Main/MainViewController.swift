@@ -20,7 +20,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         let navigationBar = NavigationBarView()
-        navigationBar.setup(title: "Мой чеклист")
+        navigationBar.setup(title: Localization.mainTitle)
         view.addSubview(navigationBar)
         NSLayoutConstraint.activate([
             navigationBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
