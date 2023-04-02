@@ -1,0 +1,815 @@
+ [
+  {
+    "testAnchor": "hiv",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 25
+      }
+    ]
+  },
+  {
+    "testAnchor": "cholesterolTest",
+    "conditions": [
+      {
+        "question_id": "bloodPressure",
+        "answer": "high"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 4,
+        "startAge": 21,
+        "endAge": 40
+      }
+    ]
+  },
+  {
+    "testAnchor": "cholesterolTest",
+    "conditions": [
+      {
+        "question_id": "bmi",
+        "type": "moreThan",
+        "answer": "30"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 4,
+        "startAge": 21,
+        "endAge": 40
+      }
+    ]
+  },
+  {
+    "testAnchor": "cholesterolTest",
+    "conditions": [],
+    "frequencies": [
+      {
+        "repeatEvery": 4,
+        "startAge": 40,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "cholesterolTest",
+    "conditions": [
+      {
+        "question_id": "highCholesterol",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 30,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "hemoglobin",
+    "conditions": [],
+    "frequencies": [
+      {
+        "repeatEvery": 1
+      }
+    ]
+  },
+  {
+    "testAnchor": "colonoscopy",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 45
+      }
+    ]
+  },
+  {
+    "testAnchor": "gastroscopy",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 45
+      }
+    ]
+  },
+  {
+    "testAnchor": "helicobacteria",
+    "conditions": [
+      {
+        "question_id": "stomachCancerDetails",
+        "answer": "under50"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 20
+      }
+    ]
+  },
+  {
+    "testAnchor": "helicobacteria",
+    "conditions": [
+      {
+        "question_id": "colonCancerMan",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 20
+      }
+    ]
+  },
+  {
+    "testAnchor": "helicobacteria",
+    "conditions": [
+      {
+        "question_id": "colonCancerWoman",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 20
+      }
+    ]
+  },
+  {
+    "testAnchor": "diabeticEye",
+    "conditions": [
+      {
+        "question_id": "hasDiabetis",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 18
+      }
+    ]
+  },
+  {
+    "testAnchor": "FPG",
+    "conditions": [
+      {
+        "question_id": "familyDiabetes",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 30
+      }
+    ]
+  },
+  {
+    "testAnchor": "FPG",
+    "conditions": [
+      {
+        "question_id": "bmi",
+        "type": "moreThan",
+        "answer": "25"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 30
+      }
+    ]
+  },
+  {
+    "testAnchor": "FPG",
+    "conditions": [
+      {
+        "question_id": "bloodPressure",
+        "answer": "high"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 30
+      }
+    ]
+  },
+  {
+    "testAnchor": "FPG",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 65
+      }
+    ]
+  },
+  {
+    "testAnchor": "aneurysmScreening",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "man"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 65
+      }
+    ]
+  },
+  {
+    "testAnchor": "СT-lungs",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "man"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 65
+      }
+    ]
+  },
+  {
+    "testAnchor": "СT-lungs",
+    "conditions": [
+      {
+        "question_id": "smokingQuestion",
+        "answer": "man"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 55,
+        "endAge": 74
+      }
+    ]
+  },
+  {
+    "testAnchor": "СT-lungs",
+    "conditions": [
+      {
+        "question_id": "smokingQuestion",
+        "answer": "quitSmoking"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 55,
+        "endAge": 74
+      }
+    ]
+  },
+  {
+    "testAnchor": "breastcancer",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "woman"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 45,
+        "endAge": 54
+      }
+    ]
+  },
+  {
+    "testAnchor": "stomachCancerGeneticTest",
+    "conditions": [
+      {
+        "question_id": "stomachCancerDetails",
+        "answer": "morethan3"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 20
+      }
+    ]
+  },
+  {
+    "testAnchor": "stomachCancerGeneticTest",
+    "conditions": [
+      {
+        "question_id": "stomachCancerDetails",
+        "answer": "under40"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 27
+      }
+    ]
+  },
+  {
+    "testAnchor": "stomachCancerGeneticTest",
+    "conditions": [
+      {
+        "question_id": "stomachCancerDetails",
+        "answer": "under50"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 35
+      }
+    ]
+  },
+  {
+    "testAnchor": "stomachCancerGeneticTest",
+    "conditions": [
+      {
+        "question_id": "stomachCancerDetails",
+        "answer": "complex"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 35
+      }
+    ]
+  },
+  {
+    "testAnchor": "psa",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "man"
+      },
+      {
+        "question_id": "prostateCancer",
+        "answer": "true"
+      },
+      {
+        "question_id": "prostateCancerDetails",
+        "answer": "morethan1"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 40,
+        "endAge": 70
+      }
+    ]
+  },
+  {
+    "testAnchor": "psa",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "man"
+      },
+      {
+        "question_id": "prostateCancer",
+        "answer": "true"
+      },
+      {
+        "question_id": "prostateCancerDetails",
+        "answer": "morethan1"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1,
+        "startAge": 40,
+        "endAge": 70
+      }
+    ]
+  },
+  {
+    "testAnchor": "psa",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "man"
+      },
+      {
+        "question_id": "prostateCancer",
+        "answer": "true"
+      },
+      {
+        "question_id": "prostateCancerDetails",
+        "answer": "under65"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 2,
+        "startAge": 42,
+        "endAge": 90
+      }
+    ]
+  },
+  {
+    "testAnchor": "psa",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "man"
+      },
+      {
+        "question_id": "prostateCancer",
+        "answer": "true"
+      },
+      {
+        "question_id": "prostateCancerDetails",
+        "answer": "over65"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 3,
+        "startAge": 45,
+        "endAge": 95
+      }
+    ]
+  },
+  {
+    "testAnchor": "psa-baseline",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "man"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 40
+      }
+    ]
+  },
+  {
+    "testAnchor": "colonoscopy",
+    "conditions": [
+      {
+        "question_id": "colonCancerMan",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 10,
+        "startAge": 50,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "colonoscopy",
+    "conditions": [
+      {
+        "question_id": "colonCancerWoman",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 10,
+        "startAge": 50,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "colonoscopy",
+    "conditions": [
+      {
+        "question_id": "colonCancerDetails",
+        "answer": "lessthan60"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 5,
+        "startAge": 40,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "colonoscopy",
+    "conditions": [
+      {
+        "question_id": "colonCancerDetails",
+        "answer": "colonCancerDetails"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 5,
+        "startAge": 40,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "colonoscopy",
+    "conditions": [
+      {
+        "question_id": "colonCancerDetails",
+        "answer": "over60"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 10,
+        "startAge": 40,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "colonoscopy",
+    "conditions": [
+      {
+        "question_id": "colonCancerDetails",
+        "answer": "manyCousins"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 10,
+        "startAge": 40,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "gastroscopy",
+    "conditions": [
+      {
+        "question_id": "chronicStomach",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 10,
+        "startAge": 40,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "FOBT",
+    "conditions": [],
+    "frequencies": [
+      {
+        "repeatEvery": 10,
+        "startAge": 45,
+        "endAge": 75
+      }
+    ]
+  },
+  {
+    "testAnchor": "HPV",
+    "conditions": [
+      {
+        "question_id": "gender",
+        "answer": "woman"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 18
+      }
+    ]
+  },
+  {
+    "testAnchor": "herpesVaccine",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 20
+      }
+    ]
+  },
+  {
+    "testAnchor": "pneumococcus",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 25
+      }
+    ]
+  },
+  {
+    "testAnchor": "pillar",
+    "conditions": [],
+    "frequencies": [
+      {
+        "repeatEvery": 10
+      }
+    ]
+  },
+  {
+    "testAnchor": "diphtheria",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 20
+      }
+    ]
+  },
+  {
+    "testAnchor": "measles",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 24
+      }
+    ]
+  },
+  {
+    "testAnchor": "melanoma",
+    "conditions": [
+      {
+        "question_id": "melanomaMan",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1
+      }
+    ]
+  },
+  {
+    "testAnchor": "melanoma",
+    "conditions": [
+      {
+        "question_id": "melanomaWoman",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 1
+      }
+    ]
+  },
+  {
+    "testAnchor": "dispancer",
+    "conditions": [],
+    "frequencies": [
+      {
+        "repeatEvery": 3,
+        "startAge": 15,
+        "endAge": 45
+      }
+    ]
+  },
+  {
+    "testAnchor": "dentist",
+    "conditions": [],
+    "frequencies": [
+      {
+        "repeatEvery": 2,
+        "endAge": 65
+      }
+    ]
+  },
+  {
+    "testAnchor": "vitaminD",
+    "conditions": [],
+    "frequencies": [
+      {
+        "oneTime": 18
+      }
+    ]
+  },
+  {
+    "testAnchor": "osteoporosis",
+    "conditions": [
+      {
+        "question_id": "brokeBone",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 5,
+        "startAge": 50,
+        "endAge": 69
+      }
+    ]
+  },
+  {
+    "testAnchor": "osteoporosis",
+    "conditions": [
+      {
+        "question_id": "relativeHipBroke",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 5,
+        "startAge": 50,
+        "endAge": 69
+      }
+    ]
+  },
+  {
+    "testAnchor": "osteoporosis",
+    "conditions": [
+      {
+        "question_id": "alcoholDrink",
+        "answer": "heavyDrinker"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 5,
+        "startAge": 50,
+        "endAge": 69
+      }
+    ]
+  },
+  {
+    "testAnchor": "osteoporosis",
+    "conditions": [
+      {
+        "question_id": "brokeBone",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 3,
+        "startAge": 70
+      }
+    ]
+  },
+  {
+    "testAnchor": "osteoporosis",
+    "conditions": [
+      {
+        "question_id": "relativeHipBroke",
+        "answer": "true"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 3,
+        "startAge": 70
+      }
+    ]
+  },
+  {
+    "testAnchor": "osteoporosis",
+    "conditions": [
+      {
+        "question_id": "alcoholDrink",
+        "answer": "heavyDrinker"
+      }
+    ],
+    "frequencies": [
+      {
+        "repeatEvery": 3,
+        "startAge": 70
+      }
+    ]
+  },
+  {
+    "testAnchor": "dietologist",
+    "conditions": [
+      {
+        "question_id": "bmi",
+        "type": "moreThan",
+        "answer": "25"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 18
+      }
+    ]
+  },
+  {
+    "testAnchor": "dietologist",
+    "conditions": [
+      {
+        "question_id": "bmi",
+        "type": "lessThan",
+        "answer": "18"
+      }
+    ],
+    "frequencies": [
+      {
+        "oneTime": 18
+      }
+    ]
+  }
+]
