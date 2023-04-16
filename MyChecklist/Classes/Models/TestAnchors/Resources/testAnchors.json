@@ -113,21 +113,7 @@
     "testAnchor": "helicobacteria",
     "conditions": [
       {
-        "question_id": "colonCancerMan",
-        "answer": "true"
-      }
-    ],
-    "frequencies": [
-      {
-        "oneTime": 20
-      }
-    ]
-  },
-  {
-    "testAnchor": "helicobacteria",
-    "conditions": [
-      {
-        "question_id": "colonCancerWoman",
+        "question_id": "colonCancer",
         "answer": "true"
       }
     ],
@@ -141,7 +127,7 @@
     "testAnchor": "diabeticEye",
     "conditions": [
       {
-        "question_id": "hasDiabetis",
+        "question_id": "hasDiabetes",
         "answer": "true"
       }
     ],
@@ -453,23 +439,7 @@
     "testAnchor": "colonoscopy",
     "conditions": [
       {
-        "question_id": "colonCancerMan",
-        "answer": "true"
-      }
-    ],
-    "frequencies": [
-      {
-        "repeatEvery": 10,
-        "startAge": 50,
-        "endAge": 75
-      }
-    ]
-  },
-  {
-    "testAnchor": "colonoscopy",
-    "conditions": [
-      {
-        "question_id": "colonCancerWoman",
+        "question_id": "colonCancer",
         "answer": "true"
       }
     ],
@@ -702,6 +672,10 @@
         "repeatEvery": 5,
         "startAge": 50,
         "endAge": 69
+      },
+      {
+        "repeatEvery": 3,
+        "startAge": 70
       }
     ]
   },
@@ -734,21 +708,6 @@
         "repeatEvery": 5,
         "startAge": 50,
         "endAge": 69
-      }
-    ]
-  },
-  {
-    "testAnchor": "osteoporosis",
-    "conditions": [
-      {
-        "question_id": "brokeBone",
-        "answer": "true"
-      }
-    ],
-    "frequencies": [
-      {
-        "repeatEvery": 3,
-        "startAge": 70
       }
     ]
   },

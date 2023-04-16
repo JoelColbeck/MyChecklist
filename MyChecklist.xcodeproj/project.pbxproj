@@ -43,6 +43,9 @@
 		C7AB92C4270F761000E4827B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C3270F761000E4827B /* Constants.swift */; };
 		C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AB92C5270F772E00E4827B /* UserApiMethod.swift */; };
 		C7EA0EB829D9961700713599 /* testContents.json in Resources */ = {isa = PBXBuildFile; fileRef = C7EA0EB729D9961700713599 /* testContents.json */; };
+		C7EA0EBC29D99F5E00713599 /* NewSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA0EBB29D99F5E00713599 /* NewSurvey.swift */; };
+		C7EA0EBE29D9A25E00713599 /* SurveyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA0EBD29D9A25E00713599 /* SurveyService.swift */; };
+		C7EA0EC029EB2A0600713599 /* QuestionIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA0EBF29EB2A0600713599 /* QuestionIdentifiable.swift */; };
 		C7F34EF02878507400A8DB74 /* Optional+Conformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */; };
 		C7F69A3829BE89F700AD7F62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F69A3729BE89F700AD7F62 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +102,9 @@
 		C7AB92C3270F761000E4827B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7AB92C5270F772E00E4827B /* UserApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiMethod.swift; sourceTree = "<group>"; };
 		C7EA0EB729D9961700713599 /* testContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testContents.json; sourceTree = "<group>"; };
+		C7EA0EBB29D99F5E00713599 /* NewSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSurvey.swift; sourceTree = "<group>"; };
+		C7EA0EBD29D9A25E00713599 /* SurveyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyService.swift; sourceTree = "<group>"; };
+		C7EA0EBF29EB2A0600713599 /* QuestionIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionIdentifiable.swift; sourceTree = "<group>"; };
 		C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Conformance.swift"; sourceTree = "<group>"; };
 		C7F69A3729BE89F700AD7F62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,9 +287,11 @@
 		C78487A0270075C0003240C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C7EA0EBA29D99F5A00713599 /* Survey */,
 				C76937AF29D989E20051B8C4 /* TestAnchors */,
 				C72E181C27415C9300191706 /* Survey.swift */,
 				C76B76372854B3D200DB212D /* TitleConvertible.swift */,
+				C7EA0EBF29EB2A0600713599 /* QuestionIdentifiable.swift */,
 				C789C6FD27103649001E7B75 /* User.swift */,
 				C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */,
 			);
@@ -377,6 +385,15 @@
 				C76937AB29D989B70051B8C4 /* testAnchors.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C7EA0EBA29D99F5A00713599 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				C7EA0EBB29D99F5E00713599 /* NewSurvey.swift */,
+				C7EA0EBD29D9A25E00713599 /* SurveyService.swift */,
+			);
+			path = Survey;
 			sourceTree = "<group>";
 		};
 		C7F69A3629BE89F200AD7F62 /* Main */ = {
@@ -559,6 +576,7 @@
 				C72B9F2429B90CDE008D78B4 /* FilledButton.swift in Sources */,
 				C7418B0F2710E03F0018A233 /* TestAnchorService.swift in Sources */,
 				C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */,
+				C7EA0EC029EB2A0600713599 /* QuestionIdentifiable.swift in Sources */,
 				C789C71027104065001E7B75 /* TestAnchor.swift in Sources */,
 				C78AE85E29AEA52A00477D16 /* Localization.swift in Sources */,
 				C78AE86C29B8DA2100477D16 /* pass.swift in Sources */,
@@ -570,6 +588,8 @@
 				C78AE86129AEABBE00477D16 /* ImageDescriptor .swift in Sources */,
 				C76B762D284D33B800DB212D /* Weakify.swift in Sources */,
 				C78AE86729B8C90A00477D16 /* SegmentedControl.swift in Sources */,
+				C7EA0EBC29D99F5E00713599 /* NewSurvey.swift in Sources */,
+				C7EA0EBE29D9A25E00713599 /* SurveyService.swift in Sources */,
 				C78AE85529AE979A00477D16 /* NavigationBarView.swift in Sources */,
 				C78AE85929AE9DE200477D16 /* Palette.swift in Sources */,
 			);

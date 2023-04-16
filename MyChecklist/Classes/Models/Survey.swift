@@ -48,15 +48,10 @@ struct Survey: Codable {
     var colonCancerDetails: ColonCancerDetails? // colonCancerDetails
 }
 
-enum Gender: String, Codable, CaseIterable {
-    case man
-    case woman
-}
-
-enum Smoke: String, Codable, CaseIterable {
-    case smokingNow
-    case quitSmoking
-    case noSmoking
+enum AdditionalQuestions: String, Codable, CaseIterable {
+    case highCholesterol
+    case hasDiabetes
+    case brokeBone
 }
 
 enum Alcohol: String, Codable, CaseIterable {
@@ -70,6 +65,37 @@ enum BloodPressure: String, Codable, CaseIterable {
     case normal
     case high
 }
+
+enum Chronic: String, Codable, CaseIterable {
+    case chronicStomach
+    case hiv
+}
+
+enum FamilyDiseases: String, Codable, CaseIterable {
+    case infarct
+    case stroke
+    case relativeHipBroke
+    case diabetes
+}
+
+enum Gender: String, Codable, CaseIterable {
+    case man
+    case woman
+}
+
+enum Smoke: String, Codable, CaseIterable {
+    case smokingNow
+    case quitSmoking
+    case noSmoking
+}
+
+enum RelativeOncology: String, Codable, CaseIterable {
+    case prostateCancer
+    case colonCancer
+    case stomachCancer
+}
+
+// MARK: Relative Oncology Details
 
 enum ProstateCancerDetails: String, Codable, CaseIterable {
     case morethan1
@@ -90,3 +116,4 @@ enum ColonCancerDetails: String, Codable, CaseIterable {
     case manyRelatives
     case manyCousins
 }
+
