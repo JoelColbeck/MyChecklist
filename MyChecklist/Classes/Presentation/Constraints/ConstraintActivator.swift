@@ -9,7 +9,7 @@ import UIKit
 
 @resultBuilder
 struct ConstraintActivator {
-    static func buildBlock(_ constraints: NSLayoutConstraint...) {
-        NSLayoutConstraint.activate(constraints)
+    static func buildBlock(_ components: NSLayoutConstraint?...) {
+        NSLayoutConstraint.activate(components.compactMap(identity))
     }
 }

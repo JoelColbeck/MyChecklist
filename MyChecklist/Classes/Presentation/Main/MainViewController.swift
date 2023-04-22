@@ -28,6 +28,12 @@ final class MainViewController: UIViewController {
             navigationBar.topAnchor.constraint(equalTo: view.topAnchor)
         ])
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        present(SurveyController(surveyService: CommonSurveyService()), animated: true)
+    }
 }
 
 enum Page: CaseIterable {

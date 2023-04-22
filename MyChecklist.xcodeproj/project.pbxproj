@@ -22,6 +22,18 @@
 		C74A2C1526C6F1AB001F5508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74A2C1426C6F1AB001F5508 /* Assets.xcassets */; };
 		C74A2C1826C6F1AB001F5508 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74A2C1626C6F1AB001F5508 /* LaunchScreen.storyboard */; };
 		C76937AC29D989B70051B8C4 /* testAnchors.json in Resources */ = {isa = PBXBuildFile; fileRef = C76937AB29D989B70051B8C4 /* testAnchors.json */; };
+		C76B1F9C29F3F59B00491166 /* SurveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1F9B29F3F59B00491166 /* SurveyController.swift */; };
+		C76B1FA029F3F69B00491166 /* SurveyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1F9F29F3F69B00491166 /* SurveyNavigationBar.swift */; };
+		C76B1FA229F3FDC600491166 /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FA129F3FDC600491166 /* SurveyViewModel.swift */; };
+		C76B1FA729F4002E00491166 /* CheckboxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76B1FA529F4002E00491166 /* CheckboxView.xib */; };
+		C76B1FA829F4002E00491166 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FA629F4002E00491166 /* CheckboxView.swift */; };
+		C76B1FAD29F4006700491166 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FAC29F4006700491166 /* XibView.swift */; };
+		C76B1FE729F4135000491166 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FE629F4134F00491166 /* UIConstants.swift */; };
+		C76B1FEB29F4136000491166 /* ReactiveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FE929F4136000491166 /* ReactiveCollectionViewCell.swift */; };
+		C76B1FEC29F4136000491166 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FEA29F4136000491166 /* BaseCollectionViewCell.swift */; };
+		C76B1FEF29F4138800491166 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FEE29F4138800491166 /* BaseViewModel.swift */; };
+		C76B1FF429F4145500491166 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FF329F4145500491166 /* QuestionCell.swift */; };
+		C76B1FF729F414A700491166 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B1FF629F414A700491166 /* PickerView.swift */; };
 		C76B762828434F0C00DB212D /* PartialApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762728434F0C00DB212D /* PartialApply.swift */; };
 		C76B762A28434FBD00DB212D /* Uncurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762928434FBD00DB212D /* Uncurry.swift */; };
 		C76B762D284D33B800DB212D /* Weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76B762C284D33B800DB212D /* Weakify.swift */; };
@@ -46,6 +58,8 @@
 		C7EA0EBC29D99F5E00713599 /* NewSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA0EBB29D99F5E00713599 /* NewSurvey.swift */; };
 		C7EA0EBE29D9A25E00713599 /* SurveyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA0EBD29D9A25E00713599 /* SurveyService.swift */; };
 		C7EA0EC029EB2A0600713599 /* QuestionIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA0EBF29EB2A0600713599 /* QuestionIdentifiable.swift */; };
+		C7EC7E8029F4355F00992548 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC7E7F29F4355F00992548 /* Optional+Extension.swift */; };
+		C7EC7E8329F435EB00992548 /* identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC7E8229F435EB00992548 /* identity.swift */; };
 		C7F34EF02878507400A8DB74 /* Optional+Conformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */; };
 		C7F69A3829BE89F700AD7F62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F69A3729BE89F700AD7F62 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +95,18 @@
 		C74A2C1726C6F1AB001F5508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C74A2C1926C6F1AB001F5508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C76937AB29D989B70051B8C4 /* testAnchors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testAnchors.json; sourceTree = "<group>"; };
+		C76B1F9B29F3F59B00491166 /* SurveyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyController.swift; sourceTree = "<group>"; };
+		C76B1F9F29F3F69B00491166 /* SurveyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyNavigationBar.swift; sourceTree = "<group>"; };
+		C76B1FA129F3FDC600491166 /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
+		C76B1FA529F4002E00491166 /* CheckboxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckboxView.xib; sourceTree = "<group>"; };
+		C76B1FA629F4002E00491166 /* CheckboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
+		C76B1FAC29F4006700491166 /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		C76B1FE629F4134F00491166 /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		C76B1FE929F4136000491166 /* ReactiveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCollectionViewCell.swift; sourceTree = "<group>"; };
+		C76B1FEA29F4136000491166 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		C76B1FEE29F4138800491166 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		C76B1FF329F4145500491166 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		C76B1FF629F414A700491166 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		C76B762728434F0C00DB212D /* PartialApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialApply.swift; sourceTree = "<group>"; };
 		C76B762928434FBD00DB212D /* Uncurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uncurry.swift; sourceTree = "<group>"; };
 		C76B762C284D33B800DB212D /* Weakify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weakify.swift; sourceTree = "<group>"; };
@@ -105,6 +131,8 @@
 		C7EA0EBB29D99F5E00713599 /* NewSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSurvey.swift; sourceTree = "<group>"; };
 		C7EA0EBD29D9A25E00713599 /* SurveyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyService.swift; sourceTree = "<group>"; };
 		C7EA0EBF29EB2A0600713599 /* QuestionIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionIdentifiable.swift; sourceTree = "<group>"; };
+		C7EC7E7F29F4355F00992548 /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		C7EC7E8229F435EB00992548 /* identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = identity.swift; sourceTree = "<group>"; };
 		C7F34EEF2878507400A8DB74 /* Optional+Conformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Conformance.swift"; sourceTree = "<group>"; };
 		C7F69A3729BE89F700AD7F62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,13 +188,6 @@
 				C72B9F2129B90A56008D78B4 /* ConstraintActivator.swift */,
 			);
 			path = Constraints;
-			sourceTree = "<group>";
-		};
-		C7418B0D2710E0340018A233 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		C7418B222710E3F70018A233 /* MyChecklistUnitTests */ = {
@@ -228,6 +249,80 @@
 			path = TestAnchors;
 			sourceTree = "<group>";
 		};
+		C76B1F9A29F3F59100491166 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FF129F4144000491166 /* Cells */,
+				C76B1F9B29F3F59B00491166 /* SurveyController.swift */,
+				C76B1F9F29F3F69B00491166 /* SurveyNavigationBar.swift */,
+				C76B1FA129F3FDC600491166 /* SurveyViewModel.swift */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		C76B1FA329F4002300491166 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FF529F4149C00491166 /* PickerView */,
+				C76B1FED29F4138800491166 /* ViewModel */,
+				C76B1FE829F4136000491166 /* CollectionViewCells */,
+				C76B1FE529F4134F00491166 /* Utility */,
+				C76B1FAC29F4006700491166 /* XibView.swift */,
+				C76B1FA429F4002E00491166 /* CheckboxView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C76B1FA429F4002E00491166 /* CheckboxView */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FA529F4002E00491166 /* CheckboxView.xib */,
+				C76B1FA629F4002E00491166 /* CheckboxView.swift */,
+			);
+			path = CheckboxView;
+			sourceTree = "<group>";
+		};
+		C76B1FE529F4134F00491166 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FE629F4134F00491166 /* UIConstants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C76B1FE829F4136000491166 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FE929F4136000491166 /* ReactiveCollectionViewCell.swift */,
+				C76B1FEA29F4136000491166 /* BaseCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		C76B1FED29F4138800491166 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FEE29F4138800491166 /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C76B1FF129F4144000491166 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FF329F4145500491166 /* QuestionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C76B1FF529F4149C00491166 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				C76B1FF629F414A700491166 /* PickerView.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		C76B762628434EEF00DB212D /* Functional */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +338,7 @@
 		C76B762B284D33A500DB212D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C7EC7E8129F435E600992548 /* Utility */,
 				C76B762628434EEF00DB212D /* Functional */,
 			);
 			path = Common;
@@ -262,6 +358,8 @@
 		C784879E2700758B003240C9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C76B1FA329F4002300491166 /* Common */,
+				C76B1F9A29F3F59100491166 /* Survey */,
 				C7F69A3629BE89F200AD7F62 /* Main */,
 				C72B9F2029B90A4F008D78B4 /* Constraints */,
 				C78AE85F29AEABB800477D16 /* Images */,
@@ -278,7 +376,6 @@
 			children = (
 				C76937AD29D989C00051B8C4 /* SurveyConverter  */,
 				C76B762B284D33A500DB212D /* Common */,
-				C7418B0D2710E0340018A233 /* Services */,
 				C7AB92C2270F760500E4827B /* Network */,
 			);
 			path = BusinessLogic;
@@ -301,6 +398,7 @@
 		C784888C27008C9B003240C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C7EC7E7E29F4355500992548 /* Utility */,
 				C784888D27008C9E003240C9 /* Fonts */,
 				C72A4BA6286D8A400021DC57 /* Image.swift */,
 			);
@@ -394,6 +492,22 @@
 				C7EA0EBD29D9A25E00713599 /* SurveyService.swift */,
 			);
 			path = Survey;
+			sourceTree = "<group>";
+		};
+		C7EC7E7E29F4355500992548 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C7EC7E7F29F4355F00992548 /* Optional+Extension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C7EC7E8129F435E600992548 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C7EC7E8229F435EB00992548 /* identity.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		C7F69A3629BE89F200AD7F62 /* Main */ = {
@@ -495,6 +609,7 @@
 			files = (
 				C74A2C1826C6F1AB001F5508 /* LaunchScreen.storyboard in Resources */,
 				C784889127008CAD003240C9 /* Gilroy-Semibold.ttf in Resources */,
+				C76B1FA729F4002E00491166 /* CheckboxView.xib in Resources */,
 				C7EA0EB829D9961700713599 /* testContents.json in Resources */,
 				C76937AC29D989B70051B8C4 /* testAnchors.json in Resources */,
 				C73417972725647C005FC8C9 /* Gilroy-Regular.ttf in Resources */,
@@ -564,33 +679,46 @@
 				C76B762A28434FBD00DB212D /* Uncurry.swift in Sources */,
 				C74A2C0C26C6F1A9001F5508 /* AppDelegate.swift in Sources */,
 				C76B76382854B3D200DB212D /* TitleConvertible.swift in Sources */,
+				C76B1F9C29F3F59B00491166 /* SurveyController.swift in Sources */,
+				C76B1FEF29F4138800491166 /* BaseViewModel.swift in Sources */,
 				C71F5DB4286CC0FB00957208 /* RadioListView.swift in Sources */,
 				C78AE86E29B8DA2B00477D16 /* FunctionComposition.swift in Sources */,
 				C7F34EF02878507400A8DB74 /* Optional+Conformance.swift in Sources */,
+				C76B1FE729F4135000491166 /* UIConstants.swift in Sources */,
 				C72B9F2229B90A56008D78B4 /* ConstraintActivator.swift in Sources */,
 				C7F69A3829BE89F700AD7F62 /* MainViewController.swift in Sources */,
 				C72E181D27415C9300191706 /* Survey.swift in Sources */,
+				C76B1FA029F3F69B00491166 /* SurveyNavigationBar.swift in Sources */,
 				C789C6FC2710352B001E7B75 /* UserService.swift in Sources */,
 				C71F5DB6286CC12100957208 /* RadioButton.swift in Sources */,
 				C789C6FE27103649001E7B75 /* User.swift in Sources */,
 				C72B9F2429B90CDE008D78B4 /* FilledButton.swift in Sources */,
 				C7418B0F2710E03F0018A233 /* TestAnchorService.swift in Sources */,
+				C76B1FF429F4145500491166 /* QuestionCell.swift in Sources */,
+				C7EC7E8329F435EB00992548 /* identity.swift in Sources */,
 				C7AB92C6270F772E00E4827B /* UserApiMethod.swift in Sources */,
 				C7EA0EC029EB2A0600713599 /* QuestionIdentifiable.swift in Sources */,
+				C76B1FEB29F4136000491166 /* ReactiveCollectionViewCell.swift in Sources */,
+				C76B1FA829F4002E00491166 /* CheckboxView.swift in Sources */,
 				C789C71027104065001E7B75 /* TestAnchor.swift in Sources */,
 				C78AE85E29AEA52A00477D16 /* Localization.swift in Sources */,
 				C78AE86C29B8DA2100477D16 /* pass.swift in Sources */,
+				C76B1FF729F414A700491166 /* PickerView.swift in Sources */,
 				C72A4BA7286D8A400021DC57 /* Image.swift in Sources */,
+				C7EC7E8029F4355F00992548 /* Optional+Extension.swift in Sources */,
 				C76B762828434F0C00DB212D /* PartialApply.swift in Sources */,
 				C7AB92C4270F761000E4827B /* Constants.swift in Sources */,
+				C76B1FA229F3FDC600491166 /* SurveyViewModel.swift in Sources */,
 				C789C70127103BAF001E7B75 /* NetworkLoggingPlugin.swift in Sources */,
 				C74A2C0E26C6F1A9001F5508 /* SceneDelegate.swift in Sources */,
 				C78AE86129AEABBE00477D16 /* ImageDescriptor .swift in Sources */,
 				C76B762D284D33B800DB212D /* Weakify.swift in Sources */,
 				C78AE86729B8C90A00477D16 /* SegmentedControl.swift in Sources */,
 				C7EA0EBC29D99F5E00713599 /* NewSurvey.swift in Sources */,
+				C76B1FEC29F4136000491166 /* BaseCollectionViewCell.swift in Sources */,
 				C7EA0EBE29D9A25E00713599 /* SurveyService.swift in Sources */,
 				C78AE85529AE979A00477D16 /* NavigationBarView.swift in Sources */,
+				C76B1FAD29F4006700491166 /* XibView.swift in Sources */,
 				C78AE85929AE9DE200477D16 /* Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

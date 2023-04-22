@@ -115,8 +115,6 @@ extension RelativeOncology: TitleConvertible {
         switch self {
         case .prostateCancer:
             return "Рак простаты"
-        case .cervicalCancer:
-            return "Рак шейки матки"
         case .colonCancer:
             return "Рак прямой кишки"
         case .stomachCancer:

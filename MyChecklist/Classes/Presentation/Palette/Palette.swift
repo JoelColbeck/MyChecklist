@@ -12,6 +12,8 @@ enum Palette {
     static let currentYearNavbar = UIColor(hex: "C4EF4A")!
     static let futureYearNavbar = UIColor(hex: "ABE2E5")!
     static let checklistsNavbar = UIColor(hex: "D9D9D9")!
+    static let surveyAnswerBackground = UIColor(hex: "F0F0F0")!
+    static let surveyAnswerBorder = UIColor(hex: "06C0F3")!
 }
 
 extension UIColor {

@@ -14,13 +14,37 @@ protocol Questionable {
     static var surveyQuestion: SurveyQuestion { get }
 }
 
-final class CommonSurveyService {
+protocol SurveyService {
+    var title: String { get }
+    var questions: Observable<[SurveyQuestion]> { get }
+    func writeAnswer(_ answer: String?, questionId: String)
+    func getAnswers() -> [String: String]
+}
+
+final class CommonSurveyService: SurveyService {
+    var title: String { "Общие вопросы" }
+    
+    var questions: Observable<[SurveyQuestion]> {
+        questionsRelay
+            .asObservable()
+    }
+    
+    init() {
+        questionsRelay.accept(makeQuestions())
+    }
+    
     func writeAnswer(_ answer: String?, questionId: String) {
         answers[questionId] = answer
         
         if let bmi = calculateBMI() {
             answers["bmi"] = String(bmi)
         }
+        
+        questionsRelay.accept(makeQuestions())
+    }
+    
+    func getAnswers() -> [String : String] {
+        answers
     }
     
     private func makeQuestions() -> [SurveyQuestion] {
@@ -73,7 +97,7 @@ final class CommonSurveyService {
         return weight / pow(height / 100, 2)
     }
 
-    private let questionsRelay = PublishRelay<[SurveyQuestion]>()
+    private let questionsRelay = BehaviorRelay<[SurveyQuestion]>(value: [])
     private var answers: [String: String] = [:]
 }
 
